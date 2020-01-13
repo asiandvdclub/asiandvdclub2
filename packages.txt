@@ -1,0 +1,22 @@
+ii  dh-php                                0.10                                       all          debhelper add-on to handle PHP PECL extensions
+ii  libapache2-mod-php                    1:7.0+35ubuntu6.1                          all          server-side, HTML-embedded scripting language (Apache 2 module) (default)
+ii  libapache2-mod-php7.0                 7.0.33-0ubuntu0.16.04.4                    amd64        server-side, HTML-embedded scripting language (Apache 2 module)
+ii  php                                   1:7.0+35ubuntu6.1                          all          server-side, HTML-embedded scripting language (default)
+ii  php-common                            1:35ubuntu6.1                              all          Common files for PHP packages
+ii  php-dev                               1:7.0+35ubuntu6.1                          all          Files for PHP module development (default)
+ii  php-gd                                1:7.0+35ubuntu6.1                          all          GD module for PHP [default]
+ii  php-mysql                             1:7.0+35ubuntu6.1                          all          MySQL module for PHP [default]
+ii  php-pear                              1:1.10.1+submodules+notgz-6ubuntu0.1       all          PEAR Base System
+ii  php-xml                               1:7.0+35ubuntu6.1                          all          DOM, SimpleXML, WDDX, XML, and XSL module for PHP [default]
+ii  php7.0                                7.0.33-0ubuntu0.16.04.4                    all          server-side, HTML-embedded scripting language (metapackage)
+ii  php7.0-cli                            7.0.33-0ubuntu0.16.04.4                    amd64        command-line interpreter for the PHP scripting language
+ii  php7.0-common                         7.0.33-0ubuntu0.16.04.4                    amd64        documentation, examples and common module for PHP
+ii  php7.0-dev                            7.0.33-0ubuntu0.16.04.4                    amd64        Files for PHP7.0 module development
+ii  php7.0-fpm                            7.0.33-0ubuntu0.16.04.4                    amd64        server-side, HTML-embedded scripting language (FPM-CGI binary)
+ii  php7.0-gd                             7.0.33-0ubuntu0.16.04.4                    amd64        GD module for PHP
+ii  php7.0-json                           7.0.33-0ubuntu0.16.04.4                    amd64        JSON module for PHP
+ii  php7.0-mysql                          7.0.33-0ubuntu0.16.04.4                    amd64        MySQL module for PHP
+ii  php7.0-opcache                        7.0.33-0ubuntu0.16.04.4                    amd64        Zend OpCache module for PHP
+ii  php7.0-readline                       7.0.33-0ubuntu0.16.04.4                    amd64        readline module for PHP
+ii  php7.0-xml                            7.0.33-0ubuntu0.16.04.4                    amd64        DOM, SimpleXML, WDDX, XML, and XSL module for PHP
+ii  pkg-php-tools                         1.32ubuntu2                                all          various packaging tools and scripts for PHP packages

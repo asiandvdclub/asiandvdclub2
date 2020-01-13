@@ -1,0 +1,139 @@
+
+@media (min-width: 1920px) {
+	.container{
+		min-width: 95%;
+	}
+}
+@media (min-width: 720px) {
+	.container{
+		min-width: 95%;
+	}
+}
+body {overflow-x: hidden;}
+.container{
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	border: 1px solid #005cbf;
+}
+#head.container{
+	margin-bottom: 10px;
+
+	height: 100px;
+	min-width: 100%;
+	border: 1px solid #005cbf;
+}
+#navbar{
+	height: 180px;
+	margin-bottom: 5px;
+}
+
+#navbar.container{
+	height: auto;
+}
+
+#std_web .container{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	height: auto;
+}
+
+
+.nav-item{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-right: 5px;
+
+}
+.nav-pills{
+	margin: auto;
+}
+.nav-link{
+	padding-top: 1px;
+	padding-bottom: 1px;
+	padding-right: 30px;
+	padding-left: 30px;
+	margin: auto;
+
+}
+
+#controller .nav-item .nav-link{
+	font-size: 14px;
+}
+#controller .navbar{
+	margin-bottom: 1px;
+}
+#controller .table{
+	margin-bottom: 5px;
+}
+
+#small{
+	padding-bottom: 10px;
+}
+#small td{
+	padding: inherit;
+	margin-left: 10px;
+	height: 20px;
+	font-size: 15px;
+	align-content: center;
+}
+#small_tab td{
+	padding-top: 0px;
+	padding-left: 20px;
+	margin-left: 10px;
+	height: 25px;
+	font-size: 15px;
+	align-content: center;
+}
+#small_tab.badge-info{
+	padding-top: 1px;
+	height: 25px;
+}
+
+#small_tab2 td{
+	padding-top: 0px;
+	padding-left: 20px;
+	margin-left: 10px;
+	height: 25px;
+	font-size: 15px;
+	align-content: center;
+}
+#small_tab2.badge-info{
+	padding-top: 1px;
+	height: 25px;
+}
+#std_in .container{
+	height: auto;
+	margin-bottom: 10px;
+}
+
+.btn{
+	height: 25px;
+	text-align: center;
+	padding: 0px;
+}
+.btn .text_news_button{
+	align-content: center;
+	font-size: 9pt;
+}
+.mg{
+	margin-bottom: 10px;
+}
+#news #texarea1{
+	resize: none;
+	height: 300px;
+}
+#news #res{
+	width: 50px;
+}
+
+.font-big{
+	font-size: 20px;
+}
+#table_form{
+	border-collapse: collapse;
+}
+.badge{
+	margin-bottom: 10px;
+}
+
