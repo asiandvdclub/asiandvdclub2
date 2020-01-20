@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: DESKTOP-BUF27
- * Date: 5/23/2019
- * Time: 11:33 PM
- */
 
 class Forum extends Controller
 {
@@ -19,7 +13,6 @@ class Forum extends Controller
         $this->cacheManager = $this->model('cacheManager');
         $this->languageMod = $this->model('language');
         $this->forum_data = $this->model('forum_data');
-
         $this->cacheManager->setUserStats();
         $this->userClass = $this->cacheManager->getUserStats()['class'];
     }
@@ -37,6 +30,7 @@ class Forum extends Controller
                     "getLangPath" => $this->languageMod->getLangPath(__FUNCTION__),
                     "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                     "getSiteManagerBar"=> $this->cacheManager->getSiteManager($this->userClass),
+                    "category" => $this->forum_data->display_forums(),
                 ]);
         }
     }

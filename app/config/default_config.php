@@ -105,7 +105,7 @@ $ATTACHMENT=array(
 //This is the map of the web pages
 $PAGES = [
     "Access"=>array("login", "signup", "failedlogin", "confirm", "confirmed", "recover"),
-    "SiteManager"=>array("staff_panel", "site_settings", "forum_manager"),
+    "SiteManager"=>array("staff_panel", "site_settings", "forum_manager", "forum_manager_forums"),
     "Home"=>array("index","create_news","delete_news"),
     "Forum"=>array("forums", "in_forum", "post")
 ];
@@ -128,8 +128,9 @@ $AUTHORITY=array(
         'staff_panel'=> array(16, 15, 14),
         'site_settings'=> array(16, 15, 14),
         'forum_manager'=> array(16, 15, 14),
+        'forum_manager_forums' => array(16,15,14)
     ),
-    'forums' => array('16'),
+    'forums' => array(16),
     'defaultclass' => '1',
     'staffmem' => '13',
     'newsmanage' => '14',

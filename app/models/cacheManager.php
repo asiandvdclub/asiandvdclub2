@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: DESKTOP-BUF27
- * Date: 5/7/2019
- * Time: 10:33 PM
- */
 
 class cacheManager
 {

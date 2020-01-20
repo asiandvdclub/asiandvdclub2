@@ -26,7 +26,6 @@ class SiteManager extends Controller
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                 "getSiteManagerBar" => $this->cacheManager->getSiteManager($this->userClass),
             ]);
-
     }
     public function site_settings(){
         $this->languageMod->setLanguage(__FUNCTION__);
@@ -44,10 +43,35 @@ class SiteManager extends Controller
     public function forum_manager(){
         $this->languageMod->setLanguage(__FUNCTION__);
 
+        $stats = [];
+        $this->db->querry("SELECT COUNT(*) as total FROM forums");  $this->db->execute();
+        $temp = $this->db->getAll();
+        $stats = array("forums" => $temp[0]['total']);
+        $this->db->querry("SELECT COUNT(*) as total FROM posts");  $this->db->execute();
+        $temp = $this->db->getAll();
+        $stats += array("posts" => $temp[0]['total']);
+        $this->db->querry("SELECT COUNT(*) as total FROM users");  $this->db->execute();
+        $temp = $this->db->getAll();
+        $stats += array("users" => $temp[0]['total']);
+
         $this->view('site_manager/forum_manager',
             [
                 "currentPage" => "/" . __FUNCTION__,
                 "userStats" => $this->cacheManager->getUserStats(),
+                "forum_status" => $stats,
+                "getLangDropdown" => $this->languageMod->getLangDropdown(),
+                "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
+                "getSiteManagerBar" => $this->cacheManager->getSiteManager($this->userClass),
+            ]);
+    }
+    public function forum_manager_forums(){
+        $this->languageMod->setLanguage(__FUNCTION__);
+
+        $this->view('site_manager/forum_manager_forums',
+            [
+                "currentPage" => "/" . __FUNCTION__,
+                "userStats" => $this->cacheManager->getUserStats(),
+                "forum_status" => $stats,
                 "getLangDropdown" => $this->languageMod->getLangDropdown(),
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                 "getSiteManagerBar" => $this->cacheManager->getSiteManager($this->userClass),

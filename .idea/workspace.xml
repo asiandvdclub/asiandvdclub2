@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="35533c8a-7baa-46f8-9fe2-be7962aab11d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1Wbq1kE4chmutBRoyWmQSAX0nC1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="35533c8a-7baa-46f8-9fe2-be7962aab11d" name="Default Changelist" comment="" />
+      <created>1579428430666</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1579428430666</updated>
+      <workItem from="1579428443420" duration="6126000" />
+      <workItem from="1579439531817" duration="4057000" />
+      <workItem from="1579510764550" duration="20269000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="178" key="#Deployment" timestamp="1579439565433">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#Deployment/0.0.1920.1040@0.0.1920.1040" timestamp="1579439565433" />
+    <state x="552" y="178" key="#Options" timestamp="1579428803678">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#Options/0.0.1920.1040@0.0.1920.1040" timestamp="1579428803678" />
+    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog" timestamp="1579428804213">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579428804213" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1579428512725">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1579428512725" />
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1579543293656">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579543293656" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1579428447478">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579428447478" />
+    <state x="844" y="250" key="ftp.server.browser" timestamp="1579428658147">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="844" y="250" key="ftp.server.browser/0.0.1920.1040@0.0.1920.1040" timestamp="1579428658147" />
+    <state x="829" y="395" key="publish.login" timestamp="1579510786392">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="829" y="395" key="publish.login/0.0.1920.1040@0.0.1920.1040" timestamp="1579510786392" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1579531845119">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579531845119" />
+  </component>
+</project>
