@@ -23,8 +23,7 @@ class Home extends Controller {
 
         $this->cacheManager->setUserStats();
 
-        $this->userClass = $this->cacheManager->getUserStats()['class'];
-
+        $this->userClass = $this->cacheManager->getUserStats()['idClass'];
     }
     public function index(){
         require_once $this->languageMod->getLangPath(__FUNCTION__);

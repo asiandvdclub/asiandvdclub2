@@ -15,6 +15,6 @@ class announce extends Controller
     }
     public function announceSession(){
         header('Content-type: Text/Plain');
-        // Here goes all the benconde packet it should return an echo back to torrent client and update database
+        // Here goes all the benconde packet it should return an echo back to torrent client and update the database
     }
 }

@@ -104,10 +104,11 @@ $ATTACHMENT=array(
 );
 //This is the map of the web pages
 $PAGES = [
-    "Access"=>array("login", "signup", "failedlogin", "confirm", "confirmed", "recover"),
-    "SiteManager"=>array("staff_panel", "site_settings", "forum_manager", "forum_manager_forums"),
-    "Home"=>array("index","create_news","delete_news"),
-    "Forum"=>array("forums", "in_forum", "post")
+    "Access"=> array("login", "signup", "failedlogin", "confirm", "confirmed", "recover"),
+    "SiteManager" => array("staff_panel", "site_settings", "forum_manager", "forum_manager_forums", "forum_delete", "forum_add"),
+    "Home" => array("index","create_news","delete_news"),
+    "Forum" => array("forums", "in_forum", "post"),
+    "Tracker" => array("torrents", "upload")
 ];
 $AUTHORITY=array(
     //'16' => array('news', 'create_news'),
@@ -116,10 +117,11 @@ $AUTHORITY=array(
     //groups of news with the news pages
     //TODO change values to INT
     'pages' => array(
-        'index'=>1,
-        'forums'=>1
+        'index' => 1,
+        'forums'=> 1,
+        'torrents'=> 1,
     ),
-    'news_group' =>array(
+    'news_group' => array(
         'create_news' => array(16,15,14),
         'delete_news' => array(16, 14),
         'news' => array(16, 12, 11),
@@ -128,9 +130,16 @@ $AUTHORITY=array(
         'staff_panel'=> array(16, 15, 14),
         'site_settings'=> array(16, 15, 14),
         'forum_manager'=> array(16, 15, 14),
-        'forum_manager_forums' => array(16,15,14)
+        'forum_manager_forums' => array(16,15,14),
+        'forum_delete' => array(16, 15, 14),
+        'forum_add' => array(16, 15, 14)
     ),
-    'forums' => array(16),
+    'forums' => array(1),
+    'tracker' => array(
+        'torrents' => array(1),
+        'upload' => array(16),
+    ),
+
     'defaultclass' => '1',
     'staffmem' => '13',
     'newsmanage' => '14',

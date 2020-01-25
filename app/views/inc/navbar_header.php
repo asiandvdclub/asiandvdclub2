@@ -40,40 +40,40 @@
                 <a class="nav-link active" href="<?php echo URL_ROOT . "/index"; ?>"><?php echo $lang_functions['text_home'] ?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="<?php echo URL_ROOT . "/forums"; ?>"><?php echo $lang_functions['text_forums'] ?></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="#"><?php echo $lang_functions['text_torrents'] ?></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="#"><?php echo $lang_functions['text_offers'] ?></a>
+                <a class="nav-link active" href="<?php echo URL_ROOT . "/torrents"; ?>"><?php echo $lang_functions['text_torrents'] ?></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="#"><?php echo $lang_functions['text_request'] ?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="#"><?php echo $lang_functions['text_upload'] ?></a>
+                <a class="nav-link active" href="<?php echo URL_ROOT . "/upload"; ?>"><?php echo $lang_functions['text_upload'] ?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="#"><?php echo $lang_functions['text_subtitles'] ?></a>
+                <a class="nav-link active" href="#"><?php echo $lang_functions['text_bookmarks'] ?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="#"><?php echo $lang_functions['text_user_cp'] ?></a>
+                <a class="nav-link active" href="#"><?php echo $lang_functions['text_profile'] ?></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="<?php echo URL_ROOT . "/forums"; ?>"><?php echo $lang_functions['text_forums'] ?></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="#"><?php echo $lang_functions['text_top_ten'] ?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="#"><?php echo $lang_functions['text_log'] ?></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="#"><?php echo $lang_functions['text_chat'] ?></a>
+                <a class="nav-link active" href="#"><?php echo $lang_functions['text_faq'] ?></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="#"><?php echo $lang_functions['text_rules'] ?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="#"><?php echo $lang_functions['text_faq'] ?></a>
+                <a class="nav-link active" href="#"><?php echo $lang_functions['text_settings'] ?></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#"><?php echo $lang_functions['text_log'] ?></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#"><?php echo $lang_functions['text_donate'] ?></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="#"><?php echo $lang_functions['text_staff'] ?></a>
