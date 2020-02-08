@@ -6,7 +6,22 @@
     </div>
     <br>
     <div id="news" class="container">
-        Torrents here
+        <table class="bg-dark text-white"  border="1" cellspacing="0" cellpadding="10">
+            <tbody>
+            <tr class="">
+                <th>Type</th>
+                <th style="width: 1200px;">Name</th>
+                <th>Com.</th>
+                <th style="width: 380px;">Time.</th>
+                <th>Size.</th>
+                <th>Seeds</th>
+                <th>Leech</th>
+                <th>Down</th>
+                <th style="width: 300px;" align="right">Uploader</th>
+            </tr>
+            <?php echo $data['showList']; ?>
+            </tbody>
+        </table>
     </div>
 </div>
 

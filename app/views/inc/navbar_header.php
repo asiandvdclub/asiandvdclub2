@@ -5,11 +5,11 @@
     <title><?php echo SITE_NAME;?></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/nexusphp.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/nexusphp.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.js"></script>
-    <script src="js/functions.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/functions.js"></script>
 </head>
 <body>
 

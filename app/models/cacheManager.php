@@ -23,7 +23,7 @@ class cacheManager
         //TODO Cache user by ID where ID is the key , user_stats_ . ID
         if (empty($this->cache->getKey($this->user_cache))) {
 
-            $this->db->querry("SELECT u.id, u.username, u.uploaded, u.downloaded, u.idClass FROM users as u WHERE u.id = :userid");
+            $this->db->querry("SELECT u.id, u.username, u.uploaded, u.downloaded, u.idClass, u.passkey FROM users as u WHERE u.id = :userid");
             $this->db->bind(":userid", base64_decode($_COOKIE['c_secure_uid']));
             $row = $this->db->getRow();
             $this->cache->setKey($this->user_cache, $row, 1800);
@@ -33,7 +33,7 @@ class cacheManager
         //$this->cache->clearKey('site_manager_bar');
         //Manage this
         //$this->cache->clearKey('site_manager_bar');
-        if($userClass == UC_STAFFLEADER){
+        if($userClass == UC_SYSOP){
             if(!$this->cache->getKey('site_manager_bar')){  // <----- this need to bee in the user cache
                 $htmlBar = "<td><a href=\"" . URL_ROOT . "\staff_panel\" class=\"badge badge-primary\">Staff Panel</a></td>
                             <td><a href=\"" . URL_ROOT . "\site_settings\" class=\"badge badge-primary\">Site Settings</a></td>

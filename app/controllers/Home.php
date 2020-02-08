@@ -13,8 +13,6 @@ class Home extends Controller {
     private $index;
     private $userClass;
 
-
-
     public function Home(){
         $this->db = new Database();
         $this->cacheManager = $this->model('cacheManager');
@@ -48,7 +46,7 @@ class Home extends Controller {
         $this->languageMod->setLanguage(__FUNCTION__);
         // Manage evey function that requires high user class with a model
         if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['sitelanguage'])) {
-            $this->db->querry("INSERT INTO `news` (`idUser`, `title`, `text`, `added`) VALUES (:uid, :title, :text, NOW())");
+            $this->db->querry("INSERT INTO `news` (`title`, `text`, `added`, `addedBy`) VALUES (:title, :text, NOW(), :uid)");
             $this->db->bind(":uid", base64_decode($_COOKIE['c_secure_uid']));
             $this->db->bind(":title", $_POST['title']);
             $this->db->bind(":text", $_POST['text_area']);
@@ -68,7 +66,7 @@ class Home extends Controller {
         }
     }
     public function delete_news($newsId){
-        if(UC_STAFFLEADER == $this->userClass) {
+        if(UC_SYSOP == $this->userClass) {
             $this->db->querry("DELETE FROM `news` WHERE :id = idNews");
             $this->db->bind(":id", $newsId);
             $this->db->execute();

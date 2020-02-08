@@ -10,7 +10,7 @@ require_once "functions_announce.php";
 @session_start();
 //TODO Language system for a "translator" to translate the page
 
-//TODO: BUGS that logout's the user, happens in some situations, I don't know the reason, Core inspection need to be done
+//TODO: BUG that logout's the user, happens in some situations, I don't know the reason, Core inspection need to be done
 class Core{
     protected $currentController = 'Pages';
     protected $currentMethod = 'index';
@@ -25,7 +25,7 @@ class Core{
         $this->pages = $PAGES;
 
         $startTime = microtime(true);
-        error_reporting(-1); // remove this
+        //error_reporting(-1); // remove this
 
         $url = $this->getUrl();
 
@@ -97,9 +97,10 @@ class Core{
             require_once '../app/controllers/' . $this->currentController . '.php';
             $this->currentController = new $this->currentController();
             $this->currentMethod = 'announceSession';
+            unset($url[0]);
         }else{
-          // redirect("");
-            die("<h1>Page not found</h1>");
+            redirect("");
+            //die("<h1>Page not found</h1>");
         }
 
         if(!isLogged() && $this->currentMethod == "signup" && !$globalSignUp['globalSignUp'])

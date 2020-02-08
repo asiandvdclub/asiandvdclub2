@@ -21,7 +21,7 @@ class takesignup
         $secret = mksecret(random_int(10, 20));
         try {
             $this->db->querry("INSERT INTO `users` (`username`, `passhash`, `email`, `gender`, `secret`, `confirmHash`,`idLanguage`, `idCountry`,  `passkey`, `ip`, `added` , `last_login`, `last_access`,`idClass`) 
-                                      VALUES (:user, :passhash, :email, :gender, :secret, :confirm, :language, :country, :passkey, :ip, NOW(), NOW(), NOW(), 1)");
+                                      VALUES (:user, :passhash, :email, :gender, :secret, :confirm, :language, :country, :passkey, :ip, NOW(), NOW(), NOW(), 2)");
             $this->db->bind(':user', $this->data['username']);
             $this->db->bind(':passhash', hash("sha3-256", $secret . $this->data['password'] . $secret . $this->data['username'] . $secret)); // This should changed in the future, but when the first release will be no more.
             $this->db->bind(':email', $this->data['email']);
