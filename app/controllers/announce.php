@@ -24,7 +24,7 @@ class announce extends Controller
         $this->db->bind(':info', bin2hex($client['info_hash']));
         $torrent_data = $this->db->getRow();
         if(empty($torrent_data)){
-          echo trim($this->bencode->error_benc("Torrent not registered!"));
+          echo trim($this->bencode->error_benc("Torrent not registred!"));
           exit;
         }
         $this->db->querry("SELECT id FROM users WHERE passkey = :pkey");

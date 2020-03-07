@@ -13,6 +13,23 @@
       <executable />
     </execution>
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="adc2" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -32,6 +49,12 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/views/tracker" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DESKTOP-Z3G2\Documents\GitHub\adc2\app\views\tracker" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -99,6 +122,33 @@
       <workItem from="1583478869762" duration="12000" />
       <workItem from="1583479134138" duration="604000" />
       <workItem from="1583511150528" duration="2499000" />
+      <workItem from="1579549557770" duration="386000" />
+      <workItem from="1579597331897" duration="1827000" />
+      <workItem from="1579883293868" duration="15862000" />
+      <workItem from="1579915274652" duration="599000" />
+      <workItem from="1579940834657" duration="6598000" />
+      <workItem from="1579981998434" duration="4301000" />
+      <workItem from="1580049611973" duration="2398000" />
+      <workItem from="1580115415862" duration="7479000" />
+      <workItem from="1580205849416" duration="931000" />
+      <workItem from="1580209211999" duration="13131000" />
+      <workItem from="1580293679195" duration="2071000" />
+      <workItem from="1580329325134" duration="1005000" />
+      <workItem from="1580381017065" duration="1813000" />
+      <workItem from="1580409162983" duration="1604000" />
+      <workItem from="1580463404436" duration="2169000" />
+      <workItem from="1580489580029" duration="5875000" />
+      <workItem from="1580548999409" duration="3639000" />
+      <workItem from="1580651850550" duration="13198000" />
+      <workItem from="1580745905040" duration="12776000" />
+      <workItem from="1580810714856" duration="8305000" />
+      <workItem from="1580848951379" duration="600000" />
+      <workItem from="1580894962598" duration="11510000" />
+      <workItem from="1580983330107" duration="5600000" />
+      <workItem from="1581002615729" duration="19698000" />
+      <workItem from="1581068264107" duration="3435000" />
+      <workItem from="1581082914861" duration="15948000" />
+      <workItem from="1581158171783" duration="1203000" />
     </task>
     <servers />
   </component>
@@ -119,26 +169,42 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="178" key="#Deployment" timestamp="1579439565433">
+    <state x="552" y="178" key="#Deployment" timestamp="1581068297741">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="178" key="#Deployment/0.0.1920.1040@0.0.1920.1040" timestamp="1579439565433" />
+    <state x="552" y="178" key="#Deployment/0.0.1920.1040@0.0.1920.1040" timestamp="1581068297741" />
     <state x="552" y="178" key="#Options" timestamp="1579428803678">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Options/0.0.1920.1040@0.0.1920.1040" timestamp="1579428803678" />
-    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog" timestamp="1579428804213">
+    <state x="552" y="178" key="#SQL_Dialects" timestamp="1580751918356">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579428804213" />
+    <state x="552" y="178" key="#SQL_Dialects/0.0.1920.1040@0.0.1920.1040" timestamp="1580751918356" />
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580752907220">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580752907220" />
+    <state x="699" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580231787799">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="699" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1580231787799" />
+    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog" timestamp="1579883355839">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579883355839" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1579428512725">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1579428512725" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1579543293656">
+    <state x="694" y="334" key="NewPhpClassDialog" timestamp="1580115940162">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579543293656" />
+    <state x="694" y="334" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580115940162" />
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1580811737116">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580811737116" />
     <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1579428447478">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -147,10 +213,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="844" y="250" key="ftp.server.browser/0.0.1920.1040@0.0.1920.1040" timestamp="1579428658147" />
-    <state x="829" y="395" key="publish.login" timestamp="1579510786392">
+    <state x="829" y="395" key="publish.login" timestamp="1581159277763">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="829" y="395" key="publish.login/0.0.1920.1040@0.0.1920.1040" timestamp="1579510786392" />
+    <state x="829" y="395" key="publish.login/0.0.1920.1040@0.0.1920.1040" timestamp="1581159277763" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1579531845119">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
