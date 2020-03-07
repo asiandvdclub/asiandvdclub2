@@ -25,6 +25,13 @@ function mksecret($len = 20) {
         $ret .= chr(random_int(33, 126));
     return $ret;
 }
+function formatBytes($size, $precision = 2)
+{
+    $base = log($size, 1024);
+    $suffixes = array('', 'K', 'M', 'G', 'T');
+
+    return round(pow(1024, $base - floor($base)), $precision) .' '. $suffixes[floor($base)];
+}
 
 function dirToArray($dir) {
 
@@ -55,4 +62,8 @@ function getConfigPath(){
     $config = $config['config'];
     return APP_ROUTE . "/config/" . $config . "_config.php";
 }
-?>
+function write_to_file($data, $path){
+    $fp = fopen($path, 'w');
+    fwrite($fp, $data);
+    fclose($fp);
+}

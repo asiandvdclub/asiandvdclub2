@@ -1,6 +1,8 @@
 <?php
+define("announce_interval", 900);
+define("announce_interval_min", 300);
 //Frame work
-define("NEXUS_PHP_VERSION", "1.6");
+define("ADC_FRAMEWORK", "1.6");
 //Bitorrent
 define("IN_TRACKER", true);
 //App route
@@ -14,31 +16,26 @@ define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', 'dupex!23');
 define('DB_NAME', 'nexusphp_updated');
+//Folders
+define('DIR_TORRENTS', APP_ROUTE . '/torrents/');
+define('DIR_IMAGES', 'images/');
+//Header
+define('TORRENT_HEADER', 'application/x-bittorrent');
 
 //Register Settings
 define('maxUserLenght', 12);
 define('minPassLenght', 6);
 //User Classes
-define ("UC_PEASANT", 0);
-define ("UC_USER", 1);
-define ("UC_POWER_USER", 2);
-define ("UC_ELITE_USER", 3);
-define ("UC_CRAZY_USER", 4);
-define ("UC_INSANE_USER", 5);
-define ("UC_VETERAN_USER", 6);
-define ("UC_EXTREME_USER", 7);
-define ("UC_ULTIMATE_USER", 8);
-define ("UC_NEXUS_MASTER", 9);
-define ("UC_VIP", 10);
-define ("UC_RETIREE",11);
-define ("UC_UPLOADER",12);
-//define ("UC_FORUM_MODERATOR", 12);
-define ("UC_MODERATOR",13);
-define ("UC_ADMINISTRATOR",14);
-define ("UC_SYSOP",15);
-define ("UC_STAFFLEADER",16);
-
-
+define ("UC_IGNORANT", 1);
+define ("UC_BEGGINER", 2);
+define ("UC_CANDIDATE", 3);
+define ("UC_ASSOCIATE", 4);
+define ("UC_EXPERT", 5);
+define ("UC_MASTER", 6);
+define ("UC_HIERARCH", 7);
+define ("UC_UPLOADER", 8);
+define ("UC_SUPPORTER", 9);
+define ("UC_SYSOP", 10);
 
 function writeConfig( $filename, $config ) {
     $fh = fopen($filename, "w");
@@ -56,5 +53,3 @@ function writeConfig( $filename, $config ) {
 function readConfig( $filename ) {
     return parse_ini_file($filename, false, INI_SCANNER_NORMAL);
 }
-
-?>

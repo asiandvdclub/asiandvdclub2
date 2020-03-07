@@ -13,8 +13,9 @@ class Forum extends Controller
         $this->cacheManager = $this->model('cacheManager');
         $this->languageMod = $this->model('language');
         $this->forum_data = $this->model('forum_data');
+
         $this->cacheManager->setUserStats();
-        $this->userClass = $this->cacheManager->getUserStats()['class'];
+        $this->userClass = $this->cacheManager->getUserStats()['idClass'];
     }
     public function forums(){
         if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['sitelanguage'])) {

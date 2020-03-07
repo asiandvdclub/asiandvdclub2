@@ -13,8 +13,6 @@ class Home extends Controller {
     private $index;
     private $userClass;
 
-
-
     public function Home(){
         $this->db = new Database();
         $this->cacheManager = $this->model('cacheManager');
@@ -23,8 +21,7 @@ class Home extends Controller {
 
         $this->cacheManager->setUserStats();
 
-        $this->userClass = $this->cacheManager->getUserStats()['class'];
-
+        $this->userClass = $this->cacheManager->getUserStats()['idClass'];
     }
     public function index(){
         require_once $this->languageMod->getLangPath(__FUNCTION__);
@@ -42,6 +39,7 @@ class Home extends Controller {
                 "getLangDropdown" => $this->languageMod->getLangDropdown(),
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                 "getSiteManagerBar"=> $this->cacheManager->getSiteManager($this->userClass),
+                "index_data" => $this->index_data()
             ]);
     }
     //TODO don't check for class here, move this to the CORE level, there will be more function that this one, keep it clean.!!!!
@@ -49,7 +47,7 @@ class Home extends Controller {
         $this->languageMod->setLanguage(__FUNCTION__);
         // Manage evey function that requires high user class with a model
         if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['sitelanguage'])) {
-            $this->db->querry("INSERT INTO `news` (`idUser`, `title`, `text`, `added`) VALUES (:uid, :title, :text, NOW())");
+            $this->db->querry("INSERT INTO `news` (`title`, `text`, `added`, `addedBy`) VALUES (:title, :text, NOW(), :uid)");
             $this->db->bind(":uid", base64_decode($_COOKIE['c_secure_uid']));
             $this->db->bind(":title", $_POST['title']);
             $this->db->bind(":text", $_POST['text_area']);
@@ -69,7 +67,7 @@ class Home extends Controller {
         }
     }
     public function delete_news($newsId){
-        if(UC_STAFFLEADER == $this->userClass) {
+        if(UC_SYSOP == $this->userClass) {
             $this->db->querry("DELETE FROM `news` WHERE :id = idNews");
             $this->db->bind(":id", $newsId);
             $this->db->execute();
@@ -78,5 +76,21 @@ class Home extends Controller {
             //Print message
             redirect("");
         }
+    }
+    //Index status
+    private function index_data(){
+        $data = array(
+            "users" => 0,
+            "unconfirmed" => 0
+        );
+        $this->db->querry("SELECT COUNT(id) as ct FROM users");
+        $temp = $this->db->getAll();
+        $data['users'] = $temp[0]['ct'];
+        $this->db->querry("SELECT COUNT(status) as un FROM users WHERE status = 'pending'");
+        $temp = $this->db->getAll();
+
+        $temp[0]['un'] ? $data['unconfirmed'] = $temp[0]['un'] : 0;
+
+        return $data;
     }
   }

@@ -38,7 +38,6 @@ class index extends Controller
         }
     }
     private function deleteButton($newsId, $lang){
-        //return "<button id='deleteButton' onclick='deleteNews(". $newsId .")' type=\"button\" style=\"margin-left:10px;\" class=\"btn btn-info text-center\">Delete</button>";
         return "<button id='deleteButton' onclick=\"location.href='". URL_ROOT . "/delete_news/" . $newsId ."'\" type=\"button\" style=\"margin-left:10px;\" class=\"btn btn-info text-center\"> ". $lang['text_delete']. " </button>";
     }
     public function polls(){

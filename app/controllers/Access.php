@@ -140,6 +140,7 @@ class Access extends Controller{
                 $this->genderErr = "*";
             if(empty($_POST['country']) || $_POST['country'] == 99)
                 $this->countryErr = "*";
+
             //------------------------------
             if(empty($this->passwordErr) && empty($this->passwordMatchErr))
                 $data['password'] = $_POST['wantpassword'];
@@ -152,9 +153,7 @@ class Access extends Controller{
             if(empty($this->countryErr) || $_POST['country'] != 99)
                 $data['country'] = $_POST['country'];
 
-           // die($_POST['sitelanguage']);
             $data['sitelanguage'] = $_POST['sitelanguage'];
-
 
             if(empty($this->usernameErr))
                 $this->usernameValue = $_POST['wantusername'];
@@ -162,16 +161,31 @@ class Access extends Controller{
             if(count($data) == 7) {
                 $this->dataMod = $this->dataModel('takesignup', $data);
             }else{
-                print_r($data['captcha'] . "=>". md5($data['captcha']) . "<br>" . $_SESSION['captcha']);
-                //die(count($data));
-                //die("Somethigs WRONG");
+                if(empty($this->captchaMod))
+                    $this->captchaMod = new captcha();
+                $this->view("access/signup",
+                    ["usernameErr" => $this->usernameErr,
+                        "passwordErr" => $this->passwordErr,
+                        "passwordMatchErr" => $this->passwordMatchErr,
+                        "genderErr" => $this->genderErr,
+                        "captchaErr" => $this->captchaErr,
+                        "countryErr" => $this->countryErr,
+                        "usernameValue" => $this->usernameValue,
+                        "captchaErr" => $this->captchaErr,
+                        "captchaImage" => $this->captchaMod->captchaImage($_SESSION['captcha']),
+                        "getCountries" => $this->languageMod->getCountries(),
+                        "getLangDropdown" => $this->languageMod->getLangDropdown(),
+                        "getLangPath"=>$this->languageMod->getLangPath(__FUNCTION__)
+                    ]
+                );
             }
-           if($this->dataMod->checkUser())
-               $this->usernameErr = "User already exists";
-           if(!$this->dataMod->checkEmail())
-               $this->emailErr = "Email not allowed. See rules.";
+
+            if($this->dataMod->checkUser())
+                $this->usernameErr = "User already exists";
+            if($this->dataMod->checkEmail())
+                $this->emailErr = "Email not allowed. See rules.";
             //die($_SESSION['captcha'] . "----------".md5($data['captcha'])." / ".$data['captcha']);
-            if(htmlentities(trim($_SESSION['captcha'])) == md5($data['captcha'])) {
+            if(htmlentities(trim($_SESSION['captcha'])) == md5($data['captcha']) && (empty($this->emailErr) && empty($this->usernameErr))) {
                 if ($this->dataMod->registerUser()) {
                     unset($_SESSION['captcha']);
                     $this->dataMod->sendConfirmEmail($this->languageMod->getLangPath("takesignup"));
@@ -181,14 +195,54 @@ class Access extends Controller{
                     ]);
                 }
                 else
-                    echo "somethings wrong";
+                    die("somethings wrong");
             }
-            else {
+            else if(!empty($this->emailErr) || !empty($this->usernameErr)){
+                if(empty($this->captchaMod))
+                    $this->captchaMod = new captcha();
+                $this->view("access/signup",
+                    ["usernameErr" => $this->usernameErr,
+                        "passwordErr" => $this->passwordErr,
+                        "passwordMatchErr" => $this->passwordMatchErr,
+                        "genderErr" => $this->genderErr,
+                        "captchaErr" => $this->captchaErr,
+                        "countryErr" => $this->countryErr,
+                        "emailErr" => $this->emailErr,
+                        "usernameValue" => $this->usernameValue,
+                        "captchaErr" => $this->captchaErr,
+                        "usernameErr" => $this->usernameErr,
+                        "captchaImage" => $this->captchaMod->captchaImage($_SESSION['captcha']),
+                        "getCountries" => $this->languageMod->getCountries(),
+                        "getLangDropdown" => $this->languageMod->getLangDropdown(),
+                        "getLangPath"=>$this->languageMod->getLangPath(__FUNCTION__)
+                    ]
+                );
+            }
+            else{
+                if(empty($this->captchaMod))
+                    $this->captchaMod = new captcha();
                 $this->captchaErr = "Wrong captcha";
+                $this->view("access/signup",
+                    ["usernameErr" => $this->usernameErr,
+                        "passwordErr" => $this->passwordErr,
+                        "passwordMatchErr" => $this->passwordMatchErr,
+                        "genderErr" => $this->genderErr,
+                        "captchaErr" => $this->captchaErr,
+                        "countryErr" => $this->countryErr,
+                        "usernameValue" => $this->usernameValue,
+                        "captchaErr" => $this->captchaErr,
+                        "captchaImage" => $this->captchaMod->captchaImage($_SESSION['captcha']),
+                        "getCountries" => $this->languageMod->getCountries(),
+                        "getLangDropdown" => $this->languageMod->getLangDropdown(),
+                        "getLangPath"=>$this->languageMod->getLangPath(__FUNCTION__)
+                    ]
+                );
             }
 
         }elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['sitelanguage'])) {
             $_SESSION['language'] = $_POST['sitelanguage'];
+           // if(empty($this->captchaMod))
+         //       $this->captchaMod = new captcha();
             if(empty($this->captchaMod))
                 $this->captchaMod = new captcha();
             $this->view("access/signup",
@@ -199,6 +253,7 @@ class Access extends Controller{
                     "captchaErr" => $this->captchaErr,
                     "countryErr" => $this->countryErr,
                     "usernameValue" => $this->usernameValue,
+                    "captchaErr" => $this->captchaErr,
                     "captchaImage" => $this->captchaMod->captchaImage($_SESSION['captcha']),
                     "getCountries" => $this->languageMod->getCountries(),
                     "getLangDropdown" => $this->languageMod->getLangDropdown(),
@@ -207,7 +262,9 @@ class Access extends Controller{
             );
 
         }else {
-            $this->captchaMod = new captcha();//$this->model('getCaptcha');
+            if(empty($this->captchaMod))
+                $this->captchaMod = new captcha();
+           // $this->captchaMod = new captcha();//$this->model('getCaptcha');
             $this->view("access/signup",
                 ["usernameErr" => $this->usernameErr,
                     "passwordErr" => $this->passwordErr,
@@ -216,6 +273,7 @@ class Access extends Controller{
                     "captchaErr" => $this->captchaErr,
                     "countryErr" => $this->countryErr,
                     "usernameValue" => $this->usernameValue,
+                    "captchaErr" => $this->captchaErr,
                     "captchaImage" => $this->captchaMod->captchaImage($_SESSION['captcha']),
                     "getCountries" => $this->languageMod->getCountries(),
                     "getLangDropdown" => $this->languageMod->getLangDropdown(),
@@ -226,7 +284,6 @@ class Access extends Controller{
     }
     public function failedlogin(){
         if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['sitelanguage'])) {
-
             //HERE
             $_SESSION['language'] = $_POST['sitelanguage'];
 
@@ -244,6 +301,9 @@ class Access extends Controller{
                 ]
             );
         }
+    }
+    private function viewSignup(){
+
     }
     public function closedSignUp(){
         die("Closed");

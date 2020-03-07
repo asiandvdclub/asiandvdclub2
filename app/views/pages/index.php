@@ -23,9 +23,10 @@
             </tr>
             <tr>
                 <td><?php echo $data["lang_index"]['row_registered_users'];?></td>
-                <td>&nbsp;</td>
+                <td><?php echo $data["index_data"]['users'] . "/" . "max_server";?></td>
+
                 <td><?php echo $data["lang_index"]['row_unconfirmed_users'];?></td>
-                <td>&nbsp;</td>
+                <td><?php echo $data["index_data"]['unconfirmed'];?></td>
             </tr>
             <tr>
                 <td><?php echo $data["lang_index"][''];?></td>

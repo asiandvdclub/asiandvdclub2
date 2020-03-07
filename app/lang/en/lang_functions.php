@@ -37,18 +37,20 @@ $lang_functions = array
 	'std_too_many_users' => "Too many users. Please press the Refresh button in your browser to retry.",
 	'text_unauthorized_ip' => "<h1>403 Forbidden</h1>Unauthorized IP address.",
 	'text_home' => "Home",
-	'text_forums' => "Forums",
-	'text_torrents' => "Torrents",
-	'text_offers' => "Offers",
+	'text_torrents' => "Browse",
 	'text_request' => "Requests",
 	'text_upload' => "Upload",
-	'text_subtitles' => "Subtitles",
-	'text_user_cp' => "User CP",
+	'text_bookmarks' => "Bookmarks",
+	'text_profile' => "Profile",
+	'text_forums' => "Forums",
 	'text_top_ten' => "Top 10",
-	'text_log' => "LOG",
-	'text_rules' => "Rules",
 	'text_faq' => "FAQ",
+	'text_rules' => "Rules",
+	'text_settings' => "Settings",
+	'text_log' => "Log",
+	'text_donate' => "Donate",
 	'text_staff' => "Staff",
+
 	'std_site_down_for_maintenance' => "Site is down for maintenance, please check back again later... thanks",
 	'text_click_view_full_image' => "Click this bar to view the full image.",
 	'text_image_resized' => "This image has been resized. Click this bar to view the full image.",
@@ -289,5 +291,4 @@ $lang_functions = array
 	'text_please_download_something_within' => "Please download something within ",
 	'text_inactive_account_be_deleted' => ". Inactive accounts (with no transfer amount) will be deleted.",
 );
-
 ?>

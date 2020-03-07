@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35533c8a-7baa-46f8-9fe2-be7962aab11d" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,16 +31,17 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
+  <component name="RunDashboard">
+    <option name="ruleStates">
       <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
       </list>
     </option>
   </component>
@@ -56,11 +58,65 @@
       <workItem from="1579428443420" duration="6126000" />
       <workItem from="1579439531817" duration="4057000" />
       <workItem from="1579510764550" duration="20269000" />
+      <workItem from="1579626526944" duration="299000" />
+      <workItem from="1579686515049" duration="1537000" />
+      <workItem from="1579701328356" duration="1199000" />
+      <workItem from="1579714432800" duration="8680000" />
+      <workItem from="1579805884913" duration="819000" />
+      <workItem from="1579846390414" duration="3004000" />
+      <workItem from="1581261374587" duration="3346000" />
+      <workItem from="1581276876438" duration="322000" />
+      <workItem from="1581604361826" duration="545000" />
+      <workItem from="1581616327101" duration="2557000" />
+      <workItem from="1581669708766" duration="539000" />
+      <workItem from="1581694214663" duration="2002000" />
+      <workItem from="1581698893772" duration="1290000" />
+      <workItem from="1581782324277" duration="400000" />
+      <workItem from="1581784759082" duration="857000" />
+      <workItem from="1581785896637" duration="18000" />
+      <workItem from="1581931882245" duration="1488000" />
+      <workItem from="1581954408616" duration="1195000" />
+      <workItem from="1582048719718" duration="599000" />
+      <workItem from="1582126568993" duration="1939000" />
+      <workItem from="1582183888258" duration="6544000" />
+      <workItem from="1582272018617" duration="1212000" />
+      <workItem from="1582557828784" duration="2731000" />
+      <workItem from="1582651789891" duration="599000" />
+      <workItem from="1582693098652" duration="1673000" />
+      <workItem from="1582730824189" duration="2160000" />
+      <workItem from="1582747075181" duration="1150000" />
+      <workItem from="1582749809253" duration="1154000" />
+      <workItem from="1582782808577" duration="599000" />
+      <workItem from="1582794768005" duration="821000" />
+      <workItem from="1582802627145" duration="6722000" />
+      <workItem from="1582872773738" duration="4648000" />
+      <workItem from="1583211972898" duration="599000" />
+      <workItem from="1583255126259" duration="2019000" />
+      <workItem from="1583297437245" duration="2201000" />
+      <workItem from="1583325812614" duration="1046000" />
+      <workItem from="1583331682534" duration="1205000" />
+      <workItem from="1583430077196" duration="3281000" />
+      <workItem from="1583478869762" duration="12000" />
+      <workItem from="1583479134138" duration="604000" />
+      <workItem from="1583511150528" duration="2499000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Deployment" timestamp="1579439565433">

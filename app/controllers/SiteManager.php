@@ -6,13 +6,16 @@ class SiteManager extends Controller
     private $userClass;
     private $cacheManager;
     private $languageMod;
+    private $forum_data;
+
     public function SiteManager(){
         $this->db = new Database();
         $this->cacheManager = $this->model('cacheManager');
         $this->languageMod = $this->model('language');
+        $this->forum_data = $this->model('forum_data');
 
         $this->cacheManager->setUserStats();
-        $this->userClass = $this->cacheManager->getUserStats()['class'];
+        $this->userClass = $this->cacheManager->getUserStats()['idClass'];
     }
 
     public function staff_panel(){
@@ -43,25 +46,15 @@ class SiteManager extends Controller
     public function forum_manager(){
         $this->languageMod->setLanguage(__FUNCTION__);
 
-        $stats = [];
-        $this->db->querry("SELECT COUNT(*) as total FROM forums");  $this->db->execute();
-        $temp = $this->db->getAll();
-        $stats = array("forums" => $temp[0]['total']);
-        $this->db->querry("SELECT COUNT(*) as total FROM posts");  $this->db->execute();
-        $temp = $this->db->getAll();
-        $stats += array("posts" => $temp[0]['total']);
-        $this->db->querry("SELECT COUNT(*) as total FROM users");  $this->db->execute();
-        $temp = $this->db->getAll();
-        $stats += array("users" => $temp[0]['total']);
-
         $this->view('site_manager/forum_manager',
             [
                 "currentPage" => "/" . __FUNCTION__,
                 "userStats" => $this->cacheManager->getUserStats(),
-                "forum_status" => $stats,
+                "forum_status" => $this->forum_data->getForumStatus(),
                 "getLangDropdown" => $this->languageMod->getLangDropdown(),
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                 "getSiteManagerBar" => $this->cacheManager->getSiteManager($this->userClass),
+                "category" => $this->forum_data->display_forums_manager(),
             ]);
     }
     public function forum_manager_forums(){
@@ -71,10 +64,23 @@ class SiteManager extends Controller
             [
                 "currentPage" => "/" . __FUNCTION__,
                 "userStats" => $this->cacheManager->getUserStats(),
-                "forum_status" => $stats,
+                "forum_status" => $this->forum_data->getForumStatus(),
                 "getLangDropdown" => $this->languageMod->getLangDropdown(),
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                 "getSiteManagerBar" => $this->cacheManager->getSiteManager($this->userClass),
             ]);
+    }
+    //TODO: Add forum funcion and interface
+    public function forum_add(){
+        $this->db->querry("DELETE FROM forums WHERE `idForum` = :forumID");
+       // $this->db->bind(":forumID", $forumID);
+        $this->db->execute();
+        redirect("forum_manager");
+    }
+    public function forum_delete($forumID){
+        $this->db->querry("DELETE FROM forums WHERE `idForum` = :forumID");
+        $this->db->bind(":forumID", $forumID);
+        $this->db->execute();
+        redirect("forum_manager");
     }
 }

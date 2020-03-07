@@ -8,18 +8,17 @@
             <tr class="text-center">
                 <td>Forums</td>
                 <td>Posts</td>
-                <td>Users</td>
-                <td>Comments</td>
-            </tr>
-            <tr class="text-center">
-                <td><?php echo $data["forum_status"]["forums"] ?></td>
-                <td><?php echo $data["forum_status"]["posts"] ?></td>
-                <td><?php echo $data["forum_status"]["users"] ?></td>
-                <td></td>
-            </tr>
-            <tr class="text-center">
                 <td>Moderators</td>
+                <td>Users</td>
             </tr>
+            <tr class="text-center">
+                <td><?php echo $data["forum_status"]["forums"]?></td>
+                <td><?php echo $data["forum_status"]["posts"] ?></td>
+                <td></td>
+                <td><?php echo $data["forum_status"]["users"] ?></td>
+
+            </tr>
+
             <tr>
                 <td></td>
                 <td></td>
@@ -30,22 +29,20 @@
         </table>
         <br>
         <a class="badge bg-light font-big mg">Forum Settings</a>
+
         <table class="table table-striped table-bordered bg-white">
-            <tbody>
-            <tr class="text-center">
-                <td>Manage Category</td>
-                <td></td>
+            <tr>
+                <th style="width: 200px"><a href="<?php echo URL_ROOT . "/forum_manager_forums"; ?>">Manage Forums</a></th>
+                <th class="border-left" rowspan="3"><?php echo $data['category']; ?></th>
             </tr>
-            <tr class="text-center">
-                <td>Manage Forums</td>
-                <td>Add Forum</td>
+            <tr>
+                <td><a href="">Manage Users</a></td>
             </tr>
-            <tr class="text-center">
-                <td>Manage Users</td>
-                <td></td>
+            <tr>
+                <td><a href="#">Manages Posts</a></td>
             </tr>
-            </tbody>
         </table>
+
     </div>
 </div>
 

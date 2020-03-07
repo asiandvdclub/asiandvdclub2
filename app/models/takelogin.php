@@ -15,7 +15,6 @@ class takelogin
 
         $this->db = new Database();
         $this->data = $data;
-
     }
 
     public function checkUser(){

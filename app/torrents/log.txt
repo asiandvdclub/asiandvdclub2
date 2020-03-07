@@ -1,0 +1,12 @@
+Array
+(
+    [url] => announce/67c13c48eaa2a93342a93ecc6cf032c7a238c97cc3649cf80082ccda142f9e00
+    [info_hash] => ÑÌ±âß@U12„@Û:o‚]
+    [peer_id] => -lt0D60-	¦wØvÃ‹ë|
+    [key] => 7ff35910
+    [compact] => 1
+    [port] => 51790
+    [uploaded] => 694991280
+    [downloaded] => 0
+    [left] => 0
+)
