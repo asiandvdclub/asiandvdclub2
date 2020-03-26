@@ -12,29 +12,28 @@
     <script src="../js/functions.js"></script>
 </head>
 <body>
-
-<nav class="navbar navbar-expand-md" style="height: auto;">
-    <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-                <img src="../images/kind.png" width="165" height="198" style="border: 20px; margin-right: 2em">
-            </li>
-        </ul>
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">DonationLogo</a>
-            </li>
-        </ul>
-        <form method="post" action="<?php echo URL_ROOT . $data['currentPage']; ?>">
-            <div align="right"><?php echo $lang_login['text_select_lang']; ?>
-                <!--  <select name="sitelanguage" onchange="submit()">  This needs to be a for from database -->
-                <?php echo $data['getLangDropdown']; ?>
-            </div>
-        </form>
-    </div>
+<header class="header">
+    <a href="#" class="logo">
+        Asian Dvd Club
+    </a>
+</header>
+<nav class="user-panel clearfix">
+    <strong><?php echo $data['userStats']['username']; ?></strong>
+    <a href="<?php echo URL_ROOT . "/logout";?>" class="badge badge-primary"><?php echo $lang_functions['text_logout'] ?></a>
+    <a href="#" class="badge badge-primary"><?php echo $lang_functions['text_bookmarks'] ?></a>
+    <?php echo $data['getSiteManagerBar']; ?>
+    <!-- This would be the php generator-->
+    <?php echo $lang_functions['text_ratio'] ?> <?php $ratio = (int)$data['userStats']['uploaded'] / (int)$data['userStats']['downloaded']; echo is_nan($ratio) ? "0" : sprintf("%01.3f", $ratio); ?>
+    <?php echo $lang_functions['text_uploaded'] ?> <?php echo formatBytes($data['userStats']['uploaded']); ?>
+    <?php echo $lang_functions['text_downloaded'] ?> <?php echo formatBytes($data['userStats']['downloaded']); ?>
+    <?php echo $lang_functions['text_active_torrents'] ?> <?php echo "<img src=\"../images/up.png\"> " .  $data['userStats']['seeding'] .  "<img src=\"../images/down.png\"> " . $data['userStats']['leeching'];?>
+    <?php echo $lang_functions['text_connectable'] ?> <?php echo $data['userStats']['connectable']; ?>
+    <?php echo $lang_functions['text_slots'] ?> 
+    <?php echo $lang_functions['text_bonus'] ?>: 
+    <?php echo $lang_functions['text_invite'] ?>: 
 </nav>
 <div id="navbar" class="container">
-    <nav class="navbar navbar-expand-md navbar-light bg-dark" style="width: 100%">
+    <nav class="navbar navbar-expand-md" style="width: 100%">
         <ul class="nav nav-pills">
             <li class="nav-item">
                 <a class="nav-link active" href="<?php echo URL_ROOT . "/index"; ?>"><?php echo $lang_functions['text_home'] ?></a>
@@ -79,29 +78,5 @@
                 <a class="nav-link active" href="#"><?php echo $lang_functions['text_staff'] ?></a>
             </li>
         </ul>
-    </nav>
-    <nav id="controller" class="navbar bg-dark justify-content-start table-responsive" style="width: 100%;">
-        <table class="table table-borderless  table-dark text-center">
-            <thead>
-            <tr id="small" class="d-flex">
-                <td>Welcome, <?php echo $data['userStats']['username']; ?></td>
-                <td><a href="<?php echo URL_ROOT . "/logout";?>" class="badge badge-primary"><?php echo $lang_functions['text_logout'] ?></a></td>
-                <td><a href="#" class="badge badge-primary"><?php echo $lang_functions['text_bookmarks'] ?></a></td>
-                <?php echo $data['getSiteManagerBar']; ?>
-                <!-- This would be the php generator-->
-            </tr>
-            <tr id="small_tab" class="d-flex badge-info embed-responsive">
-                <td><?php echo $lang_functions['text_ratio'] ?> <?php $ratio = (int)$data['userStats']['uploaded'] / (int)$data['userStats']['downloaded']; echo is_nan($ratio) ? "0" : sprintf("%01.3f", $ratio); ?></td>
-                <td><?php echo $lang_functions['text_uploaded'] ?> <?php echo formatBytes($data['userStats']['uploaded']); ?></td>
-                <td><?php echo $lang_functions['text_downloaded'] ?> <?php echo formatBytes($data['userStats']['downloaded']); ?></td>
-                <td><?php echo $lang_functions['text_active_torrents'] ?> <?php echo "<img src=\"../images/up.png\"> " .  $data['userStats']['seeding'] .  "<img src=\"../images/down.png\"> " . $data['userStats']['leeching'];?></td>
-                <td><?php echo $lang_functions['text_connectable'] ?> <?php echo $data['userStats']['connectable']; ?></td>
-                <td style="margin-left: 3px;"><?php echo $lang_functions['text_invite'] ?>: </td>
-            </tr>
-            <tr id="small_tab2" class="d-flex badge-info">
-
-            </tr>
-            </thead>
-        </table>
     </nav>
 </div>

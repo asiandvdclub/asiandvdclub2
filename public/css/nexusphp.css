@@ -1,4 +1,7 @@
 
+:root {
+	--red: #840000;
+}
 @media (min-width: 1920px) {
 	.container{
 		min-width: 95%;
@@ -9,33 +12,31 @@
 		min-width: 95%;
 	}
 }
-@font-face {
-	font-family: "Naruto";
-	src: url(../fonts/NinjaNaruto.ttf) format("truetype");
+html {
+	background: var(--red);
 }
-#adc { font-family: "Naruto", sans-serif }
-
-body {overflow-x: hidden;}
+body {
+	overflow-x: hidden;
+	background: radial-gradient(circle at 50% 15%, rgba(207,136,22,1) 0%, rgba(233,186,64,0.879989) 0%, rgba(132,0,0,1) 35%) no-repeat;
+}
+.header {
+	padding: 30px 0;
+	text-align: center;
+}
+.logo {
+	color: white; 
+	font-size: 50px;
+	text-align: center;
+	text-transform: uppercase;
+}
+.logo:hover {
+	color: white; 
+	text-decoration: none;
+}
 .container{
-	padding-top: 10px;
-	padding-bottom: 10px;
-
-	border: 1px solid #005cbf;
-}
-#head.container{
-	margin-bottom: 10px;
-
-	height: 100px;
-	min-width: 100%;
-	border: 1px solid #005cbf;
-}
-#navbar{
-	height: 180px;
-	margin-bottom: 5px;
-}
-
-#navbar.container{
-	height: auto;
+	background: #f5f4ea;
+	margin: 0 auto;
+	padding: 0;
 }
 
 #std_web .container{
@@ -44,7 +45,18 @@ body {overflow-x: hidden;}
 	height: auto;
 }
 
-
+.user-panel {
+	color: white;
+	padding: 0 5%;
+	text-align: center;
+}
+.user-panel .badge-primary {
+	color: var(--red);
+	background: rgba(255,255,255,.9);
+}
+.user-panel .badge-primary:hover {
+	background: white;
+}
 .nav-item{
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -54,13 +66,15 @@ body {overflow-x: hidden;}
 .nav-pills{
 	margin: auto;
 }
-.nav-link{
-	padding-top: 1px;
-	padding-bottom: 1px;
-	padding-right: 30px;
-	padding-left: 30px;
-	margin: auto;
-
+#navbar .nav-link { 
+	background: transparent;
+    color: #212529;
+    border: 1px solid rgba(0,0,0,.1);
+    font-weight: 600;
+    line-height: 1;
+}
+#navbar .nav-link:hover {
+	background: rgba(0,0,0,.1);
 }
 
 #controller .nav-item .nav-link{
@@ -71,6 +85,9 @@ body {overflow-x: hidden;}
 }
 #controller .table{
 	margin-bottom: 5px;
+}
+.table a {
+	color: var(--red);
 }
 
 #small{

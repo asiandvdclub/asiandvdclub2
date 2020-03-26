@@ -1,25 +1,26 @@
 <?php require_once APP_ROUTE . '/views/inc/navbar_header.php';?>
 
 <div id="home_content" class="container">
-    <div id="news" class="container">
-        Search Will be Here
-    </div>
-    <br>
-    <div id="news" class="container">
-        <table class="bg-dark text-white"  border="1" cellspacing="0" cellpadding="10">
+    <div style="padding: 20px;">
+        <div style="padding: 20px 0;">
+            Search Will be Here
+        </div>
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr class="">
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Com.</th>
+                    <th>Time.</th>
+                    <th>Size.</th>
+                    <th>Seeds</th>
+                    <th>Leech</th>
+                    <th>Down</th>
+                    <th>Uploader</th>
+                </tr>
+            </thead>
             <tbody>
-            <tr class="">
-                <th>Type</th>
-                <th style="width: 1200px;">Name</th>
-                <th>Com.</th>
-                <th style="width: 380px;">Time.</th>
-                <th>Size.</th>
-                <th>Seeds</th>
-                <th>Leech</th>
-                <th>Down</th>
-                <th style="width: 300px;" align="right">Uploader</th>
-            </tr>
-            <?php echo $data['showList']; ?>
+                <?php echo $data['showList']; ?>
             </tbody>
         </table>
     </div>
