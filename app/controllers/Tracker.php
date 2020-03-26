@@ -30,15 +30,15 @@ class Tracker extends Controller
         $tList = $this->db->getAll();
         foreach ($tList as $row){
             $showList .= "<tr>";
-            $showList .=   "<th>DVD</th>";
-            $showList .=   "<th><a href=". URL_ROOT . "/torrent/". $row['id'] .">" . $row['name'] ."</a></th>";
-            $showList .=   "<th></th>";
-            $showList .=   "<th>" . $row['added'] ."</th>";
-            $showList .=   "<th>" . formatBytes($row['size']) ."</th>";
-            $showList .=   "<th>" . $row['seeders'] ."</th>";
-            $showList .=   "<th>" . $row['leechers'] ."</th>";
-            $showList .=   "<th></th>";
-            $showList .=   "<th>" . $row['username'] ."</th>";
+            $showList .=   "<td>DVD</td>";
+            $showList .=   "<td><a href=". URL_ROOT . "/torrent/". $row['id'] .">" . $row['name'] ."</a></td>";
+            $showList .=   "<td></td>";
+            $showList .=   "<td>" . $row['added'] ."</td>";
+            $showList .=   "<td>" . formatBytes($row['size']) ."</td>";
+            $showList .=   "<td>" . $row['seeders'] ."</td>";
+            $showList .=   "<td>" . $row['leechers'] ."</td>";
+            $showList .=   "<td></td>";
+            $showList .=   "<td>" . $row['username'] ."</td>";
             $showList .= "</tr>";
         }
 
