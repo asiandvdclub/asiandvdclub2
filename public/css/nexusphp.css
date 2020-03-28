@@ -35,16 +35,17 @@ body {
 }
 .container{
 	background: #f5f4ea;
-	margin: 0 auto;
-	padding: 0;
 }
-
-#std_web .container{
-	margin-top: 10px;
-	margin-bottom: 10px;
-	height: auto;
+h2 {
+	font-size: 1.5rem;
 }
-
+.bloc {
+	border: 1px solid rgba(0,0,0,.1);
+    border-radius: .3rem;
+    padding: .5rem;
+	background: rgba(0,0,0,.05);
+	margin-bottom: 2rem;
+}
 .user-panel {
 	color: white;
 	padding: 0 5%;
