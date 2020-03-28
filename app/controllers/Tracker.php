@@ -33,7 +33,7 @@ class Tracker extends Controller
             $showList .=   "<td>DVD</td>";
             $showList .=   "<td><a href=". URL_ROOT . "/torrent/". $row['id'] .">" . $row['name'] ."</a></td>";
             $showList .=   "<td></td>";
-            $showList .=   "<td>" . $row['added'] ."</td>";
+            $showList .=   "<td>" . convTime($row['added']) ."</td>";
             $showList .=   "<td>" . formatBytes($row['size']) ."</td>";
             $showList .=   "<td>" . $row['seeders'] ."</td>";
             $showList .=   "<td>" . $row['leechers'] ."</td>";
@@ -58,7 +58,7 @@ class Tracker extends Controller
 
         $showList = "";
 
-        $this->db->querry("SELECT t.name, t.small_desc, t.seeders, t.leechers, t.size, t.added, t.specs, i.title, i.genre, i.year, i.synopsis, i.plot FROM torrents as t JOIN imdb as i WHERE t.id = :tId && i.imdb_id = t.imdb_id");
+        $this->db->querry("SELECT t.numfiles, t.imdb_id, t.name, t.small_desc, t.seeders, t.leechers, t.size, t.added, t.specs, i.title, i.genre, i.year, i.synopsis, i.plot, i.url FROM torrents as t JOIN imdb as i WHERE t.id = :tId && i.imdb_id = t.imdb_id");
         $this->db->bind(':tId', $idTorrent);
         $tData = $this->db->getRow();
         $tInfo = $tData['specs'];
@@ -69,7 +69,6 @@ class Tracker extends Controller
         $imdb_info['plot'] = $tData['plot'];
         if(empty($tData))
             redirect("");
-
 
         $this->view('tracker/torrent',
             [
@@ -120,9 +119,17 @@ class Tracker extends Controller
             $imdb_url = $_POST['imdb_url'];
 
             $pos = strpos($imdb_url, "/tt");
-            $imdb_url = substr($imdb_url, $pos + 3, 7);
+            $imdb_url = substr($imdb_url, $pos + 3,  strlen($imdb_url));
+            $chars = str_split($imdb_url);
+            $imdb_url = "";
+            foreach ($chars as $value){
+                if(is_numeric($value))
+                    $imdb_url .= $value;
+                else
+                    break;
+            }
 
-            if(!is_numeric($imdb_url) && !(strlen(str($imdb_url)) == 7)) {
+            if(!is_numeric($imdb_url)) {
                 $error['imdb'] = "Wrong imdb url";
             }
 
@@ -165,13 +172,18 @@ class Tracker extends Controller
             $f = $this->bencode->bdec_file($_FILES['torrent_file']['tmp_name'], filesize($_FILES['torrent_file']['tmp_name']));
 
             $size = 0;
-            foreach ($f['info']['files'] as $value) {
-                $size += $value['length'];
+            if(is_null($f['info']['files'])){
+                $size += $f['info']['length'];
+            }else{
+                foreach ($f['info']['files'] as $value) {
+                    $size += $value['length'];
+                }
             }
+
             $torrent_data['name'] = $_POST['torrent_name'];
             $torrent_data['size'] = $size; // size in bits
             $torrent_data['info_hash'] = sha1($this->bencode->benc($f['info']));
-            $torrent_data['numfiles'] = count($f['info']['files']);
+            $torrent_data['numfiles'] = is_null($f['info']['files']) ? 1 : count($f['info']['files']);
             $torrent_data['optradio'] = $_POST['optradio'];
             $torrent_data['specs'] = json_encode($specs); // jsond encode
             $torrent_data['imdb_id'] = $imdb_url;
@@ -185,7 +197,12 @@ class Tracker extends Controller
             $f = $this->bencode->benc($f);
             $keys = array_keys($error);
 
-            $this->registerMovie($imdb_url);
+            $this->db->querry("SELECT id FROM imdb WHERE imdb_id = :imdbID");
+            $this->db->bind(":imdbID", $imdb_url);
+            $check = $this->db->getRow();
+
+            if(empty($check))
+                $this->registerMovie($imdb_url);
 
             if (empty($error[$keys[0]]) && empty($error[$keys[1]]) && empty($error[$keys[2]]) && empty($error[$keys[3]]) && empty($error[$keys[4]])) {
                 $torrent_data = array_merge($torrent_data, $_POST);
@@ -193,6 +210,7 @@ class Tracker extends Controller
                     $torrent_data['name'] = basename($_FILES['torrent_file']['name']);
                     $torrent_data['name'] = str_replace(".torrent", "", $torrent_data['name']);
                 }
+
                 if (is_uploaded_file($_FILES['torrent_file']['tmp_name']) && $this->takeupload->addTorrent($torrent_data)) {
                     write_to_file($f, $targetFile);
                     redirect("");
@@ -219,22 +237,19 @@ class Tracker extends Controller
                 "error" => $error,
             ]);
     }
-    private function checkIMDb($id){
-        
-    }
-
     private function registerMovie($imdb_url){
         $command = "python " . APP_ROUTE . "/libraries/imdb_to_json.py " . $imdb_url;
         $data = exec($command);
         $data = json_decode($data, true);
-        $this->db->querry("INSERT INTO `imdb` (`title`, `genre`, `synopsis`, `year`, `directors`, `imdb_id`, `plot`)
-                                                        VALUES (:title, :genre, :synopsis, :year, :directors, :imdb_id, :plot)");
+        $this->db->querry("INSERT INTO `imdb` (`title`, `genre`, `synopsis`, `year`, `directors`, `imdb_id`, `plot`, `url`)
+                                                        VALUES (:title, :genre, :synopsis, :year, :directors, :imdb_id, :plot, :url)");
         $this->db->bind(":title", $data['name']);
         $this->db->bind(":genre", strval(json_encode(array("genre" => $data['genre']))));
         $this->db->bind(":synopsis", $data['synopsis'][0]);
         $this->db->bind(":plot", $data['plot']);
         $this->db->bind(":year", $data['year']);
         $this->db->bind(":directors", strval(json_encode(array("directors" => $data['directors']))));
+        $this->db->bind(":url", $data['url']);
         $this->db->bind(":imdb_id", $imdb_url); // link this to `torrents`
 
         $this->db->execute();

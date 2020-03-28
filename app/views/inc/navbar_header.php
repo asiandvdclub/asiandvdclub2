@@ -42,7 +42,7 @@
                 <a class="nav-link active" href="<?php echo URL_ROOT . "/torrents"; ?>"><?php echo $lang_functions['text_torrents'] ?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="#"><?php echo $lang_functions['text_request'] ?></a>
+                <a class="nav-link active" href="<?php echo URL_ROOT . "/requests"; ?>"><?php echo $lang_functions['text_request'] ?></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="<?php echo URL_ROOT . "/upload"; ?>"><?php echo $lang_functions['text_upload'] ?></a>
