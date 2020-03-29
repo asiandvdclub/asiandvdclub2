@@ -1,28 +1,24 @@
-<!doctype html>
-<html>
-<link>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon", href="<?php echo URL_ROOT;?>/images/favicon.ico">
-    <!-- Diferent style if....-->
-    <link rel="stylesheet", href="<?php echo URL_ROOT;?>/css/style.css">
-   <!-- <link rel="stylesheet", href="<?php echo URL_ROOT;?>/css/style_1.css"> -->
-
-    <title><?php echo SITE_NAME; ?></title>
-
+<?php require_once $data['getSiteLangHeader']; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><?php echo SITE_NAME;?></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/adc.css">
 </head>
 <body>
-<table class="head" cellspacing="0" cellpadding="0" align="center">
-    <tbody>
-        <tr class="banner">
-            <td class="clear">
-                <div class="logo_img"></div>
-            </td>
-            <td class="clear nowrap" align="right" valign="middle" style="text-align:  center;">
-
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div class="logo">
+    <div class="logo-text"></div>
+</div>
+<div class="outer">
+    <div class="navigation">
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+        <a href="/signup">Signup</a>
+        <a href="/recover">Recover</a>
+        <a href="/confirm_resend">Resend confirmation</a>
+        <a href="/rules">Rules</a>
+        <a href="/faq">FAQ</a>
+    </div>
+    <div class="main">
