@@ -7,6 +7,8 @@ define("ADC_FRAMEWORK", "1.6");
 define("IN_TRACKER", true);
 //App route
 define('APP_ROUTE',dirname(dirname(__FILE__)));
+define('APP_IMAGE', dirname(APP_ROUTE) . "/public/images");
+define('IMDB_IMAGES', APP_IMAGE . "/imdb/");
 define('LANG_ROUTE', APP_ROUTE . "/lang/");
 //URL route
 define('URL_ROOT', 'https://twtpefxuz7.tk');

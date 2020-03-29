@@ -108,7 +108,8 @@ $PAGES = [
     "SiteManager" => array("staff_panel", "site_settings", "forum_manager", "forum_manager_forums", "forum_delete", "forum_add"),
     "Home" => array("index","create_news","delete_news"),
     "Forum" => array("forums", "in_forum", "post"),
-    "Tracker" => array("torrents", "torrent", "upload", "download")
+    "Tracker" => array("torrents", "torrent", "upload", "download"),
+    "RequestsMod" => array("requests")
 ];
 $AUTHORITY=array(
     //'16' => array('news', 'create_news'),
@@ -122,6 +123,7 @@ $AUTHORITY=array(
         'torrents'=> 1,
         'torrent' => 1,
         'download' => 1,
+        'requests' => 1,
     ),
     'news_group' => array(
         'create_news' => array(10,15,14),

@@ -67,3 +67,50 @@ function write_to_file($data, $path){
     fwrite($fp, $data);
     fclose($fp);
 }
+function convTime($date){
+    $t1 = new DateTime($date);
+    $t2 = new DateTime(date("Y-m-d h:i:sa"));
+    $interval = $t1->diff($t2);
+    $types = array('%y', '%m', '%d', '%h', '%i', '%s');
+    $x = 0;
+    $out = "";
+
+    foreach ($types as $value){
+        if($x==2)  break;
+        if($interval->format($value)){
+            $out .= $interval->format($value) > 1 ? $interval->format($value) . "  " . textTypes($value) . "s " : $interval->format($value) . "  " . textTypes($value);
+            //print_r($out . " " . textTypes($value));
+            $x++;
+        }
+    }
+
+    return $out;
+}
+function textTypes($types){
+    switch ($types){
+        case '%y':
+            return "year";
+            break;
+        case '%m':
+            return "month";
+            break;
+        case '%d':
+            return "day";
+            break;
+        case '%h':
+            return "hour";
+            break;
+        case '%i':
+            return "minute";
+            break;
+        case '%s':
+            return "second";
+            break;
+    }
+}
+function dbg_log($log){
+    $log_path = APP_ROUTE . "/torrents/log.txt";
+    $handle = fopen($log_path, "w+");
+    fwrite($handle, print_r($log, TRUE));
+    fclose($handle);
+}

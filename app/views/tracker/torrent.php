@@ -27,7 +27,19 @@
         </tr>
         <tr>
             <td>Plot</td>
-            <td style="padding-left: 15px"><?php echo substr($data['imdb_info']['plot'], 0, strpos($data['imdb_info']['plot'], "::"));; ?></td>
+            <td style="padding-left: 15px"><?php echo substr($data['imdb_info']['plot'], 0, strpos($data['imdb_info']['plot'], "::")); ?></td>
+        </tr>
+        <tr>
+            <td>Image</td>
+            <td style="padding-left: 15px"><?php echo  "<img src=\"" .  $data['torrentData']['url'] . "\" width=\"200\" height=\"300\">";?></td>
+        </tr>
+        <tr>
+            <td>Torrent Info</td>
+            <td style="padding-left: 15px"><?php echo "Files: " . $data['torrentData']['numfiles'] ?> </td>
+        </tr>
+        <tr>
+            <td>Peers</td>
+            <td style="padding-left: 15px"><?php echo  $data['torrentData']['seeders'] . " Seeders | " .  $data['torrentData']['leechers'] . " Peers" ;?></td>
         </tr>
         <tr>
             <td><?php echo $data['torrent_lang']['action'];?></td>
