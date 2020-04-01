@@ -2,7 +2,7 @@
 /*
  * App Core Class
  * Creates URL & loads core controller
- * URL FROMAT - /controller/method/params
+ * URL FROMAT - /method/params
  */
 
 require_once "functions.php";
@@ -46,7 +46,6 @@ class Core{
             setLanguage();
 
         if(isLogged() && $url[0] == "logout"){
-
             $past = time() - 3600;
             foreach ($_COOKIE as $key => $value )
             {

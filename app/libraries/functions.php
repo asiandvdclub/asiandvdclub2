@@ -29,8 +29,8 @@ function formatBytes($size, $precision = 2)
 {
     $base = log($size, 1024);
     $suffixes = array('', 'K', 'M', 'G', 'T');
-
-    return round(pow(1024, $base - floor($base)), $precision) .' '. $suffixes[floor($base)];
+    $out = round(pow(1024, $base - floor($base)), $precision) .' '. $suffixes[floor($base)];
+    return is_string($out) ? 0 : $out;
 }
 
 function dirToArray($dir) {
@@ -110,7 +110,9 @@ function textTypes($types){
 }
 function dbg_log($log){
     $log_path = APP_ROUTE . "/torrents/log.txt";
-    $handle = fopen($log_path, "w+");
-    fwrite($handle, print_r($log, TRUE));
-    fclose($handle);
+    $current = file_get_contents($log_path);
+    $current .= "\n" . date("Y-m-d h:i:sa") . ": ";
+    $current .= is_array($log) ? print_r($log, true) : $log;
+    $current .= "\n";
+    file_put_contents($log_path, $current);
 }

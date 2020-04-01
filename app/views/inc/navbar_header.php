@@ -28,9 +28,8 @@
     <?php echo $lang_functions['text_downloaded'] ?> <?php echo formatBytes($data['userStats']['downloaded']); ?>
     <?php echo $lang_functions['text_active_torrents'] ?> <?php echo "<img src=\"../images/up.png\"> " .  $data['userStats']['seeding'] .  "<img src=\"../images/down.png\"> " . $data['userStats']['leeching'];?>
     <?php echo $lang_functions['text_connectable'] ?> <?php echo $data['userStats']['connectable']; ?>
-    <?php echo $lang_functions['text_slots'] ?> 
-    <?php echo $lang_functions['text_bonus'] ?>: 
-    <?php echo $lang_functions['text_invite'] ?>: 
+    <?php echo $lang_functions['text_bonus'] ?>: 0
+    <?php echo $lang_functions['text_invite'] . ": " . $data['userStats']['invites'] ?>
 </nav>
 <div id="navbar" class="container">
     <nav class="navbar navbar-expand-md" style="width: 100%">

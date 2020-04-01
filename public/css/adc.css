@@ -1,0 +1,2077 @@
+#searchtable,
+table {
+    border-collapse: collapse
+}
+
+#searchtable *,
+.torrenttable img {
+    vertical-align: middle
+}
+
+body {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    background: #840001;
+    color: #000;
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+body a {
+    outline: 0
+}
+
+div.logo {
+    position: relative;
+    height: 104px;
+    background: url(../images/adcheader.jpg) top center no-repeat #840001
+}
+
+div.logo-text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    white-space: pre
+}
+
+div.outer {
+    background: #F5F4EA;
+    border: 1px solid #000
+}
+
+div.navigation {
+    padding: .8em;
+    border-bottom: 1px solid #000
+}
+
+div.navigation a {
+    font-size: 13px;
+    font-weight: 700;
+    margin-right: .5em;
+    text-decoration: none
+}
+
+div.main {
+    max-width: 1400px;
+    padding: 20px 0
+}
+
+div#preload {
+    visibility: hidden
+}
+
+.r00 {
+    color: red
+}
+
+.r01 {
+    color: #E00
+}
+
+.r02 {
+    color: #D00
+}
+
+.r03 {
+    color: #C00
+}
+
+.r04 {
+    color: #B00
+}
+
+.r05 {
+    color: #A00
+}
+
+.r06 {
+    color: #900
+}
+
+.r07 {
+    color: #800
+}
+
+.r08 {
+    color: #700
+}
+
+.r09 {
+    color: #600
+}
+
+.r10 {
+    color: #000
+}
+
+.size1 {
+    font-size: .75em
+}
+
+.size2 {
+    font-size: 1em
+}
+
+.size3 {
+    font-size: 1.25em
+}
+
+.size4 {
+    font-size: 1.5em
+}
+
+.size5 {
+    font-size: 2em
+}
+
+.size6 {
+    font-size: 2.5em
+}
+
+.size7 {
+    font-size: 3em
+}
+
+table {
+    border: none;
+    background: #ECE9D8
+}
+
+#searchtable {
+    background: 0 0;
+    margin-bottom: 25px;
+    padding: 0;
+    border: 2px solid #840001
+}
+
+.torrenttable,
+table.alternate,
+table.smalltable {
+    border-collapse: separate
+}
+
+#searchtable thead {
+    border-color: #840001;
+    border-style: hidden solid;
+    border-width: 2px
+}
+
+#searchtable thead th {
+    background: #840001;
+    border: none;
+    margin: 0;
+    padding: 0
+}
+
+#searchtable tr.spacer {
+    background: 0 0;
+    height: 8px
+}
+
+.header,
+.pages .currentpage,
+.pages a:hover {
+    background: #840001;
+    color: #FFF
+}
+
+#searchtable td {
+    border: 0;
+    padding: 0 .2em
+}
+
+#searchtable td.side {
+    border: none
+}
+
+#searchtable td.middle {
+    border-color: #840001;
+    border-style: none solid;
+    border-width: 2px
+}
+
+#searchtable a {
+    color: #2F4F4F
+}
+
+#searchtable ul {
+    font-weight: 400;
+    list-style-type: none;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    float: left
+}
+
+#searchtable li {
+    line-height: 0;
+    margin: 0 5px 2px;
+    padding: 0
+}
+
+#cat_box,
+#filter_box,
+#search_box {
+    border: none;
+    height: 90px
+}
+
+#search_box ul {
+    text-align: right
+}
+
+#cat_helpers a {
+    position: relative;
+    bottom: 1px;
+    left: 150px;
+    margin-right: 2em;
+    font-weight: 400;
+    color: #FFF
+}
+
+.header {
+    height: 24px;
+    text-align: left;
+    width: 100%
+}
+
+.header span {
+    font-weight: 700;
+    line-height: 24px;
+    padding: 0 0 0 11px
+}
+
+.pages {
+    border: none;
+    margin: .9em auto;
+    text-align: center;
+    display: block;
+    width: 95%;
+    white-space: pre
+}
+
+.pages .currentpage,
+.pages a {
+    border: 1px solid silver;
+    margin: 0 .9em;
+    padding: .2em .6em;
+    font-family: Arial;
+    font-size: 114%;
+    font-weight: 700;
+    display: inline-block
+}
+
+.torrenttable {
+    border: 2px solid #840001;
+    border-top: none;
+    background: 0 0
+}
+
+.torrenttable thead th {
+    background: #840001;
+    border: none
+}
+
+.torrenttable tbody tr.even {
+    background: #F0EEDC
+}
+
+.torrenttable tbody tr.odd {
+    background: 0 0
+}
+
+.torrenttable tbody td {
+    border-color: silver;
+    border-style: none none solid;
+    border-width: 1px
+}
+
+.torrenttable tbody td.cat_pic {
+    padding: 0;
+    width: .1%;
+    border-style: none solid;
+    text-align: center
+}
+
+.last_record {
+    border-bottom: 1px solid silver!important
+}
+
+.torrenttable img,
+.torrenttable tfoot td,
+h1 img,
+img {
+    border: none
+}
+
+td.rowhead,
+th.row {
+    vertical-align: top;
+    font-weight: 700
+}
+
+.torrentowner {
+    padding: 0 5px 0 7px;
+    text-align: right;
+    white-space: nowrap
+}
+
+.torrentowner img {
+    margin-left: 3px
+}
+
+.torrentname {
+    padding-left: 10px;
+    text-align: left;
+    width: 100%
+}
+
+.torrentname img {
+    margin-right: 10px;
+    float: left;
+    display: block
+}
+
+td.torrentname a {
+    text-decoration: none;
+    font-weight: 700
+}
+
+a:hover,
+a:link,
+a:visited,
+td.colhead a {
+    text-decoration: underline
+}
+
+td.torrentname a:link {
+    color: #000
+}
+
+td.torrentname a:visited {
+    color: grey
+}
+
+td.torrentname a:hover {
+    color: red
+}
+
+td.torrentname a:active {
+    color: green
+}
+
+.torrenttable .numeric,
+td.size,
+td.time,
+th.size,
+th.time {
+    text-align: right;
+    white-space: nowrap
+}
+
+.bmark,
+.comms,
+.dls,
+.leechers,
+.seeders {
+    text-align: center;
+    white-space: nowrap
+}
+
+.bookmarked {
+    background: #FF9
+}
+
+span.bumped {
+    font-weight: 700;
+    color: coral
+}
+
+span.new {
+    font-weight: 700;
+    color: red
+}
+
+img.tt-bluray {
+    float: none;
+    display: inline;
+    margin-left: 1.3em
+}
+
+span.batch-sized,
+span.zero-day {
+    font-weight: 700
+}
+
+.torrenttable tfoot,
+span.dvd5-sized,
+span.zero-month {
+    color: grey
+}
+
+.torrenttable tfoot ol {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+.torrenttable tfoot li {
+    margin: 2px 0;
+    line-height: 16px
+}
+
+#tablelegend {
+    width: 48.5%;
+    float: left;
+    text-align: right
+}
+
+#searchtips {
+    width: 48.5%;
+    float: right;
+    text-align: left
+}
+
+#searchtips span {
+    font-family: monospace;
+    font-weight: 700
+}
+
+img.main-arrowup {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png);
+    width: 12px;
+    height: 12px
+}
+
+img.main-arrowdown {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -12px 0;
+    width: 12px;
+    height: 12px
+}
+
+img.main-addbookmark {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -24px 0;
+    width: 16px;
+    height: 16px
+}
+
+img.main-delbookmark {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -40px 0;
+    width: 16px;
+    height: 16px
+}
+
+img.main-completed {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -56px 0;
+    width: 16px;
+    height: 16px
+}
+
+img.main-bookmark {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -72px 0;
+    width: 16px;
+    height: 16px
+}
+
+img.main-comments {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -88px 0;
+    width: 16px;
+    height: 15px
+}
+
+img.main-inbox,
+img.main-inboxnew,
+img.main-sentbox,
+img.main-viewnfo {
+    width: 16px;
+    height: 16px
+}
+
+img.main-inbox {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -104px 0
+}
+
+img.main-inboxnew {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -120px 0
+}
+
+img.main-sentbox {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -136px 0
+}
+
+img.main-viewnfo {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -152px 0
+}
+
+img.main-buddylist {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -168px 0;
+    width: 14px;
+    height: 14px
+}
+
+img.main-rss {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -182px 0;
+    width: 14px;
+    height: 14px
+}
+
+img.main-magglass {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -196px 0;
+    width: 11px;
+    height: 11px
+}
+
+img.main-multipage {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -207px 0;
+    width: 8px;
+    height: 10px
+}
+
+img.main-warned2 {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -215px 0;
+    width: 13px;
+    height: 11px
+}
+
+img.main-warned {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -228px 0;
+    width: 13px;
+    height: 11px
+}
+
+img.main-disabled {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -241px 0;
+    width: 11px;
+    height: 11px
+}
+
+img.main-donor {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -252px 0;
+    width: 11px;
+    height: 11px
+}
+
+img.main-warnedbig {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -263px 0;
+    width: 16px;
+    height: 16px
+}
+
+img.main-disabledbig {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -279px 0;
+    width: 16px;
+    height: 16px
+}
+
+img.main-donorbig {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -295px 0;
+    width: 16px;
+    height: 16px
+}
+
+img.main-bluray {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -311px 0;
+    width: 30px;
+    height: 15px!important
+}
+
+img.main-top {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -341px 0;
+    width: 15px;
+    height: 13px
+}
+
+img.main-button_pm {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -356px 0;
+    width: 25px;
+    height: 15px
+}
+
+img.main-new {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -381px 0;
+    width: 27px;
+    height: 11px
+}
+
+img.main-updated {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -408px 0;
+    width: 46px;
+    height: 11px
+}
+
+img.main-bar_left {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -454px 0;
+    width: 2px;
+    height: 9px
+}
+
+img.main-bar_right {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -456px 0;
+    width: 2px;
+    height: 9px
+}
+
+img.cat-china,
+img.cat-drama,
+img.cat-hk,
+img.cat-india,
+img.cat-japan,
+img.cat-korea,
+img.cat-music,
+img.cat-ost,
+img.cat-patch,
+img.cat-phil,
+img.cat-pinku,
+img.cat-rest,
+img.cat-taiwan,
+img.cat-thai,
+img.cat-viet {
+    width: 40px;
+    height: 40px
+}
+
+img.cat-china {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png)
+}
+
+img.cat-japan {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -40px 0
+}
+
+img.cat-korea {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -80px 0
+}
+
+img.cat-hk {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -120px 0
+}
+
+img.cat-viet {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -160px 0
+}
+
+img.cat-thai {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -200px 0
+}
+
+img.cat-rest {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -240px 0
+}
+
+img.cat-anime {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -280px 0;
+    width: 40px;
+    height: 40px
+}
+
+img.cat-music {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -320px 0
+}
+
+img.cat-ost {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -360px 0
+}
+
+img.cat-drama {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -400px 0
+}
+
+img.cat-pinku {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -440px 0
+}
+
+img.cat-phil {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -480px 0
+}
+
+img.cat-patch {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -520px 0
+}
+
+img.cat-taiwan {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -560px 0
+}
+
+img.cat-india {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -600px 0
+}
+
+table.main {
+    background: #F5F4EA
+}
+
+table.bottom {
+    background: 0 0
+}
+
+table.embedded,
+table.embedded tr td {
+    padding: 0;
+    background: 0 0;
+    border: none
+}
+
+a:link,
+a:visited {
+    color: #000
+}
+
+a:hover {
+    color: red
+}
+
+form {
+    margin: 0
+}
+
+h1 {
+    font-size: 16px
+}
+
+h2 {
+    font-size: 13px;
+    margin: 0 0 6px
+}
+
+p,
+td,
+td.comment,
+th {
+    font-size: 11px
+}
+
+input,
+select,
+textarea {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 11px
+}
+
+li {
+    margin: 8px 0
+}
+
+ul {
+    margin: 0 0 0 21px
+}
+
+p.sub {
+    margin-bottom: 6px
+}
+
+td,
+th {
+    border: 1px solid #000
+}
+
+td.bottom,
+td.embedded {
+    border: none
+}
+
+th {
+    font-weight: 700;
+    color: #FFF;
+    background: #840001;
+    text-align: center
+}
+
+th.row {
+    background: #F5F4EA;
+    color: #000;
+    text-align: right
+}
+
+td.colhead,
+td.colhead a:hover,
+td.colhead a:link,
+td.colhead a:visited,
+th a:hover,
+th a:link,
+th a:visited {
+    color: #FFF
+}
+
+td.embedded {
+    padding: 0;
+    text-align: left
+}
+
+td.comment,
+td.text {
+    padding: 13px;
+    text-align: left
+}
+
+td.heading {
+    font-weight: 700
+}
+
+td.colhead {
+    font-weight: 700;
+    background: #840001
+}
+
+td.colhead a {
+    padding-right: 0
+}
+
+td.colhead a:active,
+th a:active {
+    color: grey
+}
+
+td.rowhead {
+    text-align: right
+}
+
+td.title {
+    font-size: 18px
+}
+
+td.clear {
+    padding: 0;
+    border: 0;
+    background: 0 0
+}
+
+tt {
+    white-space: nowrap
+}
+
+tt.nfo {
+    font-family: "MS Linedraw", "Courier New", monospace;
+    white-space: pre
+}
+
+.bumped_div,
+.nobr {
+    white-space: nowrap
+}
+
+ul.poll {
+    list-style-type: none;
+    padding: 0;
+    margin: .2em 0
+}
+
+ul.poll li {
+    padding: 0 .4em;
+    margin: .2em 0
+}
+
+ul.poll li img {
+    height: 9px
+}
+
+ul.poll li.rowA {
+    background: #ECE9D8
+}
+
+ul.poll li.rowB {
+    background: #F5F4EA
+}
+
+.myvote {
+    background: #BCB47B
+}
+
+table.homepage_content {
+    width: 98%;
+    max-width: 1200px;
+    padding: 0;
+    background: 0 0;
+    border: none
+}
+
+table.delete_torrent th {
+    background: #D0CAA3;
+    color: #000;
+    font-weight: 700;
+    text-align: center;
+    padding: 5px
+}
+
+table.delete_torrent td {
+    text-align: left;
+    padding: 5px
+}
+
+table.statstable {
+    border: none;
+    background: 0 0
+}
+
+table.statstable td.descriptor {
+    border: none;
+    font-weight: 700;
+    text-align: right
+}
+
+table.statstable td.figure {
+    border: none;
+    background: #F5F4EA;
+    text-align: right
+}
+
+table.smalltable {
+    font-family: Verdana, Helvetica, sans-serif;
+    border: 1px solid #840001;
+    border-top: none;
+    border-spacing: 0
+}
+
+table.smalltable td,
+table.smalltable th {
+    font-size: 90%;
+    padding: .2em .5em;
+    border: none
+}
+
+table.smalltable th {
+    font-weight: 700;
+    color: #FFF;
+    text-align: left;
+    background: #840001
+}
+
+table.smalltable td {
+    color: #000;
+    background: #F5F4EA;
+    border-bottom: 1px solid #CCC
+}
+
+table.smalltable td.first_cell {
+    border-bottom: none!important
+}
+
+table.staffpagetable {
+    background: #F5F4EA;
+    width: 400px;
+    text-align: left
+}
+
+table.staffpagetable td {
+    padding: 2px 2px 2px 6px
+}
+
+table.staffpagetable td div {
+    font-size: 115%;
+    font-weight: 700;
+    margin: 0 0 .2em 1em
+}
+
+table.alternate {
+    border: 1px solid #840001;
+    border-top: none;
+    border-spacing: 0
+}
+
+#preview_area,
+.torrenttable_helper,
+table.clean {
+    border-collapse: collapse
+}
+
+table.alternate th {
+    font-weight: 700;
+    color: #FFF;
+    text-align: left;
+    background: #840001;
+    padding: .25em .5em;
+    border: none
+}
+
+table.alternate th.center {
+    text-align: center
+}
+
+table.alternate th.right {
+    text-align: right
+}
+
+table.alternate tr.rowA {
+    background: #F5F4EA
+}
+
+table.alternate tr.rowB {
+    background: #ECE9D8
+}
+
+table.alternate tr.self {
+    background: #CCC
+}
+
+table.alternate tr td {
+    color: #000;
+    padding: .3em .5em;
+    border: none;
+    border-bottom: 1px solid #B7B7B7;
+    text-align: left
+}
+
+table.alternate tr td.center {
+    text-align: center
+}
+
+table.alternate tr td.right {
+    text-align: right
+}
+
+table.alternate tr td.small {
+    font-size: smaller
+}
+
+table.peerstable th {
+    padding: .2em .5em!important;
+    text-align: right!important
+}
+
+table.peerstable th.left {
+    text-align: left!important
+}
+
+table.peerstable tr td {
+    padding: .2em .5em!important;
+    text-align: right!important
+}
+
+table.peerstable tr td.connectable {
+    text-align: center!important
+}
+
+table.peerstable tr td.left {
+    text-align: left!important
+}
+
+table.peerstable tr td.user {
+    text-align: left!important;
+    font-weight: 700
+}
+
+.bumped_div,
+div.bbcode_area,
+div.news {
+    text-align: left
+}
+
+table.user_torrents tr td.category_icon {
+    width: 40px;
+    padding: 0;
+    border: none;
+    border-right: 1px solid #B7B7B7
+}
+
+table.user_torrents tr td.category_icon img {
+    vertical-align: middle
+}
+
+.torrenttable_helper {
+    width: 95%;
+    background: 0 0;
+    border: none
+}
+
+.bumped_div {
+    padding: 1.8em 0 .4em;
+    font-weight: 400
+}
+
+.bumped_div a,
+.bumped_div a:visited {
+    border-bottom: 1px dashed #444;
+    text-decoration: none!important
+}
+
+.bumped_div a:hover {
+    border-bottom: 1px dashed red
+}
+
+div.alternate_torrents_holder {
+    width: 950px
+}
+
+div.news {
+    margin-right: 1.5em;
+    padding: 1.2em;
+    background: #ECE9D8;
+    border: 1px solid #BBBCBF;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px
+}
+
+div.news-heading {
+    margin: 0 0 .4em .6em
+}
+
+div.news-body {
+    margin-bottom: 1em;
+    padding: 1em;
+    background: #F5F4EA;
+    border: 1px solid #C3B983;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px
+}
+
+div.inbox_header {
+    overflow: hidden;
+    width: 100%;
+    margin: 1.4em 0 1em;
+    border-bottom: 1px dashed #654624
+}
+
+div.inbox_header div.left {
+    float: left
+}
+
+div.inbox_header div.left h1 {
+    display: inline-block;
+    margin: 0;
+    padding: 0
+}
+
+div.inbox_header div.left div.small_items {
+    display: inline-block;
+    margin-top: .4em
+}
+
+.hidden,
+div.ban_div {
+    display: none
+}
+
+div.inbox_header div.left div.small_items a {
+    text-decoration: none
+}
+
+div.inbox_header div.left div.small_items span.separator {
+    margin: 0 1em;
+    color: #654624
+}
+
+div.inbox_header div.right {
+    float: right;
+    margin-right: .5em
+}
+
+div.pm {
+    margin: 0 0 1.5em;
+    padding: 1em;
+    background: #ECE9D8;
+    border: 1px solid #BBBCBF;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px
+}
+
+div.pm-header {
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: .5em
+}
+
+div.pm-left {
+    float: left
+}
+
+div.pm-right {
+    float: right;
+    padding-right: 1em
+}
+
+div.pm-container {
+    margin: 0;
+    padding: 0;
+    background: #F5F4EA;
+    border: 1px solid #C3B983;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px
+}
+
+div.pm td.pm-body {
+    padding: 1em;
+    vertical-align: top
+}
+
+div.box {
+    padding: .9em;
+    background: #ECE9D8;
+    border: 1px solid #BBBCBF;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px
+}
+
+table.clean {
+    border: 1px solid #909090;
+    border-spacing: 0
+}
+
+table.clean td,
+table.clean th {
+    border: none;
+    border-bottom: 1px solid #909090;
+    padding: .4em
+}
+
+table.description {
+    width: 750px
+}
+
+table.description img {
+    max-width: 900px;
+    height: auto;
+    vertical-align: bottom
+}
+
+table.description span.post_dl {
+    font-size: 95%;
+    font-style: italic;
+    margin-left: .5em
+}
+
+table.description span.special_type {
+    font-size: 95%;
+    margin-left: .3em
+}
+
+.center,
+div.footer {
+    text-align: center
+}
+
+div.bbcode_area textarea {
+    height: 210px;
+    width: 570px
+}
+
+div.bbcode_area textarea.torrent_description {
+    width: 693px;
+    height: 300px;
+    font-family: "Courier New", Courier, monospace
+}
+
+div.bbcode_area select.bbcodeBox_selector {
+    height: 2em;
+    font-size: 1em;
+    line-height: 100%;
+    margin: 0 .25em
+}
+
+div.bbcode_area button.bbcode {
+    background: #B2A47B;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #E4DFD8 #9C8A6D #9C8A6D #E4DFD8;
+    margin: 0 .2em;
+    padding: .2em .4em;
+    color: #ECECEC;
+    font-family: Verdana;
+    font-size: 1.2em;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 2px 2px 0 #999;
+    -webkit-box-shadow: 2px 2px 0 #999;
+    box-shadow: 2px 2px 0 #999;
+    text-shadow: 1px 1px 2px #000
+}
+
+div.bbcode_area button.bbcode:hover {
+    background: #9CF;
+    border: 1px solid #003C82;
+    color: #003C82;
+    text-shadow: none
+}
+
+div.bbcode_area img.insert_emoticon {
+    cursor: pointer;
+    margin-right: .3em;
+    vertical-align: bottom
+}
+
+div.bbcode_area span.smilies_link {
+    margin-left: .35em;
+    vertical-align: bottom
+}
+
+ul.bbcode {
+    margin: 0;
+    padding: 0 0 0 1em
+}
+
+ul.bbcode li {
+    margin: 0 0 0 .5em
+}
+
+div.bbcode_quote p {
+    font-weight: 700;
+    margin-bottom: .5em
+}
+
+div.bbcode_quote table {
+    background: #F5F4EA
+}
+
+div.bbcode_quote table tr td {
+    border: 1px solid #D0CAA3;
+    border-left: 3px solid #BCB47B;
+    padding: .9em
+}
+
+.mb_02em {
+    margin-bottom: .2em
+}
+
+.mb_03em {
+    margin-bottom: .3em
+}
+
+.mb_10em {
+    margin-bottom: 1em
+}
+
+.mb_12em {
+    margin-bottom: 1.2em
+}
+
+.mb_16em {
+    margin-bottom: 1.6em
+}
+
+.mb_20em {
+    margin-bottom: 2em
+}
+
+.ml_04em {
+    margin-left: .4em
+}
+
+.ml_05em {
+    margin-left: .5em
+}
+
+.ml_06em {
+    margin-left: .6em
+}
+
+.ml_08em {
+    margin-left: .8em
+}
+
+.ml_09em {
+    margin-left: .9em
+}
+
+.ml_10em {
+    margin-left: 1em
+}
+
+.ml_15em {
+    margin-left: 1.5em
+}
+
+.ml_25em {
+    margin-left: 2.5em
+}
+
+.ml_30em {
+    margin-left: 3em
+}
+
+.mr_04em {
+    margin-right: .4em
+}
+
+.mr_15em {
+    margin-right: 1.5em
+}
+
+.mr_20em {
+    margin-right: 2em
+}
+
+.mt_025em {
+    margin-top: .25em
+}
+
+.mt_04em {
+    margin-top: .4em
+}
+
+.mt_06em {
+    margin-top: .6em
+}
+
+.mt_20em {
+    margin-top: 2em
+}
+
+.mt_22em {
+    margin-top: 2.2em
+}
+
+.mt_30em {
+    margin-top: 3em
+}
+
+.bold {
+    font-weight: 700
+}
+
+.mw800 {
+    max-width: 800px
+}
+
+.blue {
+    color: #00F
+}
+
+.bluray {
+    color: #437796
+}
+
+.gray {
+    color: #95907E
+}
+
+.green {
+    color: green
+}
+
+.navy {
+    color: navy
+}
+
+.red {
+    color: red
+}
+
+.smaller {
+    font-size: smaller
+}
+
+.larger {
+    font-size: larger
+}
+
+.small {
+    font-size: 10px
+}
+
+.big {
+    font-size: 13px
+}
+
+.verybig {
+    font-size: 15px
+}
+
+input.radio {
+    vertical-align: middle
+}
+
+.btn {
+    width: 75px;
+    height: 23px
+}
+
+div.footer {
+    margin: 1.2em 0;
+    font-weight: 700;
+    color: #FFF
+}
+
+div.footer a:link,
+div.footer a:visited {
+    color: #E4E4E4
+}
+
+div.footer a:hover {
+    text-decoration: underline;
+    color: red
+}
+
+#preview_area {
+    display: none;
+    width: 750px;
+    border: none;
+    margin-bottom: 2em;
+    padding: 0;
+    text-align: left
+}
+
+#preview_area fieldset {
+    border: 3px solid #909090;
+    background: #ECE9D8;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px
+}
+
+#preview_area legend {
+    color: #000;
+    font-size: 120%;
+    font-weight: 700
+}
+
+#swap_times_div {
+    text-align: left;
+    padding: .3em 0 0 .6em
+}
+
+#swap_times_div a,
+#view_entries_div a {
+    text-decoration: none;
+    border-bottom: 1px dashed #444
+}
+
+#view_entries_div {
+    text-align: right;
+    padding: 0 .6em .3em
+}
+
+#totw_position_div {
+    position: relative;
+    height: 100px;
+    line-height: 100px
+}
+
+#totw_position_div span {
+    position: absolute;
+    bottom: .25em;
+    right: .25em;
+    line-height: 1em
+}
+
+div.user_heading {
+    font-size: 140%;
+    font-weight: 700;
+    margin-bottom: .7em
+}
+
+div.user_heading img {
+    vertical-align: bottom
+}
+
+div.closebox {
+    float: right;
+    padding: 0;
+    margin: .1em .4em 0 0
+}
+
+div.closebox a {
+    font-size: 9px;
+    font-weight: 700;
+    color: #95A;
+    text-decoration: none
+}
+
+a.geoip,
+a.mask_search {
+    text-decoration: none!important;
+    font-size: 9px!important;
+    margin-left: .5em
+}
+
+div.ban_div {
+    position: absolute;
+    width: auto;
+    min-width: 5px;
+    max-width: 100%;
+    min-height: 5px;
+    max-height: 100%;
+    background: #ECE9D8;
+    border: 1px solid #000;
+    padding: .2em;
+    line-height: 95%;
+    text-align: left;
+    z-index: 99
+}
+
+a.geoip {
+    color: #385!important
+}
+
+a.mask_search {
+    color: #B82E00!important
+}
+
+input.modern {
+    color: #000;
+    font-size: 110%;
+    padding: .2em;
+    background: #D4CCA5;
+    border: 1px solid #675F32;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px
+}
+
+input.modern:hover {
+    color: #FFF;
+    background: #78503A
+}
+
+input.modern[disabled] {
+    color: graytext
+}
+
+input.modern[disabled]:hover {
+    background: #D4CCA5
+}
+
+div.comment_div {
+    margin-top: 1.4em;
+    padding: 1em;
+    width: 520px;
+    background: #ECE9D8;
+    border: 1px solid #909090;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px
+}
+
+div.comment_div h1 {
+    margin-top: 0
+}
+
+div.comment_div textarea {
+    width: 100%;
+    height: 140px;
+    border: 1px solid #777
+}
+
+textarea.comment_box {
+    width: 520px;
+    height: 140px;
+    border: 1px solid #777
+}
+
+textarea.faq_answer {
+    width: 740px;
+    height: 300px
+}
+
+textarea.question {
+    width: 500px;
+    height: 100px
+}
+
+img.usericon {
+    margin-left: .2em;
+    vertical-align: middle
+}
+
+img.usericon-big {
+    margin-left: .4em;
+    vertical-align: middle
+}
+
+div.alerts {
+    width: 300px;
+    font-family: Verdana;
+    background: #D0CAA3;
+    border: 1px solid #444;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    margin-bottom: .8em
+}
+
+div.alertbar {
+    color: #000;
+    font-weight: 700;
+    text-align: center;
+    padding: .4em
+}
+
+span.ugly_notice {
+    display: inline-block;
+    background: #00F;
+    margin: 1em 0;
+    padding: .9em
+}
+
+span.ugly_notice a {
+    color: #FFF;
+    font-weight: 700
+}
+
+div.spoiler {
+    margin-top: .5em
+}
+
+div.spoiler div.spoilerbox {
+    background: #ECE9D8;
+    border: 1px solid #909090;
+    margin: 0 5px;
+    padding: 4px 8px 0
+}
+
+div.spoiler div.spoilerbox h4 {
+    color: #1B1D1E;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 1.1em;
+    font-weight: 700;
+    margin: 0 0 1em;
+    padding: 0
+}
+
+div.spoiler div.spoilerbox p {
+    color: #ECE9D8
+}
+
+div.spoiler div.spoilerbox p:hover {
+    color: #000
+}
+
+div.pager {
+    text-align: center;
+    white-space: pre;
+    margin: 1em 0
+}
+
+div.error h2,
+div.info h2,
+div.success h2 {
+    font-size: 18px;
+    letter-spacing: -.03em;
+    margin: .1em 0;
+    font-family: Verdana, Arial, sans-serif;
+    font-weight: 700
+}
+
+div.pager a {
+    font-weight: 700;
+    padding: 0 .4em
+}
+
+div.notification {
+    width: 500px;
+    padding: 7px 10px 7px 40px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px
+}
+
+div.info {
+    color: #222;
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/info.png) 10px center no-repeat #ECE9D8;
+    border: 1px solid #675F32
+}
+
+div.info h2 {
+    color: #3A8ABB
+}
+
+div.error {
+    color: #222;
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/error.png) 10px center no-repeat #F3D2D2;
+    border: 1px solid #E46C84
+}
+
+div.error h2 {
+    color: #D6000B
+}
+
+div.success {
+    color: #222;
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/success.png) 10px center no-repeat #D2F3D2;
+    border: 1px solid #60DC41
+}
+
+div.success h2 {
+    color: #08A300
+}
+
+div.comment {
+    border: 1px solid #666;
+    -moz-border-radius: 6px 6px 6px 0;
+    -webkit-border-radius: 6px 6px 6px 0;
+    border-radius: 6px 6px 6px 0;
+    margin: .4em 0 1em;
+    background: #F5F4EA;
+    overflow: hidden
+}
+
+div.comm-heading {
+    background: #D9D4B4;
+    padding: .4em 0
+}
+
+div.comm-heading a {
+    color: #000;
+    font-weight: 700;
+    text-decoration: none
+}
+
+div.comm-heading a:hover {
+    color: red
+}
+
+div.uploader div.comm-heading {
+    background: #85BC7B
+}
+
+td.comm-avatar,
+td.comm-body {
+    background: #F5F4EA;
+    border: none;
+    text-align: left
+}
+
+div.comm-identity {
+    margin-left: .6em
+}
+
+div.comm-actions {
+    float: right;
+    margin-right: .6em
+}
+
+td.comm-avatar {
+    width: 150px;
+    padding: 0;
+    vertical-align: top
+}
+
+td.comm-avatar img {
+    max-width: 150px;
+    vertical-align: middle
+}
+
+td.comm-body {
+    padding: .8em;
+    vertical-align: top
+}
+
+#modal_window {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12px;
+    display: none
+}
+
+#modal_window div.bulletlist {
+    font-size: smaller;
+    margin: 1.5em 0 0
+}
+
+#modal_window div.bulletlist p {
+    margin: 0 0 .3em 1em
+}
+
+#modal_window div.bulletlist ul {
+    line-height: 2.1em;
+    margin: 0;
+    padding: 0 0 0 3em
+}
+
+#modal_window div.bulletlist ul li {
+    margin: 0 0 0 1em
+}
+
+#modal_window textarea {
+    width: 580px;
+    height: 180px;
+    margin: 1.5em 0 .2em;
+    font-family: "Courier New", Courier, monospace
+}
+
+#modal_window span {
+    font-size: 80%;
+    display: block
+}
+
+#modal_window div.submit_modal {
+    position: absolute;
+    bottom: 1em;
+    left: 1.5em
+}
+
+#simplemodal-overlay {
+    background: #000
+}
+
+#simplemodal-container {
+    width: 600px;
+    height: 445px;
+    color: #000;
+    background: #ECE9D8;
+    border: 4px solid #555;
+    padding: 1em;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 0 0 30px 2px #000;
+    -webkit-box-shadow: 0 0 30px 2px #000;
+    box-shadow: 0 0 30px 2px #000
+}
+
+#simplemodal-container .simplemodal-data {
+    padding: .7em
+}
+
+#simplemodal-container a.modalCloseImg {
+    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/modal_close.png) no-repeat;
+    position: absolute;
+    top: -17px;
+    right: -17px;
+    width: 34px;
+    height: 34px;
+    display: block;
+    z-index: 1200;
+    cursor: pointer
+}
+
+#simplemodal-container a.modalCloseImg:hover {
+    background-position: -35px 0
+}
+
+#simplemodal-container h3 {
+    color: #3A8ABB;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -.04em;
+    line-height: 1em;
+    margin: 0 0 .8em
+}
+
+a.altlink:link,
+a.altlink:visited {
+    font-weight: 700;
+    color: #A83838;
+    text-decoration: none
+}
+
+a.altlink:hover {
+    text-decoration: underline
+}
+
+a.biglink {
+    font-size: 16px;
+    font-weight: 700
+}
+
+a.sublink {
+    font-size: 10px;
+    font-style: italic;
+    font-weight: 400
+}
+
+#uploadrules {
+    text-align: left;
+    margin: 0 auto;
+    width: 600px
+}
+
+#uploadrules h1 {
+    clear: right
+}
+
+#uploadrules ul {
+    padding-left: 10px;
+    list-style-type: decimal
+}
+
+.ruleblock {
+    padding-bottom: 40px
+}
+
+.ruleblock span {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: red
+}
+
+.rulecheck {
+    display: inline;
+    padding-left: 10px;
+    font-weight: 700;
+}
+
+#accept {
+    padding-top: 5px;
+    display: block;
+    text-align: center
+}
+
+#centeredform {
+    color: #333;
+    width: 765px;
+    margin: 0 auto
+}
+
+.tablechunk {
+    width: 100%;
+    background: 0 0
+}
+
+.tablechunk td {
+    border: 1px solid grey
+}
+
+.tablechunk .heading {
+    font-family: Tahoma;
+    font-size: 1.2em;
+    font-weight: 400
+}
+
+#headertitle h1,
+#headertitle h2,
+.tablechunk .required {
+    font-weight: 700
+}
+
+.tablechunk ul {
+    list-style-type: lower-roman;
+    margin: 15px 0
+}
+
+.tablechunk li {
+    margin: 0;
+    padding: 0
+}
+
+.tablechunk p {
+    margin: 0
+}
+
+.formchunk {
+    margin-bottom: 30px
+}
+
+.formchunk h2 {
+    color: #AAA;
+    text-align: right;
+    margin: 0;
+    padding: 0
+}
+
+.formchunk h2 span {
+    color: #777
+}
+
+#headertitle {
+    text-align: center;
+    margin: 0 0 45px
+}
+
+#headertitle h1 {
+    margin: 0;
+    color: #777;
+    font-family: Verdana;
+    font-size: 26px
+}
+
+#headertitle h2 {
+    margin: -7px 0 0;
+    color: #AAA;
+    font-family: Verdana;
+    font-size: 21px;
+    letter-spacing: 5px
+}

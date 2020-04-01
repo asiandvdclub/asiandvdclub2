@@ -23,7 +23,7 @@ class cacheManager
         //TODO Cache user by ID where ID is the key , user_stats_ . ID
         if (empty($this->cache->getKey($this->user_cache))) {
 
-            $this->db->querry("SELECT u.id, u.username, u.uploaded, u.downloaded, u.idClass, u.passkey FROM users as u WHERE u.id = :userid");
+            $this->db->querry("SELECT u.id, u.username, u.uploaded, u.downloaded, u.idClass, u.passkey, u.invites FROM users as u WHERE u.id = :userid");
             $this->db->bind(":userid", base64_decode($_COOKIE['c_secure_uid']));
             $row = $this->db->getRow();
             $this->db->querry("SELECT p.seeder, p.connectable FROM peers as p WHERE p.userid = :userid");

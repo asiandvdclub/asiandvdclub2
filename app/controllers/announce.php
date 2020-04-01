@@ -1,5 +1,11 @@
 <?php
-
+/*
+ * Memcached not implemented
+ *
+ * Announce Notes
+ * - user can't seed from more than one location
+ * - user can't download from another account on the same client
+ */
 class announce extends Controller
 {
     private $db;
@@ -14,25 +20,27 @@ class announce extends Controller
     public function announceSession($passkey)
     {
         ob_clean();
+        header('Content-type: text/plain');
         //echo $this->bencode->benc_error("Announce offline");
         //exit;
         //$response = $this->bencode->benc($response);
-        header('Content-type: text/plain');
         $client = $_GET;
+
         //TODO decode passkey
         $passkey = str_replace("announce/", "", $client['url']);
         $this->db->querry("SELECT id, info_hash FROM torrents WHERE info_hash = :info");
         $this->db->bind(':info', bin2hex($client['info_hash']));
         $torrent_data = $this->db->getRow();
         if (empty($torrent_data)) {
-            echo trim($this->bencode->error_benc("Torrent not registred!"));
+            echo trim($this->bencode->benc_error("Torrent not registred!"));
             exit;
         }
-        $this->db->querry("SELECT id FROM users WHERE passkey = :pkey");
+        $this->db->querry("SELECT id, banned FROM users WHERE passkey = :pkey");
         $this->db->bind(':pkey', $passkey);
-        $uid = $this->db->getRow()['id'];
-        if (empty($uid)) { // TODO: add bened column in the `users` table and check here
-            echo trim($this->bencode->error_benc("User banned or doesn't exists!"));
+        $user = $this->db->getRow();
+        $uid = $user['id'];
+        if (empty($uid) || $user['banned'] == "yes") {
+            echo trim($this->bencode->benc_error("User banned or doesn't exists!"));
             exit;
         }
         /*
@@ -50,15 +58,51 @@ class announce extends Controller
         }
         */
         //insert to db then send it back
-        $this->db->querry("SELECT * FROM peers WHERE passkey = :pkey AND torrent = :tId");
+
+        $this->db->querry("SELECT * FROM peers WHERE passkey = :pkey AND torrent = :tId AND userid = :uid AND peer_id = :pid");
         $this->db->bind(':pkey', $passkey);
         $this->db->bind(':tId', $torrent_data['id']);
+        $this->db->bind(':uid', $uid);
+        $this->db->bind(':pid',  bin2hex($client['peer_id']));
         $peer = $this->db->getRow();
-        $is_seeding = $peer['id'];
-        $peer_ip = $peer['ip'];
 
-        if (empty($is_seeding)) { // Start event here => uploaded 0
-            //insert peers
+        //check seeding
+        $this->db->querry("SELECT * FROM peers WHERE passkey = :pkey AND torrent = :tId AND userid = :uid");
+        $this->db->bind(':pkey', $passkey);
+        $this->db->bind(':tId', $torrent_data['id']);
+        $this->db->bind(':uid', $uid);
+        $check = $this->db->getRow();
+        if(empty($peer) && !empty($check)) {
+            echo trim($this->bencode->benc_error("You can't seed from more that one location!"));
+            exit;
+        }
+        //announce related
+        if(isset($peer) && $client['event'] == "stopped"){
+            $this->delete_peers($torrent_data['id'], $uid);
+            $peers = $this->getPeers($torrent_data['id'], $passkey, $client['compact']);
+            $response = $this->bencode->announce_request($peers, $client['compact']);
+            $sp = $this->getSP($torrent_data['id']);
+            $this->update_torrent($sp['complete'], $sp['incomplete'], $torrent_data['id']);
+            dbg_log($response);
+            echo $response;
+            exit;
+        }elseif (!empty($peer)){
+            $this->update_peers($client, $torrent_data['id'], $uid);
+            $sp = $this->getSP($torrent_data['id']);
+            $this->update_torrent($sp['complete'], $sp['incomplete'], $torrent_data['id']);
+            $sn = $this->get_snatched($torrent_data['id'], $uid);
+
+            $uploaded =  $sn['uploaded'] + ($client['uploaded'] - $peer['uploaded']);
+            $downloaded = $sn['downloaded'] + ($client['downloaded'] - $peer['downloaded']);
+
+            $this->update_snatched($torrent_data['id'], $uid, $uploaded, $downloaded); // Change up and down
+
+            $peers = $this->getPeers($torrent_data['id'], $passkey, $downloaded);
+            $response = $this->bencode->announce_request($peers, $client['compact']);
+
+            echo $response;
+            exit;
+        }else{
             $peers = $this->getPeers($torrent_data['id'], $passkey, $client['compact']);
             $this->insert_peers($torrent_data, $client, $uid, $passkey);
             $sp = $this->getSP($torrent_data['id']);
@@ -66,35 +110,14 @@ class announce extends Controller
             //under test
             if(!$this->check_snatched($torrent_data['id'], $uid))
                 $this->insert_snatched($client, $torrent_data['id'], $uid);
-            else
-                $this->update_snatched($torrent_data['id'], $uid, 0, 0); // Change up and down
-
+            else {
+                $sn = $this->get_snatched($torrent_data['id'], $uid);//useless
+                $this->update_snatched($torrent_data['id'], $uid, $sn['uploaded'] + ($client['uploaded'] - $sn['uploaded']), $sn['downloaded']); // Change up and down
+            }
             $response = $this->bencode->announce_request($peers, $client['compact']);
-            echo $response;
-        } elseif ($client['event'] == "stopped") {
-            $this->delete_peers($torrent_data['id'], $uid);
-            $peers = $this->getPeers($torrent_data['id'], $passkey, $client['compact']);
-            $response = $this->bencode->announce_request($peers, $client['compact']);
-
-            $sp = $this->getSP($torrent_data['id']);
-            $this->update_torrent($sp['complete'], $sp['incomplete'], $torrent_data['id']);
+            dbg_log($response);
             echo $response;
             exit;
-            /*
-        } elseif ($peer_ip != getip()){ //test incomplete, doesn't work for dynamic ip's, I will update is peer IP
-            dbg_log(getip() . "----" . $peer_ip);
-            echo trim($this->bencode->benc_error("Can't seed the same torrent from multiple locations!"));
-            exit;
-            */
-       } else{ // sience statarted upload //TODO check if is the same IP, very important user can't seed from multiple location
-            $this->update_peers($client, $torrent_data['id'], $uid);
-            $peers = $this->getPeers($torrent_data['id'], $passkey, $client['compact']);
-            $response = $this->bencode->announce_request($peers, $client['compact']);
-            //update torrent seeders and leechers
-            $sp = $this->getSP($torrent_data['id']);
-            $this->update_torrent($sp['complete'], $sp['incomplete'], $torrent_data['id']);
-
-            echo  $response;
         }
     }
     private function checkPeer(){
@@ -117,22 +140,29 @@ class announce extends Controller
         return $sp;
     }
     private function getPeers($tId, $passkey, $compact){
-        $this->db->querry("SELECT * FROM peers WHERE torrent = :tId AND passkey != :pkey");
-        $this->db->bind(':pkey', $passkey);
-        $this->db->bind(':tId', $tId);
-        $peersData = $this->db->getAll();
         $complete = 0;
         $incomplete = 0;
-        foreach ($peersData as $value)
-            if($value["seeder"] == "yes")
-                $complete++;
-            else
-                $incomplete++;
         $peers = array(
             "complete" => $complete,
             "incomplete" => $incomplete,
             "peers" => array()
         );
+        $this->db->querry("SELECT * FROM peers WHERE torrent = :tId AND passkey != :pkey");
+        $this->db->bind(':pkey', $passkey);
+        $this->db->bind(':tId', $tId);
+        $peersData = $this->db->getAll();
+
+        if(empty($peersData)) {
+            $peers['peers'] = "";
+            return $peers;
+        }
+
+        foreach ($peersData as $value)
+            if($value["seeder"] == "yes")
+                $complete++;
+            else
+                $incomplete++;
+
         if ($compact == 1){
             $peer_list = "";
             foreach ($peersData as $value) {
@@ -162,7 +192,7 @@ class announce extends Controller
         $this->db->bind(':port', $client['port']);
         $this->db->bind(':ip', getip());
         $this->db->bind(':finished', is_null($client['to_go']) ? "yes" : "no");
-      //  dbg_log("hello");
+        //  dbg_log("hello");
         $this->db->execute();
     }
     private function update_snatched($tid, $uid, $up, $down){
@@ -172,6 +202,12 @@ class announce extends Controller
         $this->db->bind(':up', $up);
         $this->db->bind(':down', $down);
         $this->db->execute();
+    }
+    private function get_snatched($tid, $uid){
+        $this->db->querry("SELECT uploaded, downloaded FROM `snatched` WHERE torrentid = :tid AND userid = :uid");
+        $this->db->bind(':tid', $tid);
+        $this->db->bind(':uid', $uid);
+        return $this->db->getRow();
     }
     private function check_snatched($tid, $uid){
         $this->db->querry("SELECT * FROM `snatched` WHERE torrentid = :tid AND userid = :uid");

@@ -1,56 +1,77 @@
 <?php require_once APP_ROUTE . '/views/inc/navbar_header.php';?>
 
 
-<div id="std_web" class="container">
-    <div id="std_in" class="container bg-dark">
-        <a class="badge bg-light font-big mg"><?php echo $data["lang_index"]['text_recent_news'];?></a>
-        <?php echo $data['news']; ?>
-    </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h2><?php echo $data["lang_index"]['text_recent_news'];?></h2>
+            <div class="bloc">
+                <?php echo $data['news']; ?>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h2><?php echo $data["lang_index"]['text_tracker_statistics'];?></h2>
+            <div class="bloc">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td class="text-right">
+                                <?php echo $data["lang_index"]['row_users_active_today'];?>
+                            </td>
+                            <td>
 
-    <div id="pools" class="container bg-dark">
-        <a class="badge bg-light font-big mg"><?php echo $data["lang_index"]['text_polls'];?></a>
-
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">
+                                <?php echo $data["lang_index"]['row_users_active_this_week'];?>
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right"><?php echo $data["lang_index"]['row_registered_users'];?></td>
+                            <td><?php echo $data["index_data"]['users'] . "/" . "max_server";?></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right"><?php echo $data["lang_index"]['row_unconfirmed_users'];?></td>
+                            <td><?php echo $data["index_data"]['unconfirmed'];?></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right"><?php echo $data["lang_index"][''];?></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right"><?php echo $data["lang_index"][''];?></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right"><?php echo $data["lang_index"][''];?></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right"><?php echo $data["lang_index"][''];?></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right"><?php echo $data["lang_index"][''];?></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right"><?php echo $data["lang_index"][''];?></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h2><?php echo $data["lang_index"]['text_polls']; ?></h2>
+        </div>
     </div>
-    <div id="tracker_stats" class="container bg-dark">
-        <a class="badge bg-light font-big mg"><?php echo $data["lang_index"]['text_tracker_statistics'];?></a>
-        <table  class="table table-striped table-bordered bg-white">
-            <tbody class="text-right">
-            <tr>
-                <td><?php echo $data["lang_index"]['row_users_active_today'];?></td>
-                <td></td>
-                <td><?php echo $data["lang_index"]['row_users_active_this_week'];?></td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td><?php echo $data["lang_index"]['row_registered_users'];?></td>
-                <td><?php echo $data["index_data"]['users'] . "/" . "max_server";?></td>
-
-                <td><?php echo $data["lang_index"]['row_unconfirmed_users'];?></td>
-                <td><?php echo $data["index_data"]['unconfirmed'];?></td>
-            </tr>
-            <tr>
-                <td><?php echo $data["lang_index"][''];?></td>
-                <td>&nbsp;</td>
-                <td><?php echo $data["lang_index"][''];?></td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td><?php echo $data["lang_index"][''];?></td>
-                <td>&nbsp;</td>
-                <td><?php echo $data["lang_index"][''];?></td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td><?php echo $data["lang_index"][''];?></td>
-                <td>&nbsp;</td>
-                <td><?php echo $data["lang_index"][''];?></td>
-                <td>&nbsp;</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-    <div id="disclaimer" class="container bg-dark">
-        <a class="badge bg-light font-big mg"><?php echo $data["lang_index"]['text_disclaimer'];?></a>
+    <div class="row">
+        <div class="col-md-12">
+            <?php echo $data["lang_index"]['text_disclaimer'];?>
+        </div>
     </div>
 </div>
 
