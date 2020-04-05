@@ -36,7 +36,6 @@ class Home extends Controller {
                 "userStats" => $this->cacheManager->getUserStats(),
                 "news" => $this->index->news($lang_index, $this->userClass), // I know this $lang_index doesn't look good here but this works on the fly due to require above
                 "lang_index" => $lang_index,
-                "getLangDropdown" => $this->languageMod->getLangDropdown(),
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                 "getSiteManagerBar"=> $this->cacheManager->getSiteManager($this->userClass),
                 "index_data" => $this->index_data()
@@ -60,7 +59,6 @@ class Home extends Controller {
                 [
                     "currentPage" => "/create_news",
                     "userStats" => $this->cacheManager->getUserStats(),
-                    "getLangDropdown" => $this->languageMod->getLangDropdown(),
                     "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                     "getSiteManagerBar"=> $this->cacheManager->getSiteManager($this->userClass),
                 ]);

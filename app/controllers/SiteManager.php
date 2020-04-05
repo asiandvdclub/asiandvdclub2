@@ -25,7 +25,6 @@ class SiteManager extends Controller
             [
                 "currentPage" => "/" . __FUNCTION__,
                 "userStats" => $this->cacheManager->getUserStats(),
-                "getLangDropdown" => $this->languageMod->getLangDropdown(),
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                 "getSiteManagerBar" => $this->cacheManager->getSiteManager($this->userClass),
             ]);
@@ -37,7 +36,6 @@ class SiteManager extends Controller
             [
                 "currentPage" => "/" . __FUNCTION__,
                 "userStats" => $this->cacheManager->getUserStats(),
-                "getLangDropdown" => $this->languageMod->getLangDropdown(),
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                 "getSiteManagerBar" => $this->cacheManager->getSiteManager($this->userClass),
             ]);
@@ -51,7 +49,6 @@ class SiteManager extends Controller
                 "currentPage" => "/" . __FUNCTION__,
                 "userStats" => $this->cacheManager->getUserStats(),
                 "forum_status" => $this->forum_data->getForumStatus(),
-                "getLangDropdown" => $this->languageMod->getLangDropdown(),
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                 "getSiteManagerBar" => $this->cacheManager->getSiteManager($this->userClass),
                 "category" => $this->forum_data->display_forums_manager(),
@@ -65,7 +62,6 @@ class SiteManager extends Controller
                 "currentPage" => "/" . __FUNCTION__,
                 "userStats" => $this->cacheManager->getUserStats(),
                 "forum_status" => $this->forum_data->getForumStatus(),
-                "getLangDropdown" => $this->languageMod->getLangDropdown(),
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                 "getSiteManagerBar" => $this->cacheManager->getSiteManager($this->userClass),
             ]);

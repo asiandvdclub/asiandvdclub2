@@ -158,5 +158,7 @@ h2 {
 .badge{
 	margin-bottom: 10px;
 }
-
+.container #log{
+	height: 1000px;
+}
 

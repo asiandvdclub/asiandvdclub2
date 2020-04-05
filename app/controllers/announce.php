@@ -25,7 +25,6 @@ class announce extends Controller
         //exit;
         //$response = $this->bencode->benc($response);
         $client = $_GET;
-
         //TODO decode passkey
         $passkey = str_replace("announce/", "", $client['url']);
         $this->db->querry("SELECT id, info_hash FROM torrents WHERE info_hash = :info");
@@ -90,12 +89,11 @@ class announce extends Controller
             $this->update_peers($client, $torrent_data['id'], $uid);
             $sp = $this->getSP($torrent_data['id']);
             $this->update_torrent($sp['complete'], $sp['incomplete'], $torrent_data['id']);
-            $sn = $this->get_snatched($torrent_data['id'], $uid);
 
-            $uploaded =  $sn['uploaded'] + ($client['uploaded'] - $peer['uploaded']);
-            $downloaded = $sn['downloaded'] + ($client['downloaded'] - $peer['downloaded']);
+            $uploaded = $client['uploaded'] - $peer['uploaded'];
+            $downloaded = $client['downloaded'] - $peer['downloaded'];
 
-            $this->update_snatched($torrent_data['id'], $uid, $uploaded, $downloaded); // Change up and down
+            $this->update_snatched($torrent_data['id'], $uid, $uploaded, $downloaded, $client['left']); // Change up and down
 
             $peers = $this->getPeers($torrent_data['id'], $passkey, $downloaded);
             $response = $this->bencode->announce_request($peers, $client['compact']);
@@ -112,10 +110,9 @@ class announce extends Controller
                 $this->insert_snatched($client, $torrent_data['id'], $uid);
             else {
                 $sn = $this->get_snatched($torrent_data['id'], $uid);//useless
-                $this->update_snatched($torrent_data['id'], $uid, $sn['uploaded'] + ($client['uploaded'] - $sn['uploaded']), $sn['downloaded']); // Change up and down
+                $this->update_snatched($torrent_data['id'], $uid, $sn['uploaded'] + ($client['uploaded'] - $sn['uploaded']), $sn['downloaded'], $client['left']); // Change up and down
             }
             $response = $this->bencode->announce_request($peers, $client['compact']);
-            dbg_log($response);
             echo $response;
             exit;
         }
@@ -192,11 +189,26 @@ class announce extends Controller
         $this->db->bind(':port', $client['port']);
         $this->db->bind(':ip', getip());
         $this->db->bind(':finished', is_null($client['to_go']) ? "yes" : "no");
-        //  dbg_log("hello");
         $this->db->execute();
     }
-    private function update_snatched($tid, $uid, $up, $down){
-        $this->db->querry("UPDATE `snatched` SET `uploaded` = :up, `downloaded` = :down WHERE torrentid = :tid AND userid = :uid");
+    private function update_snatched($tid, $uid, $up, $down, $to_go){
+        $this->db->querry("SELECT `finished`, `seedtime`, `leechtime`, `last_action` FROM `snatched` WHERE torrentid = :tid AND userid = :uid");
+        $this->db->bind(':tid', $tid);
+        $this->db->bind(':uid', $uid);
+        $data = $this->db->getRow();
+
+        if($to_go == 0) {
+            if ($data['finished'] == "no") {
+                $this->db->querry("UPDATE `snatched` SET `uploaded` = `uploaded` + :up, `downloaded` = `downloaded` + :down, `finished` = :finish, `completedat` = NOW(), `last_action` = NOW() WHERE torrentid = :tid AND userid = :uid");
+                $this->db->bind(':finish', "yes");
+            }else{
+                $this->db->querry("UPDATE `snatched` SET `uploaded` = `uploaded` + :up, `downloaded` = `downloaded` + :down, `seedtime` = `seedtime` + :seed_t, `last_action` = NOW() WHERE torrentid = :tid AND userid = :uid");
+                $this->db->bind(':seed_t', date_to_seconds($data['last_action']));
+            }
+        }else{
+            $this->db->querry("UPDATE `snatched` SET `uploaded` = `uploaded` + :up, `downloaded` = `downloaded` + :down, `leechtime` = `leechtime` + :leech_t, `last_action` = NOW() WHERE torrentid = :tid AND userid = :uid");
+            $this->db->bind(':leech_t', date_to_seconds($data['last_action']));
+        }
         $this->db->bind(':tid', $tid);
         $this->db->bind(':uid', $uid);
         $this->db->bind(':up', $up);

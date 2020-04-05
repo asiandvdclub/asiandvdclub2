@@ -46,7 +46,6 @@ class Tracker extends Controller
             [
                 "currentPage" => "/" . __FUNCTION__,
                 "userStats" => $this->cacheManager->getUserStats(),
-                "getLangDropdown" => $this->languageMod->getLangDropdown(),
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                 "getSiteManagerBar"=> $this->cacheManager->getSiteManager($this->userClass),
                 "showList" => $showList,
@@ -74,7 +73,6 @@ class Tracker extends Controller
             [
                 "currentPage" => "/" . __FUNCTION__,
                 "userStats" => $this->cacheManager->getUserStats(),
-                "getLangDropdown" => $this->languageMod->getLangDropdown(),
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                 "getSiteManagerBar"=> $this->cacheManager->getSiteManager($this->userClass),
                 "torrentData" => $tData,
@@ -231,7 +229,6 @@ class Tracker extends Controller
                 "currentPage" => "/" . __FUNCTION__,
                 "userStats" => $this->cacheManager->getUserStats(),
                 "lang_upload" => $lang_upload,
-                "getLangDropdown" => $this->languageMod->getLangDropdown(),
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                 "getSiteManagerBar" => $this->cacheManager->getSiteManager($this->userClass),
                 "error" => $error,

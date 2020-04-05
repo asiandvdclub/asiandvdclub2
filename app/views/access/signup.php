@@ -15,11 +15,6 @@
                     </span>
                 </a>
                 <form method="post" action="<?php echo URL_ROOT;?>/signup">
-                    <div align="right" valign="top"><?php echo $lang_signup['text_select_lang']; ?>
-                        <?php echo $data['getLangDropdown']; ?>
-                    </div>
-                </form>
-                <form method="post" action="<?php echo URL_ROOT;?>/signup">
                     <table border="1" cellspacing="0" cellpadding="10">
                         <tbody>
                             <tr>

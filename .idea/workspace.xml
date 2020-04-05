@@ -2,18 +2,181 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35533c8a-7baa-46f8-9fe2-be7962aab11d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/controllers/Debugger.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/lang/en/lang_debugger.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/debugger/log.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/default_config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/default_config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Access.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Access.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/SiteManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/SiteManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Tracker.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Tracker.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/announce.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/announce.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lang/en/lang_functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lang/en/lang_functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/libraries/Core.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/libraries/Core.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_aboutnexus.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_admanage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_adredir.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_attachment.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_bitbucket-upload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_catmanage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_cheaterbox.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_checkuser.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_comment.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_confirm_resend.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_contactstaff.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_delete.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_deletedisabled.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_deletemessage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_details.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_donate.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_downloadnotice.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_edit.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_faq.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_fastdelete.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_forummanage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_forums.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_friends.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_fun.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_functions.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_getrss.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_getusertorrentlistajax.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_invite.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_iphistory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_ipsearch.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_linksmanage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_log.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_mailtest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_makepoll.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_messages.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_moforums.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_moresmilies.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_mybonus.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_news.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_offers.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_ok.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_polloverview.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_polls.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_preview.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_promotionlink.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_recover.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_report.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_reports.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_rules.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_sendmessage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_settings.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_shoutbox.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_signup.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_staff.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_staffbox.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_subtitles.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_tags.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_takeconfirm.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_takecontact.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_takeedit.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_takeflush.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_takeinvite.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_takelogin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_takemessage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_takereseed.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_takesignup.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_takeupload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_topten.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_torrents.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_upload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_uploaders.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_usercp.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_userdetails.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_userhistory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_users.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_viewfilelist.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_viewnfo.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_viewpeerlist.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/chs/lang_viewsnatches.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_aboutnexus.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_admanage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_adredir.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_attachment.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_bitbucket-upload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_catmanage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_cheaterbox.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_checkuser.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_comment.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_confirm_resend.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_contactstaff.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_delete.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_deletedisabled.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_deletemessage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_details.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_donate.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_downloadnotice.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_edit.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_faq.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_fastdelete.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_forummanage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_forums.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_friends.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_fun.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_functions.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_getrss.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_getusertorrentlistajax.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_invite.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_iphistory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_ipsearch.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_linksmanage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_log.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_mailtest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_makepoll.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_messages.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_moforums.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_moresmilies.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_mybonus.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_news.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_offers.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_ok.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_polloverview.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_polls.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_preview.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_promotionlink.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_recover.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_report.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_reports.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_rules.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_sendmessage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_settings.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_shoutbox.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_signup.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_staff.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_staffbox.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_subtitles.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_tags.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_takeconfirm.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_takecontact.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_takeedit.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_takeflush.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_takeinvite.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_takelogin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_takemessage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_takereseed.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_takesignup.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_takeupload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_topten.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_torrents.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_upload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_uploaders.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_usercp.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_userdetails.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_userhistory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_users.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_viewfilelist.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_viewnfo.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_viewpeerlist.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/cht/lang_viewsnatches.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/libraries/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/libraries/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/bencode.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/bencode.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/cacheManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/cacheManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/torrents/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/torrents/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/access/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/access/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/inc/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/inc/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/inc/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/inc/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/inc/navbar_header.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/inc/navbar_header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/pages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/access/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/access/signup.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/nexusphp.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/nexusphp.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -164,6 +327,12 @@
       <workItem from="1581082914861" duration="15948000" />
       <workItem from="1581158171783" duration="1203000" />
       <workItem from="1585414991888" duration="2684000" />
+      <workItem from="1585812117059" duration="6024000" />
+      <workItem from="1585913563449" duration="1958000" />
+      <workItem from="1585921930226" duration="601000" />
+      <workItem from="1585984006026" duration="4665000" />
+      <workItem from="1586034616244" duration="2236000" />
+      <workItem from="1586077269228" duration="20130000" />
     </task>
     <servers />
   </component>
@@ -184,57 +353,31 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="178" key="#Deployment" timestamp="1581068297741">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="178" key="#Deployment/0.0.1920.1040@0.0.1920.1040" timestamp="1581068297741" />
-    <state x="552" y="178" key="#Options" timestamp="1579428803678">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="178" key="#Options/0.0.1920.1040@0.0.1920.1040" timestamp="1579428803678" />
-    <state x="552" y="178" key="#SQL_Dialects" timestamp="1580751918356">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="178" key="#SQL_Dialects/0.0.1920.1040@0.0.1920.1040" timestamp="1580751918356" />
-    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580752907220">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580752907220" />
-    <state x="699" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580231787799">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="699" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1580231787799" />
-    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog" timestamp="1579883355839">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579883355839" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1579428512725">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1579428512725" />
-    <state x="694" y="334" key="NewPhpClassDialog" timestamp="1580115940162">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="694" y="334" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580115940162" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1580811737116">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580811737116" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1579428447478">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579428447478" />
-    <state x="844" y="250" key="ftp.server.browser" timestamp="1579428658147">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="844" y="250" key="ftp.server.browser/0.0.1920.1040@0.0.1920.1040" timestamp="1579428658147" />
-    <state x="829" y="395" key="publish.login" timestamp="1581159277763">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="829" y="395" key="publish.login/0.0.1920.1040@0.0.1920.1040" timestamp="1581159277763" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1579531845119">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579531845119" />
+    <state x="552" y="178" key="#Deployment" />
+    <state x="552" y="178" key="#Deployment/0.0.1920.1040@0.0.1920.1040" />
+    <state x="552" y="178" key="#Options" />
+    <state x="552" y="178" key="#Options/0.0.1920.1040@0.0.1920.1040" />
+    <state x="552" y="178" key="#SQL_Dialects" />
+    <state x="552" y="178" key="#SQL_Dialects/0.0.1920.1040@0.0.1920.1040" />
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" />
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" />
+    <state x="699" y="322" key="#com.intellij.fileTypes.FileTypeChooser" />
+    <state x="699" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" />
+    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog" />
+    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog/0.0.1920.1040@0.0.1920.1040" />
+    <state x="740" y="274" key="FileChooserDialogImpl" />
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" />
+    <state x="694" y="334" key="NewPhpClassDialog" />
+    <state x="694" y="334" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" />
+    <state x="794" y="443" key="NewPhpFileDialog" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" />
+    <state x="844" y="250" key="ftp.server.browser" />
+    <state x="844" y="250" key="ftp.server.browser/0.0.1920.1040@0.0.1920.1040" />
+    <state x="829" y="395" key="publish.login" />
+    <state x="829" y="395" key="publish.login/0.0.1920.1040@0.0.1920.1040" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" />
   </component>
 </project>
