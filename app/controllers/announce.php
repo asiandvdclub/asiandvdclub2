@@ -1,20 +1,22 @@
 <?php
 /*
- * Memcached not implemented
- *
  * Announce Notes
  * - user can't seed from more than one location
  * - user can't download from another account on the same client
+ * Notice
+ * !! Doens't support big load of peers -> Memcached not implemented
  */
 class announce extends Controller
 {
     private $db;
     private $cacheManager;
     private $bencode;
+    private $bonusPoints;
     public function announce(){
         $this->db = new Database();
         $this->cacheManager = $this->model('cacheManager');
         $this->bencode = $this->model('bencode');
+        $this->bonusPoints = $this->model("bonusPoints");
     }
     // Here goes all the benconde packet it should return an echo back to torrent client and update the database
     public function announceSession($passkey)
@@ -75,6 +77,8 @@ class announce extends Controller
             echo trim($this->bencode->benc_error("You can't seed from more that one location!"));
             exit;
         }
+        $uploaded = $client['uploaded'] - $peer['uploaded'];
+        $downloaded = $client['downloaded'] - $peer['downloaded'];
         //announce related
         if(isset($peer) && $client['event'] == "stopped"){
             $this->delete_peers($torrent_data['id'], $uid);
@@ -82,22 +86,18 @@ class announce extends Controller
             $response = $this->bencode->announce_request($peers, $client['compact']);
             $sp = $this->getSP($torrent_data['id']);
             $this->update_torrent($sp['complete'], $sp['incomplete'], $torrent_data['id']);
-            dbg_log($response);
+            $this->update_snatched($torrent_data['id'], $uid, $uploaded, $downloaded, $client['left']);
             echo $response;
             exit;
         }elseif (!empty($peer)){
             $this->update_peers($client, $torrent_data['id'], $uid);
             $sp = $this->getSP($torrent_data['id']);
             $this->update_torrent($sp['complete'], $sp['incomplete'], $torrent_data['id']);
-
-            $uploaded = $client['uploaded'] - $peer['uploaded'];
-            $downloaded = $client['downloaded'] - $peer['downloaded'];
-
-            $this->update_snatched($torrent_data['id'], $uid, $uploaded, $downloaded, $client['left']); // Change up and down
+            //under test
+            $this->set_snatched($torrent_data, $uid, $client, $uploaded, $downloaded);
 
             $peers = $this->getPeers($torrent_data['id'], $passkey, $downloaded);
             $response = $this->bencode->announce_request($peers, $client['compact']);
-
             echo $response;
             exit;
         }else{
@@ -106,12 +106,8 @@ class announce extends Controller
             $sp = $this->getSP($torrent_data['id']);
             $this->update_torrent($sp['complete'], $sp['incomplete'], $torrent_data['id']);
             //under test
-            if(!$this->check_snatched($torrent_data['id'], $uid))
-                $this->insert_snatched($client, $torrent_data['id'], $uid);
-            else {
-                $sn = $this->get_snatched($torrent_data['id'], $uid);//useless
-                $this->update_snatched($torrent_data['id'], $uid, $sn['uploaded'] + ($client['uploaded'] - $sn['uploaded']), $sn['downloaded'], $client['left']); // Change up and down
-            }
+            $this->set_snatched($torrent_data, $uid, $client, $uploaded, $downloaded);
+
             $response = $this->bencode->announce_request($peers, $client['compact']);
             echo $response;
             exit;
@@ -120,6 +116,7 @@ class announce extends Controller
     private function checkPeer(){
 
     }
+    //Total numbers of peers who have downloaded  or leeching the torrent
     private function getSP($tid){
         $this->db->querry("SELECT seeder FROM peers WHERE torrent = :tid");
         $this->db->bind(':tid', $tid);
@@ -180,6 +177,13 @@ class announce extends Controller
             return $peers;
         }
     }
+    private function set_snatched($torrent_data, $uid, $client, $uploaded, $downloaded){
+        if(!$this->check_snatched($torrent_data['id'], $uid))
+            $this->insert_snatched($client, $torrent_data['id'], $uid);
+        else {
+            $this->update_snatched($torrent_data['id'], $uid, $uploaded, $downloaded, $client['left']);// Change up and down
+        }
+    }
     private  function insert_snatched($client, $tid, $uid){
         $this->db->querry("INSERT INTO `snatched` (`torrentid`, `userid`, `ip`, `port`, `uploaded`, `downloaded`, `to_go`, `seedtime`, `leechtime`, `last_action`, `startdat`, `completedat`, `finished`)
                                   VALUES (:tid, :uid, :ip, :port, 0, 0, :to_go, 0, 0, NOW(), NOW(), NOW(), :finished)");
@@ -202,7 +206,7 @@ class announce extends Controller
                 $this->db->querry("UPDATE `snatched` SET `uploaded` = `uploaded` + :up, `downloaded` = `downloaded` + :down, `finished` = :finish, `completedat` = NOW(), `last_action` = NOW() WHERE torrentid = :tid AND userid = :uid");
                 $this->db->bind(':finish', "yes");
             }else{
-                $this->db->querry("UPDATE `snatched` SET `uploaded` = `uploaded` + :up, `downloaded` = `downloaded` + :down, `seedtime` = `seedtime` + :seed_t, `last_action` = NOW() WHERE torrentid = :tid AND userid = :uid");
+                $this->db->querry("UPDATE `snatched` SET `uploaded` = `uploaded` + :up, `downloaded` = `downloaded` + :down, seedtime = seedtime + :seed_t, `last_action` = NOW() WHERE torrentid = :tid AND userid = :uid");
                 $this->db->bind(':seed_t', date_to_seconds($data['last_action']));
             }
         }else{

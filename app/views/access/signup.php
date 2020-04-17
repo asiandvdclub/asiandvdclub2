@@ -86,6 +86,12 @@
                                 <input type="radio" name="gender" value="Male"><?php echo $lang_signup['radio_male']; ?> <input type="radio" name="gender" value="Female"><?php echo $lang_signup['radio_female']; ?> <span class="error"> <?php echo $data['genderErr']; ?></span>
                             </td>
                         </tr>
+                            <tr>
+                                <td class="rowhead">Age</td>
+                                <td class="rowfollow" align="left">
+
+                                </td>
+                            </tr>
                         <tr>
                             <td class="rowhead"><?php echo $lang_signup['row_verification']; ?></td>
                             <td class="rowfollow" align="left">

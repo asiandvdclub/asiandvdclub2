@@ -30,7 +30,7 @@ function formatBytes($size, $precision = 2)
     $base = log($size, 1024);
     $suffixes = array('', 'K', 'M', 'G', 'T');
     $out = round(pow(1024, $base - floor($base)), $precision) .' '. $suffixes[floor($base)];
-    return is_string($out) ? 0 : $out;
+    return $out;
 }
 
 function dirToArray($dir) {
@@ -99,7 +99,7 @@ function date_to_seconds($date){
                 case '%h':
                     $out += $interval->format($value) * 60 * 60;
                     break;
-                case '%m':
+                case '%i':
                     $out += $interval->format($value) * 60;
                     break;
                 case '%s':

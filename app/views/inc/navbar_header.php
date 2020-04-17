@@ -76,6 +76,7 @@
             <li class="nav-item">
                 <a class="nav-link active" href="#"><?php echo $lang_functions['text_staff'] ?></a>
             </li>
+
         </ul>
     </nav>
 </div>

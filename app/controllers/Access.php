@@ -316,9 +316,44 @@ class Access extends Controller{
        }
     }
     public function recover(){
-        $this->view("access/recover",[
-            "getLangPath"=>$this->languageMod->getLangPath(__FUNCTION__)
-        ]);
+        if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['sitelanguage'])) {
+            $this->view("access/recover", [
+                "getLangPath" => $this->languageMod->getLangPath(__FUNCTION__)
+            ]);
+        }else{
+            $this->view("access/recover", [
+                "getLangPath" => $this->languageMod->getLangPath(__FUNCTION__)
+            ]);
+        }
+    }
+    public function confirm_resend(){
+        $emailErr = "";
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $data["email"] = $_POST['email'];
+            if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+                $emailErr = "Invalid email!";
+                $this->view("access/confirm_resend", [
+                    "getLangPath" => $this->languageMod->getLangPath(__FUNCTION__),
+                    "emailErr" => $emailErr
+                ]);
+            }
+            $takerecover = $this->dataModel('takesignup', $data);
+            $resp = $takerecover->confirm_resend($this->languageMod->getLangPath("takesignup"));
+            if(!is_array($resp)) {
+                $this->view("access/confirm_resend", [
+                    "getLangPath" => $this->languageMod->getLangPath(__FUNCTION__)
+                ]);
+            }else{
+                $this->view("access/confirm_resend", [
+                    "getLangPath" => $this->languageMod->getLangPath(__FUNCTION__),
+                    "emailErr" => $resp['emailErr']
+                ]);
+            }
+        }else{
+            $this->view("access/confirm_resend", [
+                "getLangPath" => $this->languageMod->getLangPath(__FUNCTION__)
+            ]);
+        }
     }
     public function show()
     {

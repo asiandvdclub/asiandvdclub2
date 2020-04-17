@@ -31,16 +31,21 @@ class SiteManager extends Controller
     }
     public function site_settings(){
         $this->languageMod->setLanguage(__FUNCTION__);
+        $db_status = $this->db->getStatus();
+        $db_status_msg = "";
+        foreach ($db_status as $key=>$value) {
+            $db_status_msg .= str_replace("PDO::ATTR_", "", $key) . ": " . $value . " <br>";
+        }
 
         $this->view('site_manager/site_settings',
             [
                 "currentPage" => "/" . __FUNCTION__,
                 "userStats" => $this->cacheManager->getUserStats(),
+                "db_status" => $db_status_msg,
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                 "getSiteManagerBar" => $this->cacheManager->getSiteManager($this->userClass),
             ]);
     }
-
     public function forum_manager(){
         $this->languageMod->setLanguage(__FUNCTION__);
 

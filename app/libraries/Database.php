@@ -74,6 +74,14 @@ class Database{
     public function rowCount(){
         return $this->db_stm->rowCount();
     }
-
-
+    public function getStatus(){
+        $attributes = array(
+            "CLIENT_VERSION", "SERVER_VERSION", "SERVER_INFO",  "CONNECTION_STATUS", "ERRMODE",
+        );
+        $db_status = array();
+        foreach ($attributes as $val) {
+            $db_status["PDO::ATTR_$val"] = $this->dbconn->getAttribute(constant("PDO::ATTR_$val"));
+        }
+        return $db_status;
+    }
 }

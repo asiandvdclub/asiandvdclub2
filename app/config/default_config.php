@@ -104,7 +104,7 @@ $ATTACHMENT=array(
 );
 //This is the map of the web pages
 $PAGES = [
-    "Access"=> array("login", "signup", "failedlogin", "confirm", "confirmed", "recover"),
+    "Access"=> array("login", "signup", "failedlogin", "confirm", "confirmed", "recover", "confirm_resend"),
     "SiteManager" => array("staff_panel", "site_settings", "forum_manager", "forum_manager_forums", "forum_delete", "forum_add"),
     "Home" => array("index","create_news","delete_news"),
     "Forum" => array("forums", "in_forum", "post"),

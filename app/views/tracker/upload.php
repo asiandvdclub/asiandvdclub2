@@ -122,10 +122,10 @@
             </td>
             <td class="rowfollow" valign="top" align="left">
                 <select id="codec" name="codec">
-                    <option value="avc">CD</option>
-                    <option value="h.264">SACD</option>
-                    <option value="hevc">Vinyl</option>
-                    <option value="avc">BDMV</option>
+                    <option value="cd">CD</option>
+                    <option value="sacd">SACD</option>
+                    <option value="vinyl">Vinyl</option>
+                    <option value="bdmw">BDMV</option>
                 </select>
             </td>
         </tr>

@@ -15,8 +15,16 @@
                 <table class="table">
                     <tbody>
                         <tr>
+                            <td class="text-right"><?php echo $data["lang_index"]['row_registered_users'];?></td>
+                            <td><?php echo $data["index_data"]['users'] . " / " . $data['index_data']['user_limit'];?></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right"><?php echo $data["lang_index"]['row_users_active_today'];?></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
                             <td class="text-right">
-                                <?php echo $data["lang_index"]['row_users_active_today'];?>
+                                <?php echo $data["lang_index"]['text_users_browsing_now'];?>
                             </td>
                             <td>
 
@@ -24,43 +32,35 @@
                         </tr>
                         <tr>
                             <td class="text-right">
-                                <?php echo $data["lang_index"]['row_users_active_this_week'];?>
+                                <?php echo $data["lang_index"]['row_warned_users'];?>
                             </td>
                             <td>
                                 &nbsp;
                             </td>
                         </tr>
                         <tr>
-                            <td class="text-right"><?php echo $data["lang_index"]['row_registered_users'];?></td>
-                            <td><?php echo $data["index_data"]['users'] . "/" . "max_server";?></td>
+                            <td class="text-right"><?php echo $data["lang_index"]['row_torrents'];?></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right"><?php echo $data["lang_index"]['row_peers'];?></td>
+                            <td>&nbsp<?php echo $data["index_data"]['peers'];?></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right"><?php echo $data["lang_index"]['row_seeders'];?></td>
+                            <td>&nbsp;<?php echo $data["index_data"]['seeders'];?></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right"><?php echo $data["lang_index"]['row_leechers'];?></td>
+                            <td>&nbsp;<?php echo $data["index_data"]['leechers'];?></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right"><?php echo $data["lang_index"]['row_seeder_leecher_ratio'];?></td>
+                            <td>&nbsp;</td>
                         </tr>
                         <tr>
                             <td class="text-right"><?php echo $data["lang_index"]['row_unconfirmed_users'];?></td>
                             <td><?php echo $data["index_data"]['unconfirmed'];?></td>
-                        </tr>
-                        <tr>
-                            <td class="text-right"><?php echo $data["lang_index"][''];?></td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td class="text-right"><?php echo $data["lang_index"][''];?></td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td class="text-right"><?php echo $data["lang_index"][''];?></td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td class="text-right"><?php echo $data["lang_index"][''];?></td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td class="text-right"><?php echo $data["lang_index"][''];?></td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td class="text-right"><?php echo $data["lang_index"][''];?></td>
-                            <td>&nbsp;</td>
                         </tr>
                     </tbody>
                 </table>
