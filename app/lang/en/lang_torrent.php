@@ -6,5 +6,8 @@ $lang_torrent = array
     'basic_info' => "Basic Info",
     'download' => "Download",
     'action' => "Action",
+    'comment' => "Comment",
+    'text_files' => "Files",
+    'text_infohash' => "Info hash",
 );
 ?>

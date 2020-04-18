@@ -36,7 +36,6 @@ class Home extends Controller {
                 "userStats" => $this->cacheManager->getUserStats(),
                 "news" => $this->index->news($lang_index, $this->userClass), // I know this $lang_index doesn't look good here but this works on the fly due to require above
                 "lang_index" => $lang_index,
-                "getLangDropdown" => $this->languageMod->getLangDropdown(),
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                 "getSiteManagerBar"=> $this->cacheManager->getSiteManager($this->userClass),
                 "index_data" => $this->index_data()
@@ -60,7 +59,6 @@ class Home extends Controller {
                 [
                     "currentPage" => "/create_news",
                     "userStats" => $this->cacheManager->getUserStats(),
-                    "getLangDropdown" => $this->languageMod->getLangDropdown(),
                     "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                     "getSiteManagerBar"=> $this->cacheManager->getSiteManager($this->userClass),
                 ]);
@@ -88,9 +86,17 @@ class Home extends Controller {
         $data['users'] = $temp[0]['ct'];
         $this->db->querry("SELECT COUNT(status) as un FROM users WHERE status = 'pending'");
         $temp = $this->db->getAll();
-
         $temp[0]['un'] ? $data['unconfirmed'] = $temp[0]['un'] : 0;
-
+        $this->db->querry("SELECT COUNT(id) as total_peers,
+                                  sum(case when seeder = \"yes\" then 1 else 0 end) AS seeders,
+                                  sum(case when seeder = \"now\" then 1 else 0 end) AS leechers
+                                  FROM peers GROUP BY id");
+        $peers = $this->db->getRow();
+        $data['peers'] = $peers['total_peers'] > 0 ? $peers['total_peers'] : 0;
+        $data['seeders'] =  $peers['seeders'];
+        $data['leechers'] =$peers['leechers'];
+        $this->db->querry("SELECT user_limit FROM tracker LIMIT 1");
+        $data['user_limit'] = $this->db->getRow()['user_limit'];
         return $data;
     }
   }

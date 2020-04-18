@@ -9,14 +9,14 @@
             <thead>
                 <tr class="">
                     <th>Type</th>
-                    <th>Name</th>
+                    <th><?php echo $data['torrents_lang']['head_torrents'];?></th>
                     <th>Com.</th>
-                    <th>Time.</th>
-                    <th>Size.</th>
+                    <th>Time</th>
+                    <th>Size</th>
                     <th>Seeds</th>
                     <th>Leech</th>
                     <th>Down</th>
-                    <th>Uploader</th>
+                    <th><?php echo $data['torrents_lang']['select_uploader'];?></th>
                 </tr>
             </thead>
             <tbody>

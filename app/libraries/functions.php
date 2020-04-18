@@ -29,8 +29,8 @@ function formatBytes($size, $precision = 2)
 {
     $base = log($size, 1024);
     $suffixes = array('', 'K', 'M', 'G', 'T');
-
-    return round(pow(1024, $base - floor($base)), $precision) .' '. $suffixes[floor($base)];
+    $out = round(pow(1024, $base - floor($base)), $precision) .' '. $suffixes[floor($base)];
+    return $out;
 }
 
 function dirToArray($dir) {
@@ -79,8 +79,33 @@ function convTime($date){
         if($x==2)  break;
         if($interval->format($value)){
             $out .= $interval->format($value) > 1 ? $interval->format($value) . "  " . textTypes($value) . "s " : $interval->format($value) . "  " . textTypes($value);
-            //print_r($out . " " . textTypes($value));
             $x++;
+        }
+    }
+
+    return $out;
+}
+function date_to_seconds($date){
+    $t1 = new DateTime($date);
+    $t2 = new DateTime(date("Y-m-d h:i:sa"));
+    $interval = $t1->diff($t2);
+    $types = array('%y', '%m', '%d', '%h', '%i', '%s');
+
+    $out = 0;
+
+    foreach ($types as $value){
+        if($interval->format($value)){
+            switch ($value){
+                case '%h':
+                    $out += $interval->format($value) * 60 * 60;
+                    break;
+                case '%i':
+                    $out += $interval->format($value) * 60;
+                    break;
+                case '%s':
+                    $out += $interval->format($value);
+                    break;
+            }
         }
     }
 
@@ -110,7 +135,9 @@ function textTypes($types){
 }
 function dbg_log($log){
     $log_path = APP_ROUTE . "/torrents/log.txt";
-    $handle = fopen($log_path, "w+");
-    fwrite($handle, print_r($log, TRUE));
-    fclose($handle);
+    $current = file_get_contents($log_path);
+    $current .= "\n" . date("Y-m-d h:i:sa") . ": ";
+    $current .= is_array($log) ? print_r($log, true) : $log;
+    $current .= "\n";
+    file_put_contents($log_path, $current);
 }

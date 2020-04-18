@@ -46,9 +46,9 @@ class Tracker extends Controller
             [
                 "currentPage" => "/" . __FUNCTION__,
                 "userStats" => $this->cacheManager->getUserStats(),
-                "getLangDropdown" => $this->languageMod->getLangDropdown(),
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                 "getSiteManagerBar"=> $this->cacheManager->getSiteManager($this->userClass),
+                "torrents_lang" => $lang_torrents,
                 "showList" => $showList,
             ]);
     }
@@ -58,7 +58,7 @@ class Tracker extends Controller
 
         $showList = "";
 
-        $this->db->querry("SELECT t.numfiles, t.imdb_id, t.name, t.small_desc, t.seeders, t.leechers, t.size, t.added, t.specs, i.title, i.genre, i.year, i.synopsis, i.plot, i.url FROM torrents as t JOIN imdb as i WHERE t.id = :tId && i.imdb_id = t.imdb_id");
+        $this->db->querry("SELECT t.info_hash, t.numfiles, t.imdb_id, t.name, t.small_desc, t.seeders, t.leechers, t.size, t.added, t.specs, i.title, i.genre, i.year, i.synopsis, i.plot, i.url FROM torrents as t JOIN imdb as i WHERE t.id = :tId && i.imdb_id = t.imdb_id");
         $this->db->bind(':tId', $idTorrent);
         $tData = $this->db->getRow();
         $tInfo = $tData['specs'];
@@ -74,7 +74,6 @@ class Tracker extends Controller
             [
                 "currentPage" => "/" . __FUNCTION__,
                 "userStats" => $this->cacheManager->getUserStats(),
-                "getLangDropdown" => $this->languageMod->getLangDropdown(),
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                 "getSiteManagerBar"=> $this->cacheManager->getSiteManager($this->userClass),
                 "torrentData" => $tData,
@@ -139,6 +138,7 @@ class Tracker extends Controller
                     break;
                 }
             }
+            //this needs to be moved
             switch ($_POST['type']){
                 case "movie":
                 case "anime":
@@ -156,7 +156,6 @@ class Tracker extends Controller
                         "type" => $_POST['type'],
                         "codec" => $_POST['codec'],
                         "codec_audio" => $_POST['codec_audio'],
-                        "standard" => $_POST['standard'],
                         "processing" => $_POST['processing'],
                     );
                     break;
@@ -231,7 +230,6 @@ class Tracker extends Controller
                 "currentPage" => "/" . __FUNCTION__,
                 "userStats" => $this->cacheManager->getUserStats(),
                 "lang_upload" => $lang_upload,
-                "getLangDropdown" => $this->languageMod->getLangDropdown(),
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                 "getSiteManagerBar" => $this->cacheManager->getSiteManager($this->userClass),
                 "error" => $error,

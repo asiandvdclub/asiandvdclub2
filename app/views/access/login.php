@@ -1,5 +1,4 @@
-<?php require_once $data['getLangPath']; ?>
-<?php require APP_ROUTE . "/views/inc/header.php"; ?>
+<?php require APP_ROUTE . "/views/inc/header.php";?>
 <form method="post" action="<?php echo URL_ROOT;?>/login" onsubmit="return verify_form()">
     <p>Note: You need cookies enabled to log in.</p>
     <input type="hidden" name="apple" value="evil">

@@ -15,11 +15,6 @@
                     </span>
                 </a>
                 <form method="post" action="<?php echo URL_ROOT;?>/signup">
-                    <div align="right" valign="top"><?php echo $lang_signup['text_select_lang']; ?>
-                        <?php echo $data['getLangDropdown']; ?>
-                    </div>
-                </form>
-                <form method="post" action="<?php echo URL_ROOT;?>/signup">
                     <table border="1" cellspacing="0" cellpadding="10">
                         <tbody>
                             <tr>
@@ -91,6 +86,12 @@
                                 <input type="radio" name="gender" value="Male"><?php echo $lang_signup['radio_male']; ?> <input type="radio" name="gender" value="Female"><?php echo $lang_signup['radio_female']; ?> <span class="error"> <?php echo $data['genderErr']; ?></span>
                             </td>
                         </tr>
+                            <tr>
+                                <td class="rowhead">Age</td>
+                                <td class="rowfollow" align="left">
+
+                                </td>
+                            </tr>
                         <tr>
                             <td class="rowhead"><?php echo $lang_signup['row_verification']; ?></td>
                             <td class="rowfollow" align="left">

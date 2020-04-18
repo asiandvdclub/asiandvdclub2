@@ -43,16 +43,16 @@ $lang_index = array
 	'row_unconfirmed_users' => "Unconfirmed users",
 	'row_vips' => "VIPs",
 	'row_donors' => "Donors",
-	'row_warned_users' => "Warned Users",
+	'row_warned_users' => "Active Warned Users",
 	'row_banned_users' => "Banned Users",
 	'row_male_users' => "Male Users",
 	'row_female_users' => "Female Users",
-	'row_torrents' => "Torrents",
+	'row_torrents' => "Total Torrents",
 	'row_dead_torrents' => "Dead Torrents",
 	'row_seeders' => "Seeding Peers",
 	'row_leechers' => "Leeching Peers",
-	'row_peers' => "Peers",
-	'row_seeder_leecher_ratio' => "Seeding / leeching ratio",
+	'row_peers' => "Total Peers",
+	'row_seeder_leecher_ratio' => "Seeding / Leeching ratio",
 	'row_total_size_of_torrents' => "Total Size of Torrents",
 	'row_total_uploaded' => "Total Uploaded",
 	'row_total_downloaded' => "Total Downloaded",
@@ -65,7 +65,7 @@ $lang_index = array
 	'text_global_server_load' => "Global Server Load: ",
 	'text_whats_going_on' => "What's going on?",
 	'text_members_have_visited' => " members have visited during the last 24 hours, and welcome to our newest member, ",
-	'text_users_browsing_now' => " users are browsing the site in last 15 mins. ",
+	'text_users_browsing_now' => "Users active last 15 mins",
 	'text_peers_active_now' => " users are seeding or leeching. ",
 	'text_disclaimer' => "Disclaimer",
 	'text_disclaimer_content' => "None of the files shown here are actually hosted on this server. The tracker only manages connections, it does not have any knowledge of the contents of the files being distributed. The links are provided solely by this site's users. The administrator of this site ".$SITENAME." cannot be held responsible for what its users post, or any other actions of its users. You may not use this site ".$SITENAME." to distribute or download any material when you do not have the legal rights to do so. It is your own responsibility to adhere to these terms.",
@@ -98,6 +98,7 @@ $lang_index = array
 	'row_active_browsing_users' => "Active Browsing Users",
 	'row_tracker_active_users' => "Tracker Active Users",
 	'text_detail' => "Detail",
+	'row_active_accounts' => "Active accounts"
 );
 
 ?>

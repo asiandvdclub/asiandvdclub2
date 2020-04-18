@@ -30,7 +30,7 @@ class Controller{
     }
     // Load special models
     /***
-     * @param $model Usage 'name' or 'folder/name'
+     * @param $model Usage 'name' or 'folder/name' $data Data
      * @return mixed
      */
     protected function dataModel($model, array $data = []){

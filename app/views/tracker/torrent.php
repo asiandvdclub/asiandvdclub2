@@ -34,8 +34,12 @@
             <td style="padding-left: 15px"><?php echo  "<img src=\"" .  $data['torrentData']['url'] . "\" width=\"200\" height=\"300\">";?></td>
         </tr>
         <tr>
+            <td>Description</td>
+            <td style="padding-left: 15px"></td>
+        </tr>
+        <tr>
             <td>Torrent Info</td>
-            <td style="padding-left: 15px"><?php echo "Files: " . $data['torrentData']['numfiles'] ?> </td>
+            <td style="padding-left: 15px"><?php echo  $data['torrent_lang']['text_files'] . ": " . $data['torrentData']['numfiles'] . " " . $data['torrent_lang']['text_infohash'] . ": " . $data['torrentData']['info_hash'] ?> </td>
         </tr>
         <tr>
             <td>Peers</td>
@@ -46,5 +50,26 @@
             <td style="padding-left: 15px">[<a href="<?php echo URL_ROOT . "/download/" .$data['tID']; ?>"><?php echo $data['torrent_lang']['download'];?></a>]</td>
         </tr>
     </table>
+    <br>
+    <form  method="post">
+        <table class="bg-dark text-white center" align="center">
+            <tr align="center">
+                <th  colspan="2">Quick Comment</th>
+
+            </tr>
+            <tr align="center">
+                <th>
+                    <textarea id="comment" rows="4" cols="50">
+                    </textarea>
+                </th>
+            </tr>
+            <tr align="center">
+                <th>
+                    <button class="btn btn-info text-center"  type="button">Add Comment</button>
+                </th>
+            </tr>
+        </table>
+    </form>
+    <br>
 </div>
-    <?php require_once APP_ROUTE . '/views/inc/navbar_footer.php';?>
+<?php require_once APP_ROUTE . '/views/inc/navbar_footer.php';?>
