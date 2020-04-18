@@ -439,43 +439,43 @@ span.zero-month {
 }
 
 img.main-arrowup {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png);
+    background: url(../images/main_sprites.png);
     width: 12px;
     height: 12px
 }
 
 img.main-arrowdown {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -12px 0;
+    background: url(../images/main_sprites.png) -12px 0;
     width: 12px;
     height: 12px
 }
 
 img.main-addbookmark {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -24px 0;
+    background: url(../images/main_sprites.png) -24px 0;
     width: 16px;
     height: 16px
 }
 
 img.main-delbookmark {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -40px 0;
+    background: url(../images/main_sprites.png) -40px 0;
     width: 16px;
     height: 16px
 }
 
 img.main-completed {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -56px 0;
+    background: url(../images/main_sprites.png) -56px 0;
     width: 16px;
     height: 16px
 }
 
 img.main-bookmark {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -72px 0;
+    background: url(../images/main_sprites.png) -72px 0;
     width: 16px;
     height: 16px
 }
 
 img.main-comments {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -88px 0;
+    background: url(../images/main_sprites.png) -88px 0;
     width: 16px;
     height: 15px
 }
@@ -489,125 +489,125 @@ img.main-viewnfo {
 }
 
 img.main-inbox {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -104px 0
+    background: url(../images/main_sprites.png) -104px 0
 }
 
 img.main-inboxnew {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -120px 0
+    background: url(../images/main_sprites.png) -120px 0
 }
 
 img.main-sentbox {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -136px 0
+    background: url(../images/main_sprites.png) -136px 0
 }
 
 img.main-viewnfo {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -152px 0
+    background: url(../images/main_sprites.png) -152px 0
 }
 
 img.main-buddylist {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -168px 0;
+    background: url(../images/main_sprites.png) -168px 0;
     width: 14px;
     height: 14px
 }
 
 img.main-rss {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -182px 0;
+    background: url(../images/main_sprites.png) -182px 0;
     width: 14px;
     height: 14px
 }
 
 img.main-magglass {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -196px 0;
+    background: url(../images/main_sprites.png) -196px 0;
     width: 11px;
     height: 11px
 }
 
 img.main-multipage {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -207px 0;
+    background: url(../images/main_sprites.png) -207px 0;
     width: 8px;
     height: 10px
 }
 
 img.main-warned2 {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -215px 0;
+    background: url(../images/main_sprites.png) -215px 0;
     width: 13px;
     height: 11px
 }
 
 img.main-warned {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -228px 0;
+    background: url(../images/main_sprites.png) -228px 0;
     width: 13px;
     height: 11px
 }
 
 img.main-disabled {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -241px 0;
+    background: url(../images/main_sprites.png) -241px 0;
     width: 11px;
     height: 11px
 }
 
 img.main-donor {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -252px 0;
+    background: url(../images/main_sprites.png) -252px 0;
     width: 11px;
     height: 11px
 }
 
 img.main-warnedbig {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -263px 0;
+    background: url(../images/main_sprites.png) -263px 0;
     width: 16px;
     height: 16px
 }
 
 img.main-disabledbig {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -279px 0;
+    background: url(../images/main_sprites.png) -279px 0;
     width: 16px;
     height: 16px
 }
 
 img.main-donorbig {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -295px 0;
+    background: url(../images/main_sprites.png) -295px 0;
     width: 16px;
     height: 16px
 }
 
 img.main-bluray {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -311px 0;
+    background: url(../images/main_sprites.png) -311px 0;
     width: 30px;
     height: 15px!important
 }
 
 img.main-top {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -341px 0;
+    background: url(../images/main_sprites.png) -341px 0;
     width: 15px;
     height: 13px
 }
 
 img.main-button_pm {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -356px 0;
+    background: url(../images/main_sprites.png) -356px 0;
     width: 25px;
     height: 15px
 }
 
 img.main-new {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -381px 0;
+    background: url(../images/main_sprites.png) -381px 0;
     width: 27px;
     height: 11px
 }
 
 img.main-updated {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -408px 0;
+    background: url(../images/main_sprites.png) -408px 0;
     width: 46px;
     height: 11px
 }
 
 img.main-bar_left {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -454px 0;
+    background: url(../images/main_sprites.png) -454px 0;
     width: 2px;
     height: 9px
 }
 
 img.main-bar_right {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/main_sprites.png) -456px 0;
+    background: url(../images/main_sprites.png) -456px 0;
     width: 2px;
     height: 9px
 }
@@ -632,69 +632,69 @@ img.cat-viet {
 }
 
 img.cat-china {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png)
+    background: url(../images/cat_sprites.png)
 }
 
 img.cat-japan {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -40px 0
+    background: url(../images/cat_sprites.png) -40px 0
 }
 
 img.cat-korea {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -80px 0
+    background: url(../images/cat_sprites.png) -80px 0
 }
 
 img.cat-hk {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -120px 0
+    background: url(../images/cat_sprites.png) -120px 0
 }
 
 img.cat-viet {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -160px 0
+    background: url(../images/cat_sprites.png) -160px 0
 }
 
 img.cat-thai {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -200px 0
+    background: url(../images/cat_sprites.png) -200px 0
 }
 
 img.cat-rest {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -240px 0
+    background: url(../images/cat_sprites.png) -240px 0
 }
 
 img.cat-anime {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -280px 0;
+    background: url(../images/cat_sprites.png) -280px 0;
     width: 40px;
     height: 40px
 }
 
 img.cat-music {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -320px 0
+    background: url(../images/cat_sprites.png) -320px 0
 }
 
 img.cat-ost {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -360px 0
+    background: url(../images/cat_sprites.png) -360px 0
 }
 
 img.cat-drama {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -400px 0
+    background: url(../images/cat_sprites.png) -400px 0
 }
 
 img.cat-pinku {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -440px 0
+    background: url(../images/cat_sprites.png) -440px 0
 }
 
 img.cat-phil {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -480px 0
+    background: url(../images/cat_sprites.png) -480px 0
 }
 
 img.cat-patch {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -520px 0
+    background: url(../images/cat_sprites.png) -520px 0
 }
 
 img.cat-taiwan {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -560px 0
+    background: url(../images/cat_sprites.png) -560px 0
 }
 
 img.cat-india {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/cat_sprites.png) -600px 0
+    background: url(../images/cat_sprites.png) -600px 0
 }
 
 table.main {
@@ -1761,7 +1761,7 @@ div.notification {
 
 div.info {
     color: #222;
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/info.png) 10px center no-repeat #ECE9D8;
+    background: url(../images/info.png) 10px center no-repeat #ECE9D8;
     border: 1px solid #675F32
 }
 
@@ -1771,7 +1771,7 @@ div.info h2 {
 
 div.error {
     color: #222;
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/error.png) 10px center no-repeat #F3D2D2;
+    background: url(../images/error.png) 10px center no-repeat #F3D2D2;
     border: 1px solid #E46C84
 }
 
@@ -1781,7 +1781,7 @@ div.error h2 {
 
 div.success {
     color: #222;
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/success.png) 10px center no-repeat #D2F3D2;
+    background: url(../images/success.png) 10px center no-repeat #D2F3D2;
     border: 1px solid #60DC41
 }
 
@@ -1917,7 +1917,7 @@ td.comm-body {
 }
 
 #simplemodal-container a.modalCloseImg {
-    background: url(/web/20170922081804im_/http://asiandvdclub.org/pic/modal_close.png) no-repeat;
+    background: url(../images/modal_close.png) no-repeat;
     position: absolute;
     top: -17px;
     right: -17px;

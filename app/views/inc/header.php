@@ -1,4 +1,4 @@
-
+<?php require_once $data['getSiteLangHeader']; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,14 +6,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/adc.css">
-    <link rel="stylesheet" href="../css/nexusphp.css">
-
 </head>
 <body>
 <div class="logo">
     <div class="logo-text"></div>
 </div>
-<div class="outer" align="center">
+<div class="outer">
     <div class="navigation">
         <a href="/">Home</a>
         <a href="/login">Login</a>
@@ -23,4 +21,4 @@
         <a href="/rules">Rules</a>
         <a href="/faq">FAQ</a>
     </div>
-    <div class="main" align="center">
+    <div class="main">
