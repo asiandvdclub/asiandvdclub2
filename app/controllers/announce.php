@@ -11,12 +11,14 @@ class announce extends Controller
     private $db;
     private $cacheManager;
     private $bencode;
-    private $bonusPoints;
+    private $achievements;
+
+
     public function announce(){
         $this->db = new Database();
         $this->cacheManager = $this->model('cacheManager');
         $this->bencode = $this->model('bencode');
-        $this->bonusPoints = $this->model("bonusPoints");
+        $this->achievements = $this->model("achievements");
     }
     // Here goes all the benconde packet it should return an echo back to torrent client and update the database
     public function announceSession($passkey)

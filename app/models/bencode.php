@@ -1,7 +1,7 @@
 <?php
 
 
-class bencode extends Controller
+class bencode
 {
     public function bencode(){
 

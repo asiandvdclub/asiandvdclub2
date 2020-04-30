@@ -27,7 +27,7 @@
         </tr>
         <tr>
             <td>Plot</td>
-            <td style="padding-left: 15px"><?php echo substr($data['imdb_info']['plot'], 0, strpos($data['imdb_info']['plot'], "::")); ?></td>
+            <td style="padding-left: 15px"><?php echo substr($data['imdb_info']['text'], 0, strpos($data['imdb_info']['text'], "::")); ?></td>
         </tr>
         <tr>
             <td>Image</td>

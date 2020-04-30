@@ -1,4 +1,4 @@
-<?php require_once $data['getSiteLangHeader']; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

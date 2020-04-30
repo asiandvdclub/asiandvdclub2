@@ -106,6 +106,7 @@ $ATTACHMENT=array(
 $PAGES = [
     "Access"=> array("login", "signup", "failedlogin", "confirm", "confirmed", "recover", "confirm_resend"),
     "SiteManager" => array("staff_panel", "site_settings", "forum_manager", "forum_manager_forums", "forum_delete", "forum_add"),
+    "UserManager" => array("profile"),
     "Home" => array("index","create_news","delete_news"),
     "Forum" => array("forums", "in_forum", "post"),
     "Tracker" => array("torrents", "torrent", "upload", "download"),
@@ -122,6 +123,7 @@ $AUTHORITY=array(
     //!!!! Debuger will be deleted on version release
     'pages' => array(
         'index' => 1,
+        'profile' => 1,
         'forums'=> 1,
         'torrents'=> 1,
         'torrent' => 1,

@@ -1,28 +1,29 @@
 <?php
 
-
-class Debugger extends Controller
+class UserManager extends Controller
 {
+    private $db;
+    private $userClass;
     private $cacheManager;
-    public function Debugger(){
+    private $languageMod;
+
+    public function UserManager(){
         $this->db = new Database();
         $this->cacheManager = $this->model('cacheManager');
         $this->languageMod = $this->model('language');
+
         $this->cacheManager->setUserStats();
         $this->userClass = $this->cacheManager->getUserStats()['idClass'];
     }
-    public function log(){
-        require_once $this->languageMod->getLangPath(__FUNCTION__);
+    public function profile(){
         $this->languageMod->setLanguage(__FUNCTION__);
-        $log_data = "";
-        $this->view('debugger/log',
+
+        $this->view('user_manager/profile',
             [
                 "currentPage" => "/" . __FUNCTION__,
                 "userStats" => $this->cacheManager->getUserStats(),
-                "getLangDropdown" => $this->languageMod->getLangDropdown(),
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
-                "getSiteManagerBar"=> $this->cacheManager->getSiteManager($this->userClass),
-                "log_data" => $log_data
+                "getSiteManagerBar" => $this->cacheManager->getSiteManager($this->userClass),
             ]);
     }
 }
