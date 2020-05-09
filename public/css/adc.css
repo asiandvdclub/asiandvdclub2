@@ -153,7 +153,6 @@ table {
     border: 2px solid #840001
 }
 
-.torrenttable,
 table.alternate,
 table.smalltable {
     border-collapse: separate
@@ -281,12 +280,8 @@ table.smalltable {
     border: none
 }
 
-.torrenttable tbody tr.even {
+.torrenttable tbody tr:nth-child(even) {
     background: #F0EEDC
-}
-
-.torrenttable tbody tr.odd {
-    background: 0 0
 }
 
 .torrenttable tbody td {
