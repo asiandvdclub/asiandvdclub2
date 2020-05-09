@@ -75,7 +75,6 @@ class takesignup
             return false;
         else
             return true;
-
     }
     public function checkEmail(){
         $this->db->querry("SELECT `value` FROM `allowed_emails` WHERE `value` = :email");
@@ -88,5 +87,39 @@ class takesignup
             return true;
         else
             return false;
+    }
+    public function confirm_resend($lang){
+        require_once $lang;
+
+        $this->db->querry("SELECT username FROm users WHERE email = :email");
+        $this->db->bind(':email', $this->data);
+        $resp = $this->db->getRow();
+
+        if(empty($resp) || isset($resp['username']))
+            return array("emailErr" =>"User doesn't exist or banned!");
+        $this->confirm_hash = generateConfirmHash();
+
+        $message =  $lang_takesignup['mail_one'] . !empty($resp['username']) ? $resp['username'] : "error" .
+                    $lang_takesignup['mail_two'] . $this->data .
+                    $lang_takesignup['mail_three'] . getip() .
+                    $lang_takesignup['mail_four'] . "<a href=\"" . URL_ROOT . "/confirm/" . $this->confirm_hash . "\">". $lang_takesignup['mail_this_link']. "</a>".
+                    $lang_takesignup['mail_four_1'] . "<a href=\"" . URL_ROOT . "/resend>This link</a>" . $lang_takesignup['mail_five'];
+        $headers = "From: webmaster@" . URL_ROOT . "\r\n";
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+
+        if(!empty($resp) && @mail($this->data, $lang_takesignup['mail_title'], $message, $headers)) {
+
+            $this->db->querry("UPDATE users SET confirmHash = :hash WHERE email = :email");
+            $this->db->bind(':hash', $this->confirm_hash);
+            $this->db->bind(':email', $this->data['email']);
+            $this->db->execute();
+            return true;
+        }else {
+            return false;
+        }
+    }
+    public function recover(){
+
     }
 }

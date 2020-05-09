@@ -36,24 +36,20 @@ class bencode extends Controller
     {
         $type = substr($str, 0, 1);
 
-        if (is_numeric($type)) {
+        if (is_numeric($type))
             $type = 's';
-        }
-
         switch ($type) {
             case 'i': //integer
                 $p = strpos($str, 'e');
                 $_len = $p + 1; //lenght of bencoded data
                 return intval(substr($str, 1, $p - 1));
                 break;
-
             case 's': //string
                 $p = strpos($str, ':');
                 $len = substr($str, 0, $p);
                 $_len = $len + $p + 1; //lenght of bencoded data
                 return substr($str, $p + 1, $len);
                 break;
-
             case 'l': //list
                 $l = 1;
                 $ret_array = array();
@@ -64,7 +60,6 @@ class bencode extends Controller
                 $_len = $l + 1; //lenght of bencoded data
                 return $ret_array;
                 break;
-
             case 'd': //dictionary
                 $l = 1;
                 $ret_array = array();
@@ -92,7 +87,6 @@ class bencode extends Controller
 
         if (is_array($str)) {
             $ret_str = ''; //the return string
-
             $k = key($str); //we check the 1st key, if the key is 0 then is a list if not a dictionary
             foreach($str as $var => $val) {
 
@@ -101,11 +95,9 @@ class bencode extends Controller
                 }
                 $ret_str .= $this->benc($val); //we recursivly bencode the contents
             }
-
             if ($k) { //is dictionary
                 return 'd' . $ret_str . 'e';
             }
-
             return 'l' . $ret_str . 'e';
         }
     }
@@ -115,6 +107,6 @@ class bencode extends Controller
     function announce_request($peers, $compact){
         return "d" . $this->benc_string("interval") . $this->benc_int(announce_interval) . $this->benc_string("min interval") . $this->benc_int(announce_interval_min) .
             $this->benc_string("complete") . $this->benc_int($peers['complete']) . $this->benc_string("incomplete") . $this->benc_int($peers['incomplete']) . $this->benc_string("peers") .
-            ($compact ? $this->benc_string($peers['peers']) : $this->benc_list($peers['peers'])) . "e";
+            ($compact == 1 ? $this->benc_string($peers['peers']) : $this->benc_list($peers['peers'])) . "e";
     }
 }
