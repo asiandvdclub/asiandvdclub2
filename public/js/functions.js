@@ -22,7 +22,7 @@ $(document).ready(function(){
     var ma = 2;
     var musicID = 3;
     //hides dropdown content
-   $(".type").hide();
+    $(".type").hide();
 
     //unhides first option content
     $('#movie').show();

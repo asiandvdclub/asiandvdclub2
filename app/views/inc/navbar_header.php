@@ -20,11 +20,11 @@
         <a href="<?php echo URL_ROOT . "/requests"; ?>"><?php echo $lang_functions['text_request'] ?></a>
         <a href="<?php echo URL_ROOT . "/upload"; ?>"><?php echo $lang_functions['text_upload'] ?></a>
         <a href="#"><?php echo $lang_functions['text_bookmarks'] ?></a>
-        <a href="#"><?php echo $lang_functions['text_profile'] ?></a>
+        <a href="<?php echo URL_ROOT . "/profile"; ?>"><?php echo $lang_functions['text_profile'] ?></a>
         <a href="<?php echo URL_ROOT . "/forums"; ?>"><?php echo $lang_functions['text_forums'] ?></a>
         <a href="#"><?php echo $lang_functions['text_top_ten'] ?></a>
-        <a href="#"><?php echo $lang_functions['text_faq'] ?></a>
-        <a href="#"><?php echo $lang_functions['text_rules'] ?></a>
+        <a href="<?php echo URL_ROOT . "/faq"; ?>"><?php echo $lang_functions['text_faq'] ?></a>
+        <a href="<?php echo URL_ROOT . "/rules"; ?>"><?php echo $lang_functions['text_rules'] ?></a>
         <a href="#"><?php echo $lang_functions['text_settings'] ?></a>
         <a href="#"><?php echo $lang_functions['text_log'] ?></a>
         <a href="#"><?php echo $lang_functions['text_donate'] ?></a>

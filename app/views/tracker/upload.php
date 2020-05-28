@@ -7,7 +7,7 @@
         <tr><td class="colhead" colspan="2" align="center"><b>!!Upload Experimental Test!!</b>
             </td>
         </tr>
-        <tr><td class="colhead" colspan="2" align="center">The tracker's announce URL is: &nbsp;&nbsp;&nbsp;&nbsp;<b>https://twtpefxuz7.tk/announce</b>
+        <tr><td class="colhead" colspan="2" align="center">The tracker's announce URL is: &nbsp;&nbsp;&nbsp;&nbsp;<b><?php echo URL_ROOT;?>/announce</b>
             </td>
         </tr>
         <tr class="">

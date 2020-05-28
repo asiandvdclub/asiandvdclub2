@@ -2,7 +2,9 @@
 
 <div id="home_content" class="container">
     <div id="news" class="container">
-        Requests Selection
+        <h1>Requests Selection</h1><br>
+        <a href="<?php echo URL_ROOT . "/request" ; ?>">Make a request</a>
+
     </div>
     <br>
     <div id="news" class="container">

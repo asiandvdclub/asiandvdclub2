@@ -17,7 +17,7 @@ class index extends Controller
         $button = "<button onclick=\"location.href='" . URL_ROOT . "/create_news'" . "\" type=\"button\" style=\"margin-left:10px;\" class=\"btn btn-primary mg\">".$lang['text_new']."</button>";
 
         //get news add row pattern
-        $this->db->querry("SELECT idNews, title, text, added FROM news GROUP BY idNews DESC");
+        $this->db->querry("SELECT idNews, title, text, added FROM news");
         $row = $this->db->getAll();
 
         if($this->auth->getAuthority("create_news")){

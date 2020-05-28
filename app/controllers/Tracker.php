@@ -91,46 +91,13 @@ class Tracker extends Controller
           */
         require_once $this->languageMod->getLangPath(__FUNCTION__);
         $this->languageMod->setLanguage(__FUNCTION__);
-        $error = array(
-            "file" => "",
-            "imdb" => "",
-            "anidb" => "",
-            "torrent_name" => ""
-        );
+
+        $error = array();
         $imdb = false;
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['sitelanguage'])) {
-            $this->db->querry("SELECT `passkey` FROM `users` WHERE `id` = :uid");
-            $this->db->bind(":uid", base64_decode($_COOKIE['c_secure_uid']));
-            $passkey = $this->db->getRow()['passkey'];
-
-            if(empty($_POST['imdb_url']))
-                $error['imdb'] = "Empty field";
-            if(empty($_POST['url_anidb']) && empty($_POST['imdb_url']))
-                $error['anidb'] = "Empty field";
-            if(empty($_FILES['torrent_file']['name']))
-                $error['file'] = "Empty field";
-
-            if (TORRENT_HEADER != $_FILES['torrent_file']['type']) {
-                $error['file'] = "Wrong torrent file format!";
-                $this->uploadView($error);
-            }
-            $imdb_url = $_POST['imdb_url'];
-
-            $pos = strpos($imdb_url, "/tt");
-            $imdb_url = substr($imdb_url, $pos + 3,  strlen($imdb_url));
-            $chars = str_split($imdb_url);
-            $imdb_url = "";
-            foreach ($chars as $value){
-                if(is_numeric($value))
-                    $imdb_url .= $value;
-                else
-                    break;
-            }
-
-            if(!is_numeric($imdb_url)) {
-                $error['imdb'] = "Wrong imdb url";
-            }
+            $check =  $this->takeupload->checkForm($_POST, $_FILES['torrent_file']);
+            $error = $check['error'];
 
             foreach ($error as $value){
                 if(!empty($value)){
@@ -163,10 +130,6 @@ class Tracker extends Controller
                     $specs = "";
                     break;
             }
-            if($_POST['type'] = "movie")
-                $imdb = true;
-            else
-                $imdb = false;
             //Decoding torrent data
             $f = $this->bencode->bdec_file($_FILES['torrent_file']['tmp_name'], filesize($_FILES['torrent_file']['tmp_name']));
 
@@ -185,7 +148,7 @@ class Tracker extends Controller
             $torrent_data['numfiles'] = is_null($f['info']['files']) ? 1 : count($f['info']['files']);
             $torrent_data['optradio'] = $_POST['optradio'];
             $torrent_data['specs'] = json_encode($specs); // jsond encode
-            $torrent_data['imdb_id'] = $imdb_url;
+            $torrent_data['content_id'] = $check['content_id'];
             if (URL_ROOT . "/announce" != $f['announce']){
                 $error['file'] = "Invalid announce url";
                 $this->uploadView($error);
@@ -195,13 +158,6 @@ class Tracker extends Controller
             //Encoding torrent data
             $f = $this->bencode->benc($f);
             $keys = array_keys($error);
-
-            $this->db->querry("SELECT id FROM imdb WHERE imdb_id = :imdbID");
-            $this->db->bind(":imdbID", $imdb_url);
-            $check = $this->db->getRow();
-
-            if(empty($check))
-                $this->registerMovie($imdb_url);
 
             if (empty($error[$keys[0]]) && empty($error[$keys[1]]) && empty($error[$keys[2]]) && empty($error[$keys[3]]) && empty($error[$keys[4]])) {
                 $torrent_data = array_merge($torrent_data, $_POST);
@@ -234,23 +190,6 @@ class Tracker extends Controller
                 "getSiteManagerBar" => $this->cacheManager->getSiteManager($this->userClass),
                 "error" => $error,
             ]);
-    }
-    private function registerMovie($imdb_url){
-        $command = "python " . APP_ROUTE . "/libraries/imdb_to_json.py " . $imdb_url;
-        $data = exec($command);
-        $data = json_decode($data, true);
-        $this->db->querry("INSERT INTO `imdb` (`title`, `genre`, `synopsis`, `year`, `directors`, `imdb_id`, `plot`, `url`)
-                                                        VALUES (:title, :genre, :synopsis, :year, :directors, :imdb_id, :plot, :url)");
-        $this->db->bind(":title", $data['name']);
-        $this->db->bind(":genre", strval(json_encode(array("genre" => $data['genre']))));
-        $this->db->bind(":synopsis", $data['synopsis'][0]);
-        $this->db->bind(":plot", $data['plot']);
-        $this->db->bind(":year", $data['year']);
-        $this->db->bind(":directors", strval(json_encode(array("directors" => $data['directors']))));
-        $this->db->bind(":url", $data['url']);
-        $this->db->bind(":imdb_id", $imdb_url); // link this to `torrents`
-
-        $this->db->execute();
     }
 
     public function download($torrentID){
