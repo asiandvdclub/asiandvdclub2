@@ -16,12 +16,6 @@ class cacheManager
     }
 
     public function setUserStats(){
-        /*
-         * Cache array layout
-         * $cache['user'] = row;
-         * $cache['tracker'] = row; //seed time, total up|down
-         */
-
         //Check hash function of hasChange() is diferent from getKey('user_stats') hash if so clear and add key to cache;
 
         $this->cache->clearKey($this->user_cache); // <---- remove this after testing

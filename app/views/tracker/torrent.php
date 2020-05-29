@@ -23,15 +23,15 @@
         </tr>
         <tr>
             <td><?php echo $data['torrent_lang']['basic_info'];?></td>
-            <td style="padding-left: 15px"><?php echo "Size: " . formatBytes($data['torrentData']['size']) . "&emsp;Format: " . $data['torrentInfo']['format'] . "&emsp; Codec: " . $data['torrentInfo']['codec'] . "&emsp;Standard: " . $data['torrentInfo']['standard'] . "&emsp;Processing: " . $data['torrentInfo']['processing'];?></td>
+            <td style="padding-left: 15px"><?php echo "Size: " . formatBytes($data['torrentData']['size']) . "&emsp;Format: " . $data['torrentData']['specs']['format'] . "&emsp; Codec: " . $data['torrentData']['specs']['codec'] . "&emsp;Standard: " . $data['torrentData']['specs']['standard'] . "&emsp;Processing: " . $data['torrentData']['specs']['processing'];?></td>
         </tr>
         <tr>
             <td>Plot</td>
-            <td style="padding-left: 15px"><?php echo substr($data['imdb_info']['text'], 0, strpos($data['imdb_info']['text'], "::")); ?></td>
+            <td style="padding-left: 15px"><?php echo substr($data['content_data']['plot'], 0, strpos($data['content_data']['plot'], "::")); ?></td>
         </tr>
         <tr>
             <td>Image</td>
-            <td style="padding-left: 15px"><?php echo  "<img src=\"" .  $data['torrentData']['url'] . "\" width=\"200\" height=\"300\">";?></td>
+            <td style="padding-left: 15px"><?php echo  "<img src=\"" .  $data['content_data']['url'] . "\" width=\"200\" height=\"300\">";?></td>
         </tr>
         <tr>
             <td>Description</td>
@@ -65,7 +65,7 @@
             </tr>
             <tr align="center">
                 <th>
-                    <button class="btn btn-info text-center"  type="button">Add Comment</button>
+                    <button class="btn btn-info text-center"  type="button">Add</button>
                 </th>
             </tr>
         </table>

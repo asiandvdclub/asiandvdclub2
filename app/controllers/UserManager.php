@@ -16,6 +16,7 @@ class UserManager extends Controller
         $this->userClass = $this->cacheManager->getUserStats()['idClass'];
     }
     public function profile(){
+
         $this->languageMod->setLanguage(__FUNCTION__);
 
         $this->view('user_manager/profile',

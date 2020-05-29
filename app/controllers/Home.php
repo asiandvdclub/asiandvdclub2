@@ -41,6 +41,36 @@ class Home extends Controller {
                 "index_data" => $this->index_data()
             ]);
     }
+    public function rules(){
+        require_once $this->languageMod->getLangPath(__FUNCTION__);
+
+        $this->languageMod->setLanguage(__FUNCTION__);
+        $this->view('pages/rules',
+            [
+                "currentPage" => "/" . __FUNCTION__,
+                "userStats" => $this->cacheManager->getUserStats(),
+                "news" => $this->index->news($lang_index, $this->userClass), // I know this $lang_index doesn't look good here but this works on the fly due to require above
+                "lang_index" => $lang_index,
+                "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
+                "getSiteManagerBar"=> $this->cacheManager->getSiteManager($this->userClass),
+                "index_data" => $this->index_data()
+            ]);
+    }
+    public function faq(){
+        require_once $this->languageMod->getLangPath(__FUNCTION__);
+
+        $this->languageMod->setLanguage(__FUNCTION__);
+        $this->view('pages/faq',
+            [
+                "currentPage" => "/" . __FUNCTION__,
+                "userStats" => $this->cacheManager->getUserStats(),
+                "news" => $this->index->news($lang_index, $this->userClass), // I know this $lang_index doesn't look good here but this works on the fly due to require above
+                "lang_index" => $lang_index,
+                "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
+                "getSiteManagerBar"=> $this->cacheManager->getSiteManager($this->userClass),
+                "index_data" => $this->index_data()
+            ]);
+    }
     //TODO don't check for class here, move this to the CORE level, there will be more function that this one, keep it clean.!!!!
     public function create_news(){
         $this->languageMod->setLanguage(__FUNCTION__);

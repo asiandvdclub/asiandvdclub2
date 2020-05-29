@@ -7,7 +7,7 @@
         <tr><td class="colhead" colspan="2" align="center"><b>!!Upload Experimental Test!!</b>
             </td>
         </tr>
-        <tr><td class="colhead" colspan="2" align="center">The tracker's announce URL is: &nbsp;&nbsp;&nbsp;&nbsp;<b>https://twtpefxuz7.tk/announce</b>
+        <tr><td class="colhead" colspan="2" align="center">The tracker's announce URL is: &nbsp;&nbsp;&nbsp;&nbsp;<b><?php echo URL_ROOT;?>/announce</b>
             </td>
         </tr>
         <tr class="">
@@ -79,7 +79,7 @@
             <td class="rowhead nowrap" valign="top" align="right">AniDB&nbsp;URL
             </td>
             <td class="rowfollow" valign="top" align="left">
-                <input type="text" style="width: 650px;" name="anidb_url" value=""><?php echo $data['error']['anidb']; ?><br>
+                <input type="text" style="width: 650px;" name="url_anidb" value=""><?php echo $data['error']['anidb']; ?><br>
                 <span class="medium">(URL taken from <strong><a href="https://anidb.net/" target="_blank">AniDB</a></strong>. e.g.&nbsp;for anime <b> Infinite Dendrogram</b> the URL is <b>https://anidb.net/anime/14564</b></span>
             </td>
         </tr>

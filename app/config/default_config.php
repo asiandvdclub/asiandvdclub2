@@ -106,12 +106,12 @@ $ATTACHMENT=array(
 $PAGES = [
     "Access"=> array("login", "signup", "failedlogin", "confirm", "confirmed", "recover", "confirm_resend"),
     "SiteManager" => array("staff_panel", "site_settings", "forum_manager", "forum_manager_forums", "forum_delete", "forum_add"),
-    "UserManager" => array("profile"),
-    "Home" => array("index","create_news","delete_news"),
+    "Home" => array("index","create_news","delete_news", "faq", "rules"),
     "Forum" => array("forums", "in_forum", "post"),
     "Tracker" => array("torrents", "torrent", "upload", "download"),
-    "RequestsMod" => array("requests"),
+    "RequestsMod" => array("requests", "request"),
     "Debugger" => array("log"),
+    "UserManager" => array("profile"),
 ];
 $AUTHORITY=array(
     //'16' => array('news', 'create_news'),
@@ -123,13 +123,16 @@ $AUTHORITY=array(
     //!!!! Debuger will be deleted on version release
     'pages' => array(
         'index' => 1,
-        'profile' => 1,
         'forums'=> 1,
         'torrents'=> 1,
         'torrent' => 1,
         'download' => 1,
         'requests' => 1,
+        'request' => 1,
+        'rules' => 1,
+        'faq' => 1,
         'log' => 1,
+        'profile' => 1,
     ),
     'news_group' => array(
         'create_news' => array(10,15,14),
@@ -153,6 +156,13 @@ $AUTHORITY=array(
     ),
     'debugger' => array(
         'log' => 10,
+    ),
+    'user_manager' =>array(
+      'profile' => 1,
+    ),
+    'request_mod' => array(
+        'requests' => 1,
+        'request' => 1,
     ),
 
     'defaultclass' => '1',

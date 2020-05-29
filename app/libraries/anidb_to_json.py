@@ -27,7 +27,7 @@ soup = BeautifulSoup(url.content, 'html.parser')
 config.update(synopsis = soup.find("div", {"class": "g_bubble g_section desc resized"}).text)
 text = soup.find("tr", {"class":"type"})
 config.update(type = text.findAll("td", {"class":"value"})[0].text)
-text = soup.find("tr", {"class":"official verified no"})
+text = soup.find("tr", {"class":"official verified yes"})
 config.update(title = text.findAll("label")[0].text)
 text = soup.find("tr", {"class":"g_odd official verified no"})
 if(text.findAll("span", {"title" : "language: japanese"})[0].text == "ja"):

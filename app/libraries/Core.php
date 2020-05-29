@@ -111,7 +111,7 @@ class Core{
         $db->closeDb();
         //Call a callback with array of params
         call_user_func_array([$this->currentController, $this->currentMethod], $this->params);
-        echo "<br><a style='color: #FFFFFF'>Time:  " . number_format(((microtime(true) - $startTime)*1000), 2) . "ms\n</a>";
+        echo "<br><b><a style='color: #00ccff; font-size: large;'>Time:  " . number_format(((microtime(true) - $startTime)*1000), 2) . "ms\n</a></b>";
     }
     public function getUrl(){
         if(isset($_GET['url'])) {

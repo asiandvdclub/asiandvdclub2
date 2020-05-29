@@ -2,32 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35533c8a-7baa-46f8-9fe2-be7962aab11d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/controllers/UserManager.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/achievements.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/user_manager/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/config/default_config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/default_config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/Debugger.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Debugger.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/RequestsMod.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/RequestsMod.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/Tracker.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Tracker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/UserManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/UserManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/announce.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/announce.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libraries/Core.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/libraries/Core.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libraries/anidb_to_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/libraries/anidb_to_json.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/libraries/imdb_to_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/libraries/imdb_to_json.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/bencode.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/bencode.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/cacheManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/cacheManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/takeupload.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/takeupload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/torrents/28731765ccc83246fbef86d488f664e784a1e730.torrent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/torrents/38635cfb5a29d5f15200c33bd870ab0fb313b307.torrent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/torrents/78cc7e309967200eaaa7639e7360988aa77476aa.torrent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/torrents/89203062a66e4190c71a48f77453c09b1ed9e791.torrent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/torrents/ab7aa6a9d3d657f98a1fb58e3c39d5ac4d1fd0c1.torrent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/torrents/d1ccb1e2151edf405531328440db3a6f8204115d.torrent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/torrents/zaz.torrent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/torrents/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/torrents/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/access/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/access/signup.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/debugger/log.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/debugger/log.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/inc/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/inc/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/inc/navbar_footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/inc/navbar_footer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/inc/navbar_header.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/inc/navbar_header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/requests/requests.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/requests/requests.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/tracker/torrent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tracker/torrent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/tracker/torrents.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tracker/torrents.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/tracker/upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tracker/upload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/user_manager/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_manager/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/adc.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/adc.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/functions.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -200,21 +204,22 @@
       <workItem from="1586884162550" duration="1710000" />
       <workItem from="1586941981458" duration="3129000" />
       <workItem from="1587116239176" duration="653000" />
-      <workItem from="1587203482517" duration="1090000" />
-      <workItem from="1587225298328" duration="600000" />
-      <workItem from="1587376618386" duration="1358000" />
-      <workItem from="1587402951901" duration="2675000" />
-      <workItem from="1587454498526" duration="9913000" />
-      <workItem from="1587545896924" duration="3581000" />
-      <workItem from="1587635858317" duration="1037000" />
-      <workItem from="1587658227562" duration="2495000" />
-      <workItem from="1587721556878" duration="5664000" />
-      <workItem from="1587831346816" duration="4918000" />
-      <workItem from="1587892558468" duration="12726000" />
-      <workItem from="1587921244435" duration="5974000" />
-      <workItem from="1587981998786" duration="2963000" />
-      <workItem from="1588072704591" duration="4802000" />
-      <workItem from="1588244491746" duration="385000" />
+      <workItem from="1589038794016" duration="921000" />
+      <workItem from="1589188742749" duration="599000" />
+      <workItem from="1589278614066" duration="1232000" />
+      <workItem from="1589291418877" duration="7547000" />
+      <workItem from="1589359542037" duration="1213000" />
+      <workItem from="1589529914508" duration="1215000" />
+      <workItem from="1589705171833" duration="3005000" />
+      <workItem from="1589804190847" duration="5571000" />
+      <workItem from="1590219951225" duration="3321000" />
+      <workItem from="1590321053840" duration="599000" />
+      <workItem from="1590323958563" duration="34000" />
+      <workItem from="1590484540529" duration="1622000" />
+      <workItem from="1590570892015" duration="1804000" />
+      <workItem from="1590658467789" duration="8490000" />
+      <workItem from="1590683408305" duration="2813000" />
+      <workItem from="1590744594708" duration="6701000" />
     </task>
     <servers />
   </component>

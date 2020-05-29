@@ -42,7 +42,8 @@ div.outer {
 
 div.navigation {
     padding: .8em;
-    border-bottom: 1px solid #000
+    border-bottom: 1px solid #000;
+    text-align: center;
 }
 
 div.navigation a {
@@ -54,7 +55,14 @@ div.navigation a {
 
 div.main {
     max-width: 1400px;
-    padding: 20px 0
+    padding: 20px 0;
+    margin: 0 auto;
+}
+.text-center {
+    text-align: center;
+}
+.table-center {
+    margin: 0 auto;
 }
 
 div#preload {
@@ -145,7 +153,6 @@ table {
     border: 2px solid #840001
 }
 
-.torrenttable,
 table.alternate,
 table.smalltable {
     border-collapse: separate
@@ -273,12 +280,8 @@ table.smalltable {
     border: none
 }
 
-.torrenttable tbody tr.even {
+.torrenttable tbody tr:nth-child(even) {
     background: #F0EEDC
-}
-
-.torrenttable tbody tr.odd {
-    background: 0 0
 }
 
 .torrenttable tbody td {

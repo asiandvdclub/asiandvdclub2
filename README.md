@@ -16,7 +16,7 @@ sudo apt-get update
 ```
 2) Installing apache2, php 7.3 and its modules, 
 ```
-sudo apt install apache2 libapache2-mod-php7.3 php7.3 php7.3-common php7.3-cli php7.3-mysql php7.3-gd php-pear
+sudo apt install apache2 libapache2-mod-php7.3 php7.3 php7.3-common php7.3-cli php7.3-mysql php7.3-gd php-pear php-memcached
 sudo apt install php-dev autoconf automake
 sudo apt install -y pkg-config
 ```
@@ -36,4 +36,9 @@ sudo apt install postfix
 ```
 sudo nano /etc/php/7.3/apache2/php.ini
 add "extension=memcached.so" at the end of the file
-``` 
+```
+5) Enable Module Rewrite on apache2
+```
+sudo a2enmod rewrite
+sudo systemctl restart apache2.service
+```
