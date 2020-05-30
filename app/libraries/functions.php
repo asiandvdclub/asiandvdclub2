@@ -78,7 +78,7 @@ function convTime($date){
     foreach ($types as $value){
         if($x==2)  break;
         if($interval->format($value)){
-            $out .= $interval->format($value) > 1 ? $interval->format($value) . "  " . textTypes($value) . "s " : $interval->format($value) . "  " . textTypes($value);
+            $out .= $interval->format($value) > 1 ? $interval->format($value) . "  " . textTypes($value) . "s " : $interval->format($value) . "  " . textTypes($value) . " ";
             $x++;
         }
     }

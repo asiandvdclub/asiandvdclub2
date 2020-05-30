@@ -1056,7 +1056,7 @@ table.peerstable tr td.user {
 .bumped_div,
 div.bbcode_area,
 div.news {
-    text-align: left
+    text-align: left;
 }
 
 table.user_torrents tr td.category_icon {
@@ -1100,8 +1100,6 @@ div.news {
     padding: 1.2em;
     background: #ECE9D8;
     border: 1px solid #BBBCBF;
-    -moz-border-radius: 7px;
-    -webkit-border-radius: 7px;
     border-radius: 7px
 }
 
@@ -1201,12 +1199,11 @@ div.pm td.pm-body {
 }
 
 div.box {
-    padding: .9em;
+    padding: .2em;
     background: #ECE9D8;
     border: 1px solid #BBBCBF;
-    -moz-border-radius: 7px;
-    -webkit-border-radius: 7px;
-    border-radius: 7px
+
+    border-radius: 7px;
 }
 
 table.clean {

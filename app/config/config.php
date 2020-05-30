@@ -2,7 +2,13 @@
 define("announce_interval", 900);
 define("announce_interval_min", 300);
 //Frame work
-define("ADC_FRAMEWORK", "1.6");
+/*Version schematic
+Example for 1.0.30
+1 -> version
+0 -> beta, 0 for no beta -> wasn't in production
+30 -> reset from nr. of comits see git repo
+*/
+define("ADC_FRAMEWORK", "1.0.31");
 //Bitorrent
 define("IN_TRACKER", true);
 //App route

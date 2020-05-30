@@ -22,13 +22,19 @@
             <td style="padding-left: 15px"><?php echo $data['torrentData']['name'];?></td>
         </tr>
         <tr>
+            <td style="width: 20%"><?php echo $data['torrent_lang']['uploader'];?></td>
+            <td style="padding-left: 15px"><?php echo $data['torrentData']['username'];?></td>
+        </tr>
+        <tr>
             <td><?php echo $data['torrent_lang']['basic_info'];?></td>
             <td style="padding-left: 15px"><?php echo "Size: " . formatBytes($data['torrentData']['size']) . "&emsp;Format: " . $data['torrentData']['specs']['format'] . "&emsp; Codec: " . $data['torrentData']['specs']['codec'] . "&emsp;Standard: " . $data['torrentData']['specs']['standard'] . "&emsp;Processing: " . $data['torrentData']['specs']['processing'];?></td>
         </tr>
+        <!--
         <tr>
             <td>Plot</td>
-            <td style="padding-left: 15px"><?php echo substr($data['content_data']['plot'], 0, strpos($data['content_data']['plot'], "::")); ?></td>
+            <td style="padding-left: 15px"><?php echo $data['content_data']['synopsis'] . substr($data['content_data']['synopsis'], 0, strpos($data['content_data']['synopsis'], "::")); ?></td>
         </tr>
+        -->
         <tr>
             <td>Image</td>
             <td style="padding-left: 15px"><?php echo  "<img src=\"" .  $data['content_data']['url'] . "\" width=\"200\" height=\"300\">";?></td>
@@ -36,6 +42,25 @@
         <tr>
             <td>Description</td>
             <td style="padding-left: 15px"></td>
+        </tr>
+        <tr>
+            <td>Content Info</td>
+            <td style="padding-left: 15px;" align="left">
+                <p style="font-size: large">AniDB Information</p>
+               AniDB Link: <a href="http://anidb.net/a<?php echo  $data['content_data']['anidb_id'];?>">http://anidb.net/a<?php echo  $data['content_data']['anidb_id'];?></a>
+                <br>
+                Title: <?php echo  $data['content_data']['title'];?>
+                <br>
+                Original Title: <?php echo  $data['content_data']['title_jp'];?>
+                <br>
+                Type: <?php echo  $data['content_data']['type'];?>
+                <br>
+                Year: <?php echo  $data['content_data']['year'];?>
+                <br>
+                <p style="font-size: large">Plot</p>
+                <br>
+                <?php echo  $data['content_data']['synopsis'];?>
+            </td>
         </tr>
         <tr>
             <td>Torrent Info</td>
@@ -51,25 +76,26 @@
         </tr>
     </table>
     <br>
-    <form  method="post">
-        <table class="bg-dark text-white center" align="center">
-            <tr align="center">
-                <th  colspan="2">Quick Comment</th>
-
-            </tr>
-            <tr align="center">
-                <th>
-                    <textarea id="comment" rows="4" cols="50">
-                    </textarea>
-                </th>
-            </tr>
-            <tr align="center">
-                <th>
-                    <button class="btn btn-info text-center"  type="button">Add</button>
-                </th>
-            </tr>
-        </table>
-    </form>
+    <div class="" align="center">
+        <form enctype="multipart/form-data" method="POST" action="<?php echo URL_ROOT . "/torrent/" . $data['torrentData']['torrent_id'];?>" role="form">
+            <table class="bg-dark text-white center" align="center">
+                <tr align="center">
+                    <th  colspan="2">Quick Comment</th>
+                </tr>
+                <tr align="center">
+                    <th>
+                        <textarea id="comment" rows="4" cols="50" name="comment_desc">
+                        </textarea>
+                    </th>
+                </tr>
+                <tr align="center">
+                    <th>
+                        <button class="btn btn-info text-center"  type="submit">Add</button>
+                    </th>
+                </tr>
+            </table>
+        </form>
+    </div>
     <br>
 </div>
 <?php require_once APP_ROUTE . '/views/inc/navbar_footer.php';?>

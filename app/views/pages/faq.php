@@ -14,7 +14,7 @@
     <div class="main">
         <table class="main" width="750" border="0" cellspacing="0" cellpadding="0">
             <tbody><tr><td class="embedded">
-                   <h2>Contents</h2>
+                   <h2>FAQ Contents</h2>
                     <table width="100%" border="1" cellspacing="0" cellpadding="10"><tbody><tr><td>
                                 <ul>
                                     <li><a class="bold" href="<?php echo URL_ROOT . "/faq";?>#1">Site information</a>

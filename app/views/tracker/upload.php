@@ -1,7 +1,7 @@
 <?php require_once APP_ROUTE . '/views/inc/navbar_header.php';?>
 
 <div id="home_content" class="container">
-    <form enctype="multipart/form-data" method="POST" action="<?php echo $URL_ROOT . "/upload";?>" role="form">
+    <form enctype="multipart/form-data" method="POST" action="<?php echo URL_ROOT . "/upload";?>" role="form">
     <table class="bg-dark text-white" align="center" border="1" cellspacing="0" cellpadding="5" width="940">
         <tr>
         <tr><td class="colhead" colspan="2" align="center"><b>!!Upload Experimental Test!!</b>

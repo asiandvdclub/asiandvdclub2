@@ -134,17 +134,17 @@ class takeupload
         $data = exec($command);
         $data = json_decode($data, true);
 
-        $this->db->querry("INSERT INTO `anidb` (`title`, `title_jp`, `synopsis`, `year`, `directors`, `anidb_id`, `url`)
-                                                        VALUES (:title, :title_jp, :synopsis, :year, :directors, :anidb_id, :url)");
+        $this->db->querry("INSERT INTO `anidb` (`title`, `title_jp`, `synopsis`, `year`, `directors`, `anidb_id`, `url`, `type`)
+                                                        VALUES (:title, :title_jp, :synopsis, :year, :directors, :anidb_id, :url, :type)");
         $this->db->bind(":title", $data['title']);
         $this->db->bind(":title_jp", $data['title_jp']);
        // $this->db->bind(":genre", strval(json_encode(array("genre" => $data['genre'])))); // TODO need to get the genre of anime
-        $this->db->bind(":synopsis", $data['synopsis'][0]);
+        $this->db->bind(":synopsis", $data['synopsis']);
         $this->db->bind(":year", $data['year']);
         $this->db->bind(":directors", strval(json_encode(array("directors" => $data['directors']))));
         $this->db->bind(":url", $data['url']);
         $this->db->bind(":anidb_id", $anidb_url); // link this to `torrents`
-
+        $this->db->bind(":type", $data['type']);
         $this->db->execute();
 
     }

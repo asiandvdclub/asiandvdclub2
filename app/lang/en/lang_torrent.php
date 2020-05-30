@@ -9,5 +9,6 @@ $lang_torrent = array
     'comment' => "Comment",
     'text_files' => "Files",
     'text_infohash' => "Info hash",
+    'uploader' => "Uploader"
 );
 ?>

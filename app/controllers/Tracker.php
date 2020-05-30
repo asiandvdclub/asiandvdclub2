@@ -53,17 +53,21 @@ class Tracker extends Controller
             ]);
     }
     public function torrent($idTorrent){
+
         require_once $this->languageMod->getLangPath(__FUNCTION__);
         $this->languageMod->setLanguage(__FUNCTION__);
 
         $showList = "";
 
-        $this->db->querry("SELECT t.info_hash, t.numfiles, t.content_id, t.name, t.small_desc, t.seeders, t.leechers, t.size, t.added, t.specs FROM torrents as t WHERE t.id = :tid");
+        $this->db->querry("SELECT t.anonymous, t.info_hash, t.numfiles, t.content_id, t.name, t.small_desc, t.seeders, t.leechers, t.size, t.added, t.specs, usr.username FROM torrents as t JOIN users as usr WHERE t.id = :tid AND t.owner = usr.id");
         $this->db->bind(":tid", $idTorrent);
         $tdata = $this->db->getRow();
         $tdata['specs'] = json_decode($tdata['specs'], true);
+        $tdata['torrent_id'] = $idTorrent;
         $type = $tdata['specs']['type'];
         $contentData = array();
+        if($tdata['anonymous'] == "yes")
+            $tdata['username'] = "Anonymous";
 
         switch ($type){
             case "movie":
@@ -71,6 +75,8 @@ class Tracker extends Controller
                 $this->db->bind(':content_id', $tdata['content_id']);
                 $contentData = $this->db->getRow();
                 $contentData['genre'] = json_decode($contentData['genre'], true);
+                if(empty($contentData['synopsis']))
+                    $contentData['synopsis'] = $contentData['plot'];
                 $contentData['directors'] = json_decode($contentData['directors'], true);
                 break;
             case "anime":
@@ -81,17 +87,38 @@ class Tracker extends Controller
             break;
         }
 
-        $this->view('tracker/torrent',
-            [
-                "currentPage" => "/" . __FUNCTION__,
-                "userStats" => $this->cacheManager->getUserStats(),
-                "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
-                "getSiteManagerBar"=> $this->cacheManager->getSiteManager($this->userClass),
-                "torrentData" => $tdata,
-                "content_data" => $contentData,
-                "torrent_lang" => $lang_torrent,
-                "tID" => $idTorrent
-            ]);
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['sitelanguage'])) {
+            //die($this->cacheManager->getUserStats()['id'] . "------" . $idTorrent . "========" . $_POST['comment_desc']);
+            $this->db->querry("INSERT INTO `torrentComment` (`userid`, `comment`, `added`, `tid`) VALUES (:uid, :comment, NOW(), :tid)");
+            $this->db->bind(":uid", $this->cacheManager->getUserStats()['id']);
+            $this->db->bind(":tid", $idTorrent);
+            $this->db->bind(":comment", $_POST['comment_desc']);
+            $this->db->execute();
+
+            $this->view('tracker/torrent',
+                [
+                    "currentPage" => "/" . __FUNCTION__,
+                    "userStats" => $this->cacheManager->getUserStats(),
+                    "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
+                    "getSiteManagerBar" => $this->cacheManager->getSiteManager($this->userClass),
+                    "torrentData" => $tdata,
+                    "content_data" => $contentData,
+                    "torrent_lang" => $lang_torrent,
+                    "tID" => $idTorrent
+                ]);
+        }else{
+            $this->view('tracker/torrent',
+                [
+                    "currentPage" => "/" . __FUNCTION__,
+                    "userStats" => $this->cacheManager->getUserStats(),
+                    "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
+                    "getSiteManagerBar" => $this->cacheManager->getSiteManager($this->userClass),
+                    "torrentData" => $tdata,
+                    "content_data" => $contentData,
+                    "torrent_lang" => $lang_torrent,
+                    "tID" => $idTorrent
+                ]);
+        }
     }
     public function upload(){
 
@@ -233,5 +260,15 @@ class Tracker extends Controller
        // header('Content-Length: ' . filesize($bdec));
         echo trim($bdec);
         exit;
+    }
+    private function getTorrentComments($tid){
+        $html_out = "";
+
+        $this->db->querry("SELECT tc.comment, tc.added, (CASE WHEN  t.anonymous = \"yes\" AND u.id = t.owner THEN \"Anonymous\" ELSE u.username END) as username FROM torrentComment as tc 
+                                INNER JOIN torrents as t ON tc.tid = t.id AND t.id = :t_id
+                                LEFT JOIN users as u ON u.id = tc.userid ");
+        $this->db->bind(':t_id', $tid);
+        $data = $this->db->getAll();
+        return $data;
     }
 }
