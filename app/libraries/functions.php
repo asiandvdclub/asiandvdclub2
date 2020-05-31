@@ -141,3 +141,25 @@ function dbg_log($log){
     $current .= "\n";
     file_put_contents($log_path, $current);
 }
+function dbg_log_break($log){
+    echo "<pre>";
+    print_r($log);
+    echo "</pre>";
+    die();
+}
+function check_image_link($url){
+    $ext_img = array(
+        ".png", ".jpg", ".jpeg"
+    );
+
+    $p = substr($url, 0, 8);
+    $ext = "";
+    if($p != "https://")
+        return false;
+    foreach($ext_img as $value){
+        if($value == substr($url, strlen($url)-4, strlen($url)))
+            $ext = $value;
+
+    }
+    return !empty($ext) ? true : false;
+}

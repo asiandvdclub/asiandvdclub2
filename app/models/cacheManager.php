@@ -9,10 +9,10 @@ class cacheManager
     //private $userStats = array();
 
     public function cacheManager(){
-     $this->db = new Database();
-     $this->cache = new Cache();
-     // $this->auth = new Authority();
-     $this->user_cache = 'user_' . base64_decode($_COOKIE['c_secure_uid']) . '_stats';
+         $this->db = new Database();
+         $this->cache = new Cache();
+         // $this->auth = new Authority();
+         $this->user_cache = 'user_' . base64_decode($_COOKIE['c_secure_uid']) . '_stats';
     }
 
     public function setUserStats(){

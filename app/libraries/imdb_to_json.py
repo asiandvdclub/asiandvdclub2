@@ -1,6 +1,13 @@
 from imdb import IMDb
 import sys
 import json
+import os
+def url_clean(url):
+    base, ext = os.path.splitext(url)
+    i = url.count('@')
+    s2 = url.split('@')[0]
+    url = s2 + '@' * i + ext
+    return url
 
 x = {
   "name": "",
@@ -8,7 +15,8 @@ x = {
   "year": 0,
   "country" : "",
   "directors" : "",
-  "synopsis": ""
+  "synopsis" : "",
+  "plot" : "",
 }
 if len(sys.argv) != 2:
     print(json.dumps({"error":"Imdb link empty"}))
@@ -25,6 +33,8 @@ x.update(year = movie.get('year'))
 x.update(country = movie.get('country'))
 x.update(directors = direct)
 x.update(synopsis = movie.get('synopsis'))
+x.update(plot = movie.get('plot')[0])
+x.update(url = url_clean(movie.get('cover')))
 
 print(json.dumps(x))
 

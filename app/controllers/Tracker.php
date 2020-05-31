@@ -7,6 +7,7 @@ class Tracker extends Controller
     private $userClass;
     private $bencode;
     private $takeupload;
+    private $takecontent;
     private $passkey;
 
     public function Tracker(){
@@ -15,6 +16,7 @@ class Tracker extends Controller
         $this->languageMod = $this->model('language');
         $this->bencode = $this->model('bencode');
         $this->takeupload = $this->model('takeupload');
+        $this->takecontent = $this->model('takecontent');
 
         $this->cacheManager->setUserStats();
         $this->userClass = $this->cacheManager->getUserStats()['idClass'];
@@ -121,7 +123,6 @@ class Tracker extends Controller
         }
     }
     public function upload(){
-
          /*
           *  TODO:
           * - check for errors in form
@@ -199,7 +200,7 @@ class Tracker extends Controller
             $keys = array_keys($error);
 
             if (empty($error[$keys[0]]) && empty($error[$keys[1]]) && empty($error[$keys[2]]) && empty($error[$keys[3]]) && empty($error[$keys[4]])) {
-                $this->takeupload->registerContent($specs['type'], $check['content_id']);
+                $this->takecontent->registerContent($specs['type'], $check['content_id']);
 
                 $torrent_data = array_merge($torrent_data, $_POST);
                 if (empty($torrent_data['name'])) {

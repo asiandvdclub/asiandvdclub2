@@ -68,7 +68,7 @@
                                             </li>
                                             <li>
                                                 <a class="altlink" href="<?php echo URL_ROOT . "/faq";?>#22">What are the different user classes?</a>
-                                                <img class="main-updated" src="./FAQ __ AsianDVDClub.org_files/trans.gif" alt="Updated" title="This FAQ entry has been updated recently" align="absbottom">
+                                                <img class="main-updated" src="./images/trans.gif" alt="Updated" title="This FAQ entry has been updated recently" align="absbottom">
                                             </li>
                                             <li>
                                                 <a class="altlink" href="<?php echo URL_ROOT . "/faq";?>#88">I've met the requirements to be promoted but I haven't been promoted yet!</a>
@@ -81,7 +81,7 @@
                                             </li>
                                             <li>
                                                 <a class="altlink" href="<?php echo URL_ROOT . "/faq";?>#106">What are bonus points?</a>
-                                                <img class="main-updated" src="./FAQ __ AsianDVDClub.org_files/trans.gif" alt="Updated" title="This FAQ entry has been updated recently" align="absbottom"></li>
+                                                <img class="main-updated" src="./images/trans.gif" alt="Updated" title="This FAQ entry has been updated recently" align="absbottom"></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -90,7 +90,7 @@
                                     <li><a class="bold" href="<?php echo URL_ROOT . "/faq";?>#3">Stats</a>
                                         <ul>
                                             <li><a class="altlink" href="<?php echo URL_ROOT . "/faq";?>#112">How can I raise my ratio?</a>
-                                                <img class="main-new" src="./FAQ __ AsianDVDClub.org_files/trans.gif" alt="New" title="This FAQ entry is new" align="absbottom">
+                                                <img class="main-new" src="./images/trans.gif" alt="New" title="This FAQ entry is new" align="absbottom">
                                             </li>
                                             <li>
                                                 <a class="altlink" href="<?php echo URL_ROOT . "/faq";?>#27">Most common reasons for stats not updating</a>
@@ -131,11 +131,11 @@
                                             </li>
                                             <li>
                                                 <a class="altlink" href="<?php echo URL_ROOT . "/faq";?>#111">What file formats are allowed to be uploaded to ADC?</a>
-                                                <img class="main-new" src="./FAQ __ AsianDVDClub.org_files/trans.gif" alt="New" title="This FAQ entry is new" align="absbottom">
+                                                <img class="main-new" src="./images/trans.gif" alt="New" title="This FAQ entry is new" align="absbottom">
                                             </li>
                                             <li>
                                                 <a class="altlink" href="<?php echo URL_ROOT . "/faq";?>#107">Everything to know about batches</a>
-                                                <img class="main-new" src="./FAQ __ AsianDVDClub.org_files/trans.gif" alt="New" title="This FAQ entry is new" align="absbottom">
+                                                <img class="main-new" src="./images/trans.gif" alt="New" title="This FAQ entry is new" align="absbottom">
                                             </li>
                                             <li>
                                                 <a class="altlink" href="<?php echo URL_ROOT . "/faq";?>#83">I uploaded a torrent but I'm not listed as seeding it, and my client shows a 404 or 4xx error for the torrent?</a>
@@ -281,7 +281,7 @@
                                 This problem sometimes occurs with MSIE. Close all Internet Explorer windows and open Internet Options in the control panel. Click the Delete Cookies button. You should now be able to login.
                                 <br>
                                 <br>
-                                You could also upgrade to a better browser, such as <a class="altlink" href="https://web.archive.org/web/20170606005806/http://www.mozilla.com/firefox/">Firefox</a> or <a class="altlink" href="https://web.archive.org/web/20170606005806/http://www.opera.com/">Opera</a>.<br><br>
+                                You could also upgrade to a better browser, such as <a class="altlink" href="https://www.mozilla.org">Firefox</a> or <a class="altlink" href="https://www.opera.com/">Opera</a>.<br><br>
                                 <br>
                                 <strong>My IP address is dynamic. How do I stay logged in?</strong><a name="#20" id="20"></a>
                                 <br><br>
@@ -293,9 +293,9 @@
                                 <br><br>
                                 This means that other peers in the swarm will be unable to connect to you, only you to them. If two peers are both not connectable, they will never be able to connect to each other as long as they both remain in this state. This can have a detrimental effect on the overall speed of the swarm, and to a much larger extent affect your ability to share back what you've downloaded.
                                 <br><br>
-                                The way to solve this problem involves opening the port or ports used by your BitTorrent client for incoming connections. This is the port or range of ports you defined in your client (often referred to as the listening port). You must manually open the port(s) in any firewall you have on your system, as well as possibly in any anti-virus or security software you have installed. See <a class="altlink" href="https://web.archive.org/web/20170606005806/http://asiandvdclub.org/punbb/viewtopic.php?id=1475">this thread</a> for an example guide on opening your port.
+                                The way to solve this problem involves opening the port or ports used by your BitTorrent client for incoming connections. This is the port or range of ports you defined in your client (often referred to as the listening port). You must manually open the port(s) in any firewall you have on your system, as well as possibly in any anti-virus or security software you have installed. See <a class="altlink" href="http://asiandvdclub.org/punbb/viewtopic.php?id=1475">this thread (change this)</a> for an example guide on opening your port.
                                 <br><br>
-                                If you use a router or your modem has certain features of a router built-in, you will also need to forward the listening port(s) in there. Check your router/modem documentation for how to forward ports (AKA port forwarding). You could also go to <a class="altlink" href="https://web.archive.org/web/20170606005806/http://www.portforward.com/english/routers/port_forwarding/routerindex.htm">PortForward.com</a> and look for your router on that list. Most routers are listed on there, but even if yours is not you should be able to learn what you need to do by looking through a few guides for other routers.<br><br>
+                                If you use a router or your modem has certain features of a router built-in, you will also need to forward the listening port(s) in there. Check your router/modem documentation for how to forward ports (AKA port forwarding). You could also go to <a class="altlink" href="https://portforward.com/router.htm">PortForward.com</a> and look for your router on that list. Most routers are listed on there, but even if yours is not you should be able to learn what you need to do by looking through a few guides for other routers.<br><br>
                                 <br>
                                 <strong>Why do I want to be connectable? Will I be able to upload and download faster?</strong><a name="#77" id="77"></a>
                                 <br><br>
@@ -392,7 +392,7 @@
                                 <br>
                                 <strong>I'm going to be away from my computer for a long period of time, what will happen to my account?</strong><a name="#69" id="69"></a>
                                 <br><br>
-                                If your account is not parked, then it will be automatically deleted from the database after 120 days of inactivity. If your account is parked, then it will be automatically deleted from the database after 240 days of inactivity. If you return or visit the site with your account before that amount of time passes, then the inactivity timer will reset and your account will be fine for another 120 or 240 days (depending on its parked/not-parked status). You can find the account park option near the top of your <a class="altlink" href="https://web.archive.org/web/20170606005806/http://asiandvdclub.org/my.php">personal settings page</a>.
+                                If your account is not parked, then it will be automatically deleted from the database after 120 days of inactivity. If your account is parked, then it will be automatically deleted from the database after 240 days of inactivity. If you return or visit the site with your account before that amount of time passes, then the inactivity timer will reset and your account will be fine for another 120 or 240 days (depending on its parked/not-parked status). You can find the account park option near the top of your <a class="altlink" href="<?php echo URL_ROOT . "/profile";?>p">personal settings page</a>.
                                 <br><br>
                                 Keep in mind that 'activity' is considered a visit to any page and that torrent traffic is not counted as account activity. In order to reset the inactivity timer all you have to do is visit a single page while logged in with your account. If your account is deleted for inactivity, please do not ask the site staff to un-delete it for you. The deletion is performed automatically by the server and, as such, your account cannot be recovered after it has been deleted.<br><br>
                                 <br>
@@ -402,7 +402,7 @@
                                 <br>
                                 <strong>What are bonus points?</strong><a name="#106" id="106"></a>
                                 <br><br>
-                                If you're a member of other private trackers, you are probably at least vaguely familiar with the concept of bonus points. For the uninitiated, a bonus point system essentially allows users to earn points that can be redeemed for various rewards, primarily upload credit. You can find a basic description of our system, the current rewards, and some hints on how to earn points at the bottom of <a href="https://web.archive.org/web/20170606005806/http://asiandvdclub.org/mybonus.php">this page</a>, which is also linked to from your profile.<br><br>
+                                If you're a member of other private trackers, you are probably at least vaguely familiar with the concept of bonus points. For the uninitiated, a bonus point system essentially allows users to earn points that can be redeemed for various rewards, primarily upload credit. You can find a basic description of our system, the current rewards, and some hints on how to earn points at the bottom of <a href="<?php echo URL_ROOT . "/faq";?>">this page (check this)</a>, which is also linked to from your profile.<br><br>
 
                                 In our new system, there are two simple ways to earn bonus points: <strong>1.)</strong> by seeding certain qualifying torrents and <strong>2.)</strong> by actively participating in the community. The purpose of the system is severalfold. First, people often abandon older and less active torrents - or avoid downloading them in the first place - because these torrents generally see far less activity than new torrents. We hope to encourage our members to keep seeding these older and less popular torrents by giving them a small reward for their time and effort. Second, new members often grab torrents which do not present good ratio opportunities, and this results in many of these members experiencing ratio troubles that can best be described as <em>frustrating</em>. Our bonus system provides some alternate routes for them to improve their ratio, while at the same time helping to make ADC a better place for everyone. And finally, while we have a good number of active members who regularly download and seed our DVDs, BDs, and soundtracks, the number who frequently participate in the community is quite a bit lower. So one of our principal goals for the system is to promote a wider range of involvement in the ADC community. This includes uploading torrents, commenting on torrents, posting in our forums, and voting on our polls.<br><br>
 
@@ -419,7 +419,7 @@
                                 <br><br>
                                 Our staff have written a guide with a lot of great advice about raising your ratio if you are in trouble. You can read the guide here:
                                 <br><br>
-                                <a class="altlink" href="https://web.archive.org/web/20170606005806/http://asiandvdclub.org/punbb/viewtopic.php?id=4487">Advice on How to Raise Your Ratio</a><br><br>
+                                <a class="altlink" href="<?php echo URL_ROOT . "/faq";?>">Advice on How to Raise Your Ratio (point to formum!!!)</a><br><br>
                                 <br>
                                 <strong>Most common reasons for stats not updating</strong><a name="#27" id="27"></a>
                                 <br><br>
@@ -449,7 +449,7 @@
                                 <br><br>
                                 Some clients, notably TorrentStorm and Nova Torrent, do not report properly to the tracker when a torrent is stopped or finishes downloading. When this happens, the tracker will continue to wait for an "event=stopped" or an "event=completed" message. However, since the client never sends this message to the tracker the torrent will continue to be listed on your profile as seeding or leeching - until the session for the torrent surpasses the time-out threshold. Once that happens the tracker will automatically remove the old session and the listing will disappear from your profile. In the meantime you should just ignore the now defunct listing.
                                 <br><br>
-                                If this happens to you very frequently you may want to switch to a better client, such as <a class="altlink" href="https://web.archive.org/web/20170606005806/http://www.utorrent.com/">µTorrent</a>.<br><br>
+                                If this happens to you very frequently you may want to switch to a better client, such as <a class="altlink" href="https://www.utorrent.com/">µTorrent</a>.<br><br>
                                 <br>
                                 <strong>Can I login from different computers? Even if they have different IPs?</strong><a name="#33" id="33"></a>
                                 <br><br>
@@ -476,7 +476,7 @@
                                 <br><br>
                                 Any user may upload a torrent. There are no official requirements, such as needing to meet a certain minimum upload speed or being a member of a specific user class. Allowing everyone to share what they have is a cornerstone of our community.
                                 <br><br>
-                                All we ask is that you make sure to seed your upload until <em>at least</em> the first set of leechers have completed their download, and that you abide by the <a class="altlink" href="https://web.archive.org/web/20170606005806/http://asiandvdclub.org/upload.php">upload rules</a> - especially that you try to avoid uploading a duplicate torrent. If you're not familiar with the concept already, know that you can usually find all previous uploads for a film or series by searching using the <a class="altlink" href="<?php echo URL_ROOT . "/faq";?>#71">IMDB tt code</a>. Make sure that you do at least that much searching before uploading a torrent, so that you do not waste your time making and uploading a torrent that will just wind up being deleted.
+                                All we ask is that you make sure to seed your upload until <em>at least</em> the first set of leechers have completed their download, and that you abide by the <a class="altlink" href="<?php echo URL_ROOT . "/upload";?>">upload rules</a> - especially that you try to avoid uploading a duplicate torrent. If you're not familiar with the concept already, know that you can usually find all previous uploads for a film or series by searching using the <a class="altlink" href="<?php echo URL_ROOT . "/faq";?>#71">IMDB tt code</a>. Make sure that you do at least that much searching before uploading a torrent, so that you do not waste your time making and uploading a torrent that will just wind up being deleted.
                                 <br><br>
                                 Also, dedicate as much bandwidth as you can to your upload, especially if you have limited upstream bandwidth. Remember that slow speeds can be frustrating when you're downloading something, particularly when you see that the uploader is actively seeding a dozen other torrents. So put yourself in the leechers' shoes and pause or temporarily stop your other torrents, if you can, until you have finished uploading your torrent. You may want to mention your slow upload speed at the bottom of your torrent description as well. That way no one will be surprised to find the download taking more than a few hours.<br><br>
                                 <br>
@@ -505,7 +505,7 @@
                                 <ul>
                                     <li>If you want to upload a series to which you have all the discs, you must upload it as a batch. Depending on the size of the discs, you can upload season batches or a batch of the entire series.</li>
                                     <li>If you are unable to upload a complete batch, you should still upload as many discs together as you can. For example, if you only have the first 4 of 8 discs of a series, you should upload the 4 discs as a batch instead of uploading them separately.</li>
-                                    <li>Discs uploaded separately must be uploaded at least a week apart. This is to ensure the browse page does not get flooded with similar uploads. If you think you need an exemption, <a class="altlink" href="https://web.archive.org/web/20170606005806/http://asiandvdclub.org/staff.php">contact the staff</a>.</li>
+                                    <li>Discs uploaded separately must be uploaded at least a week apart. This is to ensure the browse page does not get flooded with similar uploads. If you think you need an exemption, <a class="altlink" href="<?php echo URL_ROOT . "/staff";?>">contact the staff</a>.</li>
                                     <li>Batch torrents should not exceed a certain size. For example, a 600 GB torrent is too big for most members to download at once and most seedboxes cannot handle it. Ask a staff member if you are unsure about the size of an upload.</li>
                                     <li>Newly-released "box sets" are allowed to be uploaded, as long as the whole season has not been fully released yet. If the whole season has already been released, the batch should include the entire season. If the whole season has not been released yet, these box sets can be uploaded individually, but the box set must be uploaded as one torrent; discs in such box sets are not allowed to be uploaded separately. If you think you need an exemption, contact the staff.</li>
                                     <li>Only series should be uploaded as batches. Movies (such as trilogies, or all of a director or actor's films) should be uploaded separately. The rule of thumb is: if there is a high chance that a member will not want the entire batch, then it should not be uploaded as a batch.</li>
@@ -526,7 +526,7 @@
                                 <br>
                                 <font color="black" style="font-size: 125%;"><strong><u>Batches Should Not Include</u></strong></font>
                                 <ul>
-                                    <li>Batches should not include any image files (scans, case covers, screenshots, etc) nor any other files that are not necessary for the playback of the disc (samples, trailers, logs, music files, etc). Such images and files can be uploaded to image-hosting sites like <a class="altlink" href="https://web.archive.org/web/20170606005806/http://imageshack.us/">ImageShack</a> or file-sharing sites like <a class="altlink" href="https://web.archive.org/web/20170606005806/http://www.mediafire.com/">MediaFire</a>.</li>
+                                    <li>Batches should not include any image files (scans, case covers, screenshots, etc) nor any other files that are not necessary for the playback of the disc (samples, trailers, logs, music files, etc). Such images and files can be uploaded to image-hosting sites like <a class="altlink" href="https://imageshack.us/">ImageShack</a> or file-sharing sites like <a class="altlink" href="https://www.mediafire.com/">MediaFire</a>.</li>
                                     <li>DVD5 .iso files should not include the .mds file, since it is used for setting the layer break on dual-layer (DVD9) discs, and it is useless for single-layer (DVD5) discs. Including useless files in a batch makes the torrent harder to re-seed. This is true for all torrents.</li>
                                     <li>You must not upload series and movies together in a single torrent, even if the movie is related to the series. Movies must be uploaded separately. For example, a batch containing the 'Cowboy Bebop' series should not contain the 'Cowboy Bebop' movie.</li></ul><br><br>
                                 <br>
@@ -546,17 +546,17 @@
                                 <br>
                                 <strong>I have a non-Japanese animated film. In which category does it belong?</strong><a name="#85" id="85"></a>
                                 <br><br>
-                                All torrents for the film belong in the category representing the film's country of origin, just as with non-animated films from that country. For example, the film <a class="altlink" href="https://web.archive.org/web/20170606005806/http://www.imdb.com/title/tt0302758/">My Beautiful Girl, Mari</a>, which is an animated film from South Korea, belongs in the Korea category.
+                                All torrents for the film belong in the category representing the film's country of origin, just as with non-animated films from that country. For example, the film <a class="altlink" href="https://www.imdb.com/title/tt0302758/">My Beautiful Girl, Mari</a>, which is an animated film from South Korea, belongs in the Korea category.
                                 <br><br>
                                 Only Japanese animated films and series belong in the Anime category, as the commonly understood definition for anime is Japan-centric. Keeping non-Japanese animated films out of the Anime category helps to cut down on confusion.<br><br>
                                 <br>
                                 <strong>Can I upload an Asian version of a Western film?</strong><a name="#86" id="86"></a>
                                 <br><br>
-                                No. Only films from Asian countries are allowed on ADC. Having a Japanese dub on your <a class="altlink" href="https://web.archive.org/web/20170606005806/http://www.imdb.com/title/tt0088763/">Back to the Future</a> DVD does not make it an Asian film.<br><br>
+                                No. Only films from Asian countries are allowed on ADC. Having a Japanese dub on your <a class="altlink" href="https://www.imdb.com/title/tt0088763/">Back to the Future</a> DVD does not make it an Asian film.<br><br>
                                 <br>
                                 <strong>How about Western movies with well-known Asian actors?</strong><a name="#87" id="87"></a>
                                 <br><br>
-                                Again, only films from Asian countries are allowed on ADC. It does not matter who is starring in the film - a Western film is still a Western film. <a class="altlink" href="https://web.archive.org/web/20170606005806/http://www.imdb.com/title/tt0120812/">Rush Hour</a> and <a class="altlink" href="https://web.archive.org/web/20170606005806/http://www.imdb.com/title/tt0271027/">Kiss of the Dragon</a> are not Asian films. <em>Do not upload them here!</em><br><br>
+                                Again, only films from Asian countries are allowed on ADC. It does not matter who is starring in the film - a Western film is still a Western film. <a class="altlink" href="https://www.imdb.com/title/tt0120812/">Rush Hour</a> and <a class="altlink" href="https://www.imdb.com/title/tt0271027/">Kiss of the Dragon</a> are not Asian films. <em>Do not upload them here!</em><br><br>
                                 <br>
                                 <strong>Why do I show up as a leecher with 0% completed on a torrent I uploaded?</strong><a name="#92" id="92"></a>
                                 <br><br>
@@ -583,13 +583,13 @@
                                 <a name="#5" id="5"></a><br>
                                 <strong>What is a Golden torrent?</strong><a name="#68" id="68"></a>
                                 <br><br>
-                                <a class="altlink" href="https://web.archive.org/web/20170606005806/http://asiandvdclub.org/browse.php?gold=1">Torrents with a golden chest</a> (<img src="./FAQ __ AsianDVDClub.org_files/golden.gif">) are considered "free leech", which means downloading them will not affect your download stats, but uploading on a golden torrent will still count towards your upload stats.  This means that your ratio can only get better when downloading golden torrents.  They are a great place to start for new users worried about their ratio.
+                                <a class="altlink" href="<?php echo URL_ROOT . "/torrents";?>">Torrents with a golden chest</a> (<img src="./images/golden.gif">) are considered "free leech", which means downloading them will not affect your download stats, but uploading on a golden torrent will still count towards your upload stats.  This means that your ratio can only get better when downloading golden torrents.  They are a great place to start for new users worried about their ratio.
                                 <br><br>
                                 Note: Golden torrents don't give you the right to hit-and-run, you must seed them just as you would any other torrent.<br><br>
                                 <br>
                                 <strong>What is a Silver torrent?</strong><a name="#98" id="98"></a>
                                 <br><br>
-                                <a class="altlink" href="https://web.archive.org/web/20170606005806/http://asiandvdclub.org/browse.php?silver=1">Torrents with a silver chest</a> (<img src="./FAQ __ AsianDVDClub.org_files/silver.gif">) are considered "half leech", which means downloading them will only add half of their download amount to your download stats, but uploading on a silver torrent will still fully count towards your upload stats.
+                                <a class="altlink" href="<?php echo URL_ROOT . "/faq";?>">Torrents with a silver chest</a> (<img src="./images/silver.gif">) are considered "half leech", which means downloading them will only add half of their download amount to your download stats, but uploading on a silver torrent will still fully count towards your upload stats.
                                 <br><br>
                                 Note: Only 50% of the download amount is counted for all Blu-ray torrents. In that sense, they act like silver torrents, but they do not have the silver chest. This means that when a Blu-ray torrent has a silver chest icon next to it, only 25% of the download amount is counted.
                                 <br><br>

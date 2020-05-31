@@ -1,23 +1,13 @@
 <?php require_once APP_ROUTE . '/views/inc/navbar_header.php';?>
 
     <div id="home_content" class="container">
-        <div id="log" class="container">
-        Developers Log (Use this only to test pages layone only)
-            <div class="row justify-content-md-center">
-                <div class="col-md-8">
-                    <div class="bloc">
-                        <div class="row justify-content-md-center">
-                            <div class="col-md-2">Torrent Name</div>
-                            <div class="col-md-8">NAME</div>
-                        </div>
+        <div  class="box">
+        <h1>Developers Log (Use this only to test pages layout only)</h1>
 
-                        <div class="row justify-content-md-center">
-                            <div class="col-md-2">Torrent Name</div>
-                            <div class="col-md-8">NAME</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <h1>From MemCached</h1>
+        <pre>
+            <?php echo $data['dataCache']; ?>
+        </pre>
         </div>
     </div>
 
