@@ -3,7 +3,7 @@ A new adc v2 framework
 ## Getting Started
 Framework works well on Ubunut Server with apache2, mysql and memchaced.
 ### Prerequisites
-* Apache2 with PHP 7.3
+* Apache2 with PHP 7.4.6 
 * MySQL
 * Memchaced
 ### Installing
