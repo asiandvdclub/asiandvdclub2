@@ -9,6 +9,10 @@ $lang_torrent = array
     'comment' => "Comment",
     'text_files' => "Files",
     'text_infohash' => "Info hash",
-    'uploader' => "Uploader"
+    'uploader' => "Uploader",
+    'anidb_link' => "AniDB Link",
+    'imdb_link' => "IMDb Link",
+    'imdb_info' => "IMDb Information",
+    'anidb_info' => "AniDB Information",
 );
 ?>

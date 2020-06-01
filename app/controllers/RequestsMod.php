@@ -32,21 +32,48 @@ class RequestsMod extends Controller
                 "getLangDropdown" => $this->languageMod->getLangDropdown(),
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                 "getSiteManagerBar"=> $this->cacheManager->getSiteManager($this->userClass),
-                "requests" => $this->takerequest->getrequest()
+                "requests" => $this->takerequest->getRequests()
             ]);
+    }
+    public function vote_request($idRequest){
+        if(empty($this->takerequest->checkVote($idRequest, $this->user_cache['id']))) {
+            $this->db->querry("INSERT INTO requests_votes (vote, uid, requests_id) VALUES (1, :uid, :rid)");
+            $this->db->bind(":uid", $this->user_cache['id']);
+            $this->db->bind(":rid", $idRequest);
+            $this->db->execute();
+
+            redirect("request/" . $idRequest);
+        }else{
+            redirect("request/" . $idRequest);
+        }
     }
     public function request($idRequest){
         require_once $this->languageMod->getLangPath(__FUNCTION__);
         $this->languageMod->setLanguage(__FUNCTION__);
 
-        $this->view('requests/request',
+        if(empty($this->takerequest->checkVote($idRequest, $this->user_cache['id']))){
+            $this->view('requests/request',
             [
                 "currentPage" => "/" . __FUNCTION__,
                 "userStats" => $this->cacheManager->getUserStats(),
                 "getLangDropdown" => $this->languageMod->getLangDropdown(),
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                 "getSiteManagerBar"=> $this->cacheManager->getSiteManager($this->userClass),
+                "request_data" => $this->takerequest->getRequestData($idRequest),
+                "request_vote" => "<a href=\"". URL_ROOT . "/vote_request/" . $idRequest . "\">Vote</a>"
             ]);
+        }else{
+            $this->view('requests/request',
+                [
+                    "currentPage" => "/" . __FUNCTION__,
+                    "userStats" => $this->cacheManager->getUserStats(),
+                    "getLangDropdown" => $this->languageMod->getLangDropdown(),
+                    "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
+                    "getSiteManagerBar"=> $this->cacheManager->getSiteManager($this->userClass),
+                    "request_data" => $this->takerequest->getRequestData($idRequest),
+                    "request_vote" => "Voted"
+                ]);
+        }
     }
     public function make_request(){
         require_once $this->languageMod->getLangPath(__FUNCTION__);

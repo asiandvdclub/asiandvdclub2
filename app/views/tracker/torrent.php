@@ -41,13 +41,13 @@
         </tr>
         <tr>
             <td>Description</td>
-            <td style="padding-left: 15px"></td>
+            <td style="padding-left: 15px"><?php echo $data['torrentData']['desc'];?></td>
         </tr>
         <tr>
             <td>Content Info</td>
             <td style="padding-left: 15px;" align="left">
-                <p style="font-size: large">AniDB Information</p>
-               AniDB Link: <a href="http://anidb.net/a<?php echo  $data['content_data']['anidb_id'];?>">http://anidb.net/a<?php echo  $data['content_data']['anidb_id'];?></a>
+                <p style="font-size: large"><?php echo $data['content_data']['content_site_name'];?></p>
+                <?php echo $data['content_data']['content_link_name'];?>: <a href="http://anidb.net/a<?php echo  $data['content_data']['anidb_id'];?>">http://anidb.net/a<?php echo  $data['content_data']['anidb_id'];?></a>
                 <br>
                 Title: <?php echo  $data['content_data']['title'];?>
                 <br>

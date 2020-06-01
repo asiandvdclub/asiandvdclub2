@@ -8,7 +8,6 @@ class takerequest
         $this->db = new Database();
     }
     public function makerequest($data){
-
         $this->db->querry("INSERT INTO `requests` (date, userid, votes, filled, title, description, content_id, type, reseed, tid) 
                                                VALUES (NOW(), :uid, 0, \"no\", :title, :desc, :content_id, :type, :reseed, :tid)");
         $this->db->bind(":uid", $data['uid']);
@@ -26,18 +25,32 @@ class takerequest
       //  dbg_log_break($data);
         $this->db->execute();
     }
-    public function getrequest(){
+    public function getRequests(){
         $html_out = "";
-        $this->db->querry("SELECT r.id, r.date, r.votes, r.filled, r.title, u.username, (SELECT username FROM users WHERE r.filled_by = id) as filled_by FROM requests as r JOIN users as u WHERE u.id = r.userid ORDER BY r.id DESC LIMIT 50");
+        $this->db->querry("SELECT r.id, r.date, r.filled, r.title, u.username, (SELECT COUNT(*) FROM requests_votes as rv WHERE r.id = rv.requests_id) as votes, (SELECT username FROM users WHERE r.filled_by = id) as filled_by FROM requests as r JOIN users as u WHERE u.id = r.userid ORDER BY r.id DESC LIMIT 50");
         $data = $this->db->getAll();
         $this->db->querry("SELECT username FROM users WHERE id = :uid");
         $this->db->bind(":uid", $data['filled_by']);
 
         foreach ($data as $value){
-            $html_out .= "<tr><td>" . $value['id'] . "</td><td>" . $value['title'] . "</td><td>" . convTime($value['date']) .
+            $html_out .= "<tr><td>" . $value['id'] . "</td><td><a href='" . URL_ROOT . "/request/" . $value['id'] . "'>" . $value['title'] . "</a></td><td>" . convTime($value['date']) .
                          "</td><td>" . $value['username'] . "</td><td>" . $value['filled'] . "</td><td>" . $value['filled_by'] . "</td><td>" . $value['votes'] . "</td></tr>";
         }
         return $html_out;
+    }
+    public function getRequestData($id){
+        $this->db->querry("SELECT r.id, r.content_id, r.type, r.date, r.filled, r.title, r.description, u.username, (SELECT username FROM users WHERE r.filled_by = id) as filled_by FROM requests as r JOIN users as u WHERE r.id = :rid");
+        $this->db->bind(":rid", $id);
+        $data = $this->db->getRow();
+        if($data['type'] == "movie") {
+            $data['content_url'] = URL_IMDB . $data['content_id'];
+            $data['web_name'] = "IMDb Link";
+        }
+        else {
+            $data['content_url'] = URL_ANIDB . $data['content_id'];
+            $data['web_name'] = "AniDB";
+        }
+        return $data;
     }
     public function checkForm($data){
         $content_data = array(
@@ -78,5 +91,11 @@ class takerequest
                 break;
         }
         return $content_data;
+    }
+    public function checkVote($rid, $uid){
+        $this->db->querry("SELECT * FROM requests_votes WHERE uid = :uid AND requests_id = :rid");
+        $this->db->bind(":uid", $uid);
+        $this->db->bind(":rid", $rid);
+        return $this->db->getRow();
     }
 }

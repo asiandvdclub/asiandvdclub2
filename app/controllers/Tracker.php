@@ -55,13 +55,12 @@ class Tracker extends Controller
             ]);
     }
     public function torrent($idTorrent){
-
         require_once $this->languageMod->getLangPath(__FUNCTION__);
         $this->languageMod->setLanguage(__FUNCTION__);
 
         $showList = "";
 
-        $this->db->querry("SELECT t.anonymous, t.info_hash, t.numfiles, t.content_id, t.name, t.small_desc, t.seeders, t.leechers, t.size, t.added, t.specs, usr.username FROM torrents as t JOIN users as usr WHERE t.id = :tid AND t.owner = usr.id");
+        $this->db->querry("SELECT t.anonymous, t.info_hash, t.numfiles, t.content_id, t.name, t.desc, t.seeders, t.leechers, t.size, t.added, t.specs, usr.username FROM torrents as t JOIN users as usr WHERE t.id = :tid AND t.owner = usr.id");
         $this->db->bind(":tid", $idTorrent);
         $tdata = $this->db->getRow();
         $tdata['specs'] = json_decode($tdata['specs'], true);
@@ -80,12 +79,16 @@ class Tracker extends Controller
                 if(empty($contentData['synopsis']))
                     $contentData['synopsis'] = $contentData['plot'];
                 $contentData['directors'] = json_decode($contentData['directors'], true);
+                $contentData['content_site_name'] = $lang_torrent['imdb_info'];
+                $contentData['content_link_name'] = $lang_torrent['imdb_link'];
                 break;
             case "anime":
                 $this->db->querry("SELECT * FROM anidb WHERE anidb_id = :content_id");
                 $this->db->bind(":content_id", $tdata['content_id']);
                 $contentData = $this->db->getRow();
                 $contentData['directors'] = json_decode($contentData['directors'], true);
+                $contentData['content_site_name'] = $lang_torrent['anidb_info'];
+                $contentData['content_link_name'] = $lang_torrent['anidb_link'];
             break;
         }
 

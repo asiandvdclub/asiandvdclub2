@@ -8,7 +8,7 @@ Example for 1.0.30
 0 -> beta, 0 for no beta -> wasn't in production
 30 -> reset from nr. of comits see git repo
 */
-define("ADC_FRAMEWORK", "1.0.31");
+define("ADC_FRAMEWORK", "1.0.32");
 //Bitorrent
 define("IN_TRACKER", true);
 //App route
@@ -18,6 +18,8 @@ define('IMDB_IMAGES', APP_IMAGE . "/imdb/");
 define('LANG_ROUTE', APP_ROUTE . "/lang/");
 //URL route
 define('URL_ROOT', 'http://192.168.1.2');
+define('URL_IMDB', 'https://www.imdb.com/title/tt');
+define('URL_ANIDB', 'https://anidb.net/anime/');
 define('SITE_NAME', 'forum');
 //BD Variables
 define('DB_HOST', 'localhost');

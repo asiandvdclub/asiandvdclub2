@@ -2,23 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35533c8a-7baa-46f8-9fe2-be7962aab11d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/models/takeContent.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/config/default_config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/default_config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Debugger.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Debugger.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/RequestsMod.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/RequestsMod.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/Tracker.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Tracker.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/libraries/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/libraries/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/libraries/imdb_to_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/libraries/imdb_to_json.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/cacheManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/cacheManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/en/lang_torrent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lang/en/lang_torrent.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/takerequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/takerequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/takeupload.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/takeupload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/debugger/log.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/debugger/log.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/inc/navbar_header.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/inc/navbar_header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/pages/faq.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/faq.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/pages/rules.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/rules.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/requests/request.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/requests/request.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/requests/requests.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/requests/requests.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/tracker/torrent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tracker/torrent.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -209,7 +201,9 @@
       <workItem from="1590744594708" duration="6701000" />
       <workItem from="1590755893396" duration="7485000" />
       <workItem from="1590835492158" duration="19049000" />
-      <workItem from="1590918163645" duration="21700000" />
+      <workItem from="1590918163645" duration="22027000" />
+      <workItem from="1591005654108" duration="12797000" />
+      <workItem from="1591027949131" duration="20000" />
     </task>
     <servers />
   </component>

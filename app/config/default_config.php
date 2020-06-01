@@ -109,7 +109,7 @@ $PAGES = [
     "Home" => array("index","create_news","delete_news", "faq", "rules"),
     "Forum" => array("forums", "in_forum", "post"),
     "Tracker" => array("torrents", "torrent", "upload", "download"),
-    "RequestsMod" => array("requests", "request", "make_request"),
+    "RequestsMod" => array("requests", "request", "make_request", "vote_request"),
     "Debugger" => array("log"),
     "UserManager" => array("profile"),
 ];
@@ -129,6 +129,7 @@ $AUTHORITY=array(
         'download' => 1,
         'requests' => 1,
         'request' => 1,
+        'vote_request' => 1,
         'make_request' => 1,
         'rules' => 1,
         'faq' => 1,
@@ -164,7 +165,8 @@ $AUTHORITY=array(
     'request_mod' => array(
         'requests' => 1,
         'request' => 1,
-        'make_request' => 1
+        'make_request' => 1,
+        'vote_request' => 1,
     ),
 
     'defaultclass' => '1',
