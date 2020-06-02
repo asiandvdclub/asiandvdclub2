@@ -10,7 +10,6 @@ require_once "functions_announce.php";
 @session_start();
 //TODO Language system for a "translator" to translate the page
 
-//TODO: BUG that logout's the user, happens in some situations, I don't know the reason, Core inspection need to be done
 class Core{
     protected $currentController = 'Pages';
     protected $currentMethod = 'index';

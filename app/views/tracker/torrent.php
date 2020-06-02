@@ -44,6 +44,10 @@
             <td style="padding-left: 15px"><?php echo $data['torrentData']['desc'];?></td>
         </tr>
         <tr>
+            <td>Mediainfo</td>
+            <td style="padding-left: 15px"><?php echo $data['torrentData']['media_info'];?></td>
+        </tr>
+        <tr>
             <td>Content Info</td>
             <td style="padding-left: 15px;" align="left">
                 <p style="font-size: large"><?php echo $data['content_data']['content_site_name'];?></p>

@@ -2,15 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35533c8a-7baa-46f8-9fe2-be7962aab11d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/models/takeprofile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/config/default_config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/default_config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/RequestsMod.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/RequestsMod.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Access.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Access.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Home.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/Tracker.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Tracker.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lang/en/lang_torrent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lang/en/lang_torrent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/takerequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/takerequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/requests/request.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/requests/request.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/UserManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/UserManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/session_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/session_helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/en/lang_donate.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libraries/Core.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/libraries/Core.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/cacheManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/cacheManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/takelogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/takelogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/takesignup.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/takesignup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/pages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/tracker/torrent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tracker/torrent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/tracker/torrents.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tracker/torrents.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/tracker/upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tracker/upload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/user_manager/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_manager/profile.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -204,6 +213,8 @@
       <workItem from="1590918163645" duration="22027000" />
       <workItem from="1591005654108" duration="12797000" />
       <workItem from="1591027949131" duration="20000" />
+      <workItem from="1591035509111" duration="3230000" />
+      <workItem from="1591082424607" duration="14018000" />
     </task>
     <servers />
   </component>

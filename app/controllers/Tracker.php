@@ -28,18 +28,18 @@ class Tracker extends Controller
 
         $showList = "";
 
-        $this->db->querry("SELECT tor.id, tor.name, tor.seeders, tor.leechers, usr.username, tor.size, tor.added FROM torrents as tor JOIN users as usr WHERE tor.owner = usr.id");
+        $this->db->querry("SELECT tor.downloaded, tor.id, tor.name, tor.seeders, tor.leechers, usr.username, tor.size, tor.added, (SELECT COUNT(*) FROM torrentComment as tc WHERE tc.id = tor.id) as comments FROM torrents as tor JOIN users as usr WHERE tor.owner = usr.id");
         $tList = $this->db->getAll();
         foreach ($tList as $row){
-            $showList .= "<tr>";
+            $showList .= "<tr align='center'>";
             $showList .=   "<td>DVD</td>";
             $showList .=   "<td><a href=". URL_ROOT . "/torrent/". $row['id'] .">" . $row['name'] ."</a></td>";
-            $showList .=   "<td></td>";
+            $showList .=   "<td>" . $row['comments'] . "</td>";
             $showList .=   "<td>" . convTime($row['added']) ."</td>";
             $showList .=   "<td>" . formatBytes($row['size']) ."</td>";
             $showList .=   "<td>" . $row['seeders'] ."</td>";
             $showList .=   "<td>" . $row['leechers'] ."</td>";
-            $showList .=   "<td></td>";
+            $showList .=   "<td>" . $row['downloaded'] . "</td>";
             $showList .=   "<td>" . $row['username'] ."</td>";
             $showList .= "</tr>";
         }
@@ -57,8 +57,6 @@ class Tracker extends Controller
     public function torrent($idTorrent){
         require_once $this->languageMod->getLangPath(__FUNCTION__);
         $this->languageMod->setLanguage(__FUNCTION__);
-
-        $showList = "";
 
         $this->db->querry("SELECT t.anonymous, t.info_hash, t.numfiles, t.content_id, t.name, t.desc, t.seeders, t.leechers, t.size, t.added, t.specs, usr.username FROM torrents as t JOIN users as usr WHERE t.id = :tid AND t.owner = usr.id");
         $this->db->bind(":tid", $idTorrent);
@@ -238,9 +236,12 @@ class Tracker extends Controller
     }
 
     public function download($torrentID){
+        $this->db->querry("UPDATE torrents SET downloaded = downloaded+1 WHERE id = :tid");
+        $this->db->bind(":tid", $torrentID);
+        $this->db->execute();
         ob_clean();
-        $this->db->querry("SELECT `name`, `info_hash` FROM `torrents` WHERE id = :tId");
-        $this->db->bind(":tId", $torrentID);
+        $this->db->querry("SELECT `name`, `info_hash` FROM `torrents` WHERE id = :tid");
+        $this->db->bind(":tid", $torrentID);
         $torrent_data = $this->db->getRow();
         $path = DIR_TORRENTS . $torrent_data['info_hash'] . ".torrent";
         $bdec = $this->bencode->bdec_file($path, filesize($path));

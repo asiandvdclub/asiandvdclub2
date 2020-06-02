@@ -67,7 +67,6 @@ class Access extends Controller{
                 $this->dataMod->checkUser();
 
             }
-            //TODO This check needs to be changed
         }elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['sitelanguage'])) {
 
             //HERE

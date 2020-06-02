@@ -33,19 +33,19 @@
                 <tbody>
                 <tr>
                     <td style="table-layout: fixed; width: 10%;">Username:</td>
-                    <td></td>
+                    <td><?php echo $data['user_data']['username']; ?></td>
                 </tr>
                 <tr>
                     <td style="table-layout: fixed; width: 10%;">Join Date:</td>
-                    <td></td>
+                    <td><?php echo $data['user_data']['added']; ?></td>
                 </tr>
                 <tr>
                     <td style="table-layout: fixed; width: 10%;">Last Seen:</td>
-                    <td></td>
+                    <td><?php echo $data['user_data']['last_access']; ?></td>
                 </tr>
                 <tr>
                     <td style="table-layout: fixed; width: 10%;">Gender:</td>
-                    <td></td>
+                    <td><?php echo $data['user_data']['gender']; ?></td>
                 </tr>
                 <tr>
                     <td style="table-layout: fixed; width: 10%;">Class:</td>

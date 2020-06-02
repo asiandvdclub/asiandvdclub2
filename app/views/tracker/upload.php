@@ -177,10 +177,16 @@
             </td>
         </tr>
         <tr>
-            <td align="right">Description</td>
+            <td class="rowhead nowrap" valign="top" align="right">Description</td>
             <td align="left">
                 <textarea class="bbcode" cols="100" style="width: 650px;" name="big_desc" id="descr" rows="20">
                 </textarea>
+            </td>
+        </tr>
+        <tr>
+            <td class="rowhead nowrap" valign="top" align="right">MediaInfo</td>
+            <td align="left">
+                <button>Add</button>
             </td>
         </tr>
         <tr>

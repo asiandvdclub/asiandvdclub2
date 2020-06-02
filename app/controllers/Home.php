@@ -53,7 +53,6 @@ class Home extends Controller {
                 "lang_index" => $lang_index,
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                 "getSiteManagerBar"=> $this->cacheManager->getSiteManager($this->userClass),
-                "index_data" => $this->index_data()
             ]);
     }
     public function faq(){
@@ -68,7 +67,20 @@ class Home extends Controller {
                 "lang_index" => $lang_index,
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                 "getSiteManagerBar"=> $this->cacheManager->getSiteManager($this->userClass),
-                "index_data" => $this->index_data()
+            ]);
+    }
+    public function donation(){
+        require_once $this->languageMod->getLangPath(__FUNCTION__);
+        $this->languageMod->setLanguage(__FUNCTION__);
+
+        $this->view('pages/donation',
+            [
+                "currentPage" => "/" . __FUNCTION__,
+                "userStats" => $this->cacheManager->getUserStats(),
+                "news" => $this->index->news($lang_index, $this->userClass), // I know this $lang_index doesn't look good here but this works on the fly due to require above
+                "lang_index" => $lang_index,
+                "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
+                "getSiteManagerBar"=> $this->cacheManager->getSiteManager($this->userClass),
             ]);
     }
     //TODO don't check for class here, move this to the CORE level, there will be more function that this one, keep it clean.!!!!
@@ -123,10 +135,13 @@ class Home extends Controller {
                                   FROM peers GROUP BY id");
         $peers = $this->db->getRow();
         $data['peers'] = $peers['total_peers'] > 0 ? $peers['total_peers'] : 0;
-        $data['seeders'] =  $peers['seeders'];
-        $data['leechers'] =$peers['leechers'];
+        $data['seeders'] = $peers['seeders'] ? $peers['seeders'] : 0;
+        $data['leechers'] = $peers['leechers'] ? $peers['leechers'] : 0;
         $this->db->querry("SELECT user_limit FROM tracker LIMIT 1");
         $data['user_limit'] = $this->db->getRow()['user_limit'];
+        $this->db->querry("SELECT COUNT(*) FROM torrents");
+        $data['total_torrents'] = $this->db->getRow()[0];
+        $data['ratio'] = ($data['seeders'] != 0 && $data['leechers'] != 0) ? $data['seeders']/$data['leechers'] : 0;
         return $data;
     }
   }

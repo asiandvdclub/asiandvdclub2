@@ -86,11 +86,11 @@
                     <th>Type</th>
                     <th>Name</th>
                     <th>Com.</th>
-                    <th>Time.</th>
-                    <th>Size.</th>
+                    <th>Time</th>
+                    <th>Size</th>
                     <th>Seeds</th>
                     <th>Leech</th>
-                    <th>Down</th>
+                    <th>Down.</th>
                     <th>Uploader</th>
                 </tr>
             </thead>

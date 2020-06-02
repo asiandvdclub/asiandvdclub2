@@ -6,6 +6,8 @@ class UserManager extends Controller
     private $userClass;
     private $cacheManager;
     private $languageMod;
+    private $takeprofile;
+    private $cache_data;
 
     public function UserManager(){
         $this->db = new Database();
@@ -13,10 +15,13 @@ class UserManager extends Controller
         $this->languageMod = $this->model('language');
 
         $this->cacheManager->setUserStats();
-        $this->userClass = $this->cacheManager->getUserStats()['idClass'];
+        $this->cache_data = $this->cacheManager->getUserStats();
+        $this->userClass = $this->cache_data['idClass'];
+
+
+        $this->takeprofile = $this->dataModel('takeprofile', $this->cache_data);
     }
     public function profile(){
-
         $this->languageMod->setLanguage(__FUNCTION__);
 
         $this->view('user_manager/profile',
@@ -25,6 +30,7 @@ class UserManager extends Controller
                 "userStats" => $this->cacheManager->getUserStats(),
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                 "getSiteManagerBar" => $this->cacheManager->getSiteManager($this->userClass),
+                "user_data" => $this->cache_data
             ]);
     }
 }

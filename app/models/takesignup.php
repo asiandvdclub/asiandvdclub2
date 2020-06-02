@@ -34,7 +34,6 @@ class takesignup
 
             $this->confirm_hash = $this->generateConfirmHash();
             $this->db->bind(':confirm', $this->confirm_hash);
-            //TODO IP need to get recorded
             if($this->db->execute())
                 return true;
             else

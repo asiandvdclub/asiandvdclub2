@@ -106,7 +106,7 @@ $ATTACHMENT=array(
 $PAGES = [
     "Access"=> array("login", "signup", "failedlogin", "confirm", "confirmed", "recover", "confirm_resend"),
     "SiteManager" => array("staff_panel", "site_settings", "forum_manager", "forum_manager_forums", "forum_delete", "forum_add"),
-    "Home" => array("index","create_news","delete_news", "faq", "rules"),
+    "Home" => array("index","create_news","delete_news", "faq", "rules", "donation"),
     "Forum" => array("forums", "in_forum", "post"),
     "Tracker" => array("torrents", "torrent", "upload", "download"),
     "RequestsMod" => array("requests", "request", "make_request", "vote_request"),
@@ -118,7 +118,7 @@ $AUTHORITY=array(
     ///------------------------------------
     //'att' => $ATTACHMENT,
     //groups of news with the news pages
-    //TODO change values to INT
+
 
     //!!!! Debuger will be deleted on version release
     'pages' => array(
@@ -135,6 +135,7 @@ $AUTHORITY=array(
         'faq' => 1,
         'log' => 1,
         'profile' => 1,
+        'donation' => 1
     ),
     'news_group' => array(
         'create_news' => array(10,15,14),

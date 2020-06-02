@@ -1,5 +1,10 @@
 <?php
 
+/* TODO !IMPORTANT
+ * update the memecache everytime and once on 30 min or 1 hour update the database
+ * put a remaining time in memcached
+ */
+
 class cacheManager
 {
     private $db;
@@ -20,10 +25,8 @@ class cacheManager
 
         $this->cache->clearKey($this->user_cache); // <---- remove this after testing
 
-        //TODO Cache user by ID where ID is the key , user_stats_ . ID
         if (empty($this->cache->getKey($this->user_cache))) {
-
-            $this->db->querry("SELECT u.id, u.username, u.uploaded, u.downloaded, u.idClass, u.passkey, u.invites FROM users as u WHERE u.id = :userid");
+            $this->db->querry("SELECT u.id, u.username, u.uploaded, u.downloaded, u.idClass, u.passkey, u.invites, u.added, u.last_access, u.gender FROM users as u WHERE u.id = :userid");
             $this->db->bind(":userid", base64_decode($_COOKIE['c_secure_uid']));
             $row = $this->db->getRow();
             $this->db->querry("SELECT p.seeder, p.connectable FROM peers as p WHERE p.userid = :userid");

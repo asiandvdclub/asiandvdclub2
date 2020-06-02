@@ -15,7 +15,7 @@ function isLogged(){
     // c_secure_id <-- find other method to get the passhash
     $tempDB->bind(':user', base64_decode($_COOKIE['c_secure_uid']));
     $val = $tempDB->getRow();
-
+    $tempDB->closeDb(); // TODO if something is up remove this
     //setcookie("lang", $lang);
 
     if($_COOKIE["c_secure_login"] == base64_encode("yeah")) {

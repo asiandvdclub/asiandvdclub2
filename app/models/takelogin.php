@@ -44,7 +44,6 @@ class takelogin
             unset($getPH);
             if($this->data['logout']) {
                 $this->logincookie($row['id'], $cookiePH, 900, 1, true);
-
             }
             else {
                 $this->logincookie($row['id'], $cookiePH, 0x7fffffff, 1, true);
