@@ -18,6 +18,7 @@ class Forum extends Controller
         $this->userClass = $this->cacheManager->getUserStats()['idClass'];
     }
     public function forums(){
+
         if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['sitelanguage'])) {
             $expires = time() + 0x7fffffff;
             setcookie("c_site_language", base64_encode($_POST['sitelanguage']), $expires, "/");

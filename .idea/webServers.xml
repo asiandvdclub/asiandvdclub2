@@ -2,12 +2,11 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="982f7a45-7b95-4b7f-9c75-2dc9738693a0" name="google" url="http://192.168.1.2">
-        <fileTransfer host="192.168.1.2" port="22" rootFolder="/var/www/html" accessType="SFTP">
+      <webServer id="bb0d0a11-b1e1-4c4a-9fc1-bcf89c0b8bd5" name="fossa" url="http://45.83.27.44">
+        <fileTransfer rootFolder="/var/www/html" accessType="SFTP" host="45.83.27.44" port="22" sshConfigId="96f6c1e0-cc59-4a0a-a933-fc31ac52c6e6" sshConfig="google" keyPair="true">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
-          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
     </option>

@@ -14,6 +14,7 @@ class cacheManager
     //private $userStats = array();
 
     public function cacheManager(){
+
          $this->db = new Database();
          $this->cache = new Cache();
          // $this->auth = new Authority();
@@ -46,18 +47,28 @@ class cacheManager
                 "connectable" => !empty($total[0]['connectable']) ? $total[0]['connectable'] : "no"
             );
             $row = array_merge($row, $sl);
+            $last_seen = $row['last_access'];
+            unset($row['last_access']);
             $this->cache->setKey($this->user_cache, $row, 1800);
+            $this->cache->setKey(str_replace("_stats", "_last_seen", $this->user_cache), date("Y-m-d h:i:sa"), 900);
         }
     }
+    public function setLastSeen(){
+        $this->cache->setKey(str_replace("_stats", "_last_seen", $this->user_cache), date("Y-m-d h:i:sa"), 900);
+    }
+    public function getLastSeen(){
+        return $this->cache->getKey(str_replace("_stats", "_last_seen", $this->user_cache));
+    }
+
     public function getSiteManager($userClass){
         //$this->cache->clearKey('site_manager_bar');
         //Manage this
-        //$this->cache->clearKey('site_manager_bar');
+      // $this->cache->clearKey('site_manager_bar');
         if($userClass == UC_SYSOP){
             if(!$this->cache->getKey('site_manager_bar')){  // <----- this need to bee in the user cache
-                $htmlBar = "<td><a href=\"" . URL_ROOT . "\staff_panel\" class=\"badge badge-primary\">Staff Panel</a></td>
-                            <td><a href=\"" . URL_ROOT . "\site_settings\" class=\"badge badge-primary\">Site Settings</a></td>
-                            <td><a href=\"" . URL_ROOT . "\\forum_manager\" class=\"badge badge-primary\">Forum Manager</a></td>";
+                $htmlBar = "<a href=\"" . URL_ROOT . "\staff_panel\" class=\"badge badge-primary\">Staff Panel</a>
+                            <a href=\"" . URL_ROOT . "\site_settings\" class=\"badge badge-primary\">Site Settings</a>
+                            <a href=\"" . URL_ROOT . "\\forum_manager\" class=\"badge badge-primary\">Forum Manager</a>";
                 $this->cache->setKey('site_manager_bar', $htmlBar, 86400);
                 return $this->cache->getKey('site_manager_bar');
             }else{
@@ -65,8 +76,8 @@ class cacheManager
             }
         }elseif($userClass == UC_MODERATOR){
             if(!$this->cache->getKey('site_manager_bar')){
-                $htmlBar = "<td><a href=\"" . URL_ROOT . "\staff_panel\" class=\"badge badge-primary\">Staff Panel</a></td>                            
-                            <td><a href=\"" . URL_ROOT . "\\forum_manager\" class=\"badge badge-primary\">Forum Manager</a></td>";
+                $htmlBar = "<a href=\"" . URL_ROOT . "\staff_panel\" class=\"badge badge-primary\">Staff Panel</a>                          
+                            <a href=\"" . URL_ROOT . "\\forum_manager\" class=\"badge badge-primary\">Forum Manager</a>";
                 $this->cache->setKey('site_manager_bar', $htmlBar, 86400);
                 return $this->cache->getKey('site_manager_bar');
             }else{

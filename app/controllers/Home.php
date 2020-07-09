@@ -12,12 +12,14 @@ class Home extends Controller {
     private $languageMod;
     private $index;
     private $userClass;
+    private $tracker_info;
 
     public function Home(){
         $this->db = new Database();
         $this->cacheManager = $this->model('cacheManager');
         $this->languageMod = $this->model('language');
         $this->index = $this->model('index');
+        $this->tracker_info = $this->model('tracker_info');
 
         $this->cacheManager->setUserStats();
 
@@ -38,7 +40,7 @@ class Home extends Controller {
                 "lang_index" => $lang_index,
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                 "getSiteManagerBar"=> $this->cacheManager->getSiteManager($this->userClass),
-                "index_data" => $this->index_data()
+                "tracker_info" => $this->tracker_info->users_data()
             ]);
     }
     public function rules(){
@@ -116,32 +118,5 @@ class Home extends Controller {
             //Print message
             redirect("");
         }
-    }
-    //Index status
-    private function index_data(){
-        $data = array(
-            "users" => 0,
-            "unconfirmed" => 0
-        );
-        $this->db->querry("SELECT COUNT(id) as ct FROM users");
-        $temp = $this->db->getAll();
-        $data['users'] = $temp[0]['ct'];
-        $this->db->querry("SELECT COUNT(status) as un FROM users WHERE status = 'pending'");
-        $temp = $this->db->getAll();
-        $temp[0]['un'] ? $data['unconfirmed'] = $temp[0]['un'] : 0;
-        $this->db->querry("SELECT COUNT(id) as total_peers,
-                                  sum(case when seeder = \"yes\" then 1 else 0 end) AS seeders,
-                                  sum(case when seeder = \"now\" then 1 else 0 end) AS leechers
-                                  FROM peers GROUP BY id");
-        $peers = $this->db->getRow();
-        $data['peers'] = $peers['total_peers'] > 0 ? $peers['total_peers'] : 0;
-        $data['seeders'] = $peers['seeders'] ? $peers['seeders'] : 0;
-        $data['leechers'] = $peers['leechers'] ? $peers['leechers'] : 0;
-        $this->db->querry("SELECT user_limit FROM tracker LIMIT 1");
-        $data['user_limit'] = $this->db->getRow()['user_limit'];
-        $this->db->querry("SELECT COUNT(*) FROM torrents");
-        $data['total_torrents'] = $this->db->getRow()[0];
-        $data['ratio'] = ($data['seeders'] != 0 && $data['leechers'] != 0) ? $data['seeders']/$data['leechers'] : 0;
-        return $data;
     }
   }

@@ -80,6 +80,8 @@
         </tr>
     </table>
     <br>
+    <?php echo $data['comments']; ?>
+    <br>
     <div class="" align="center">
         <form enctype="multipart/form-data" method="POST" action="<?php echo URL_ROOT . "/torrent/" . $data['torrentData']['torrent_id'];?>" role="form">
             <table class="bg-dark text-white center" align="center">
@@ -88,13 +90,12 @@
                 </tr>
                 <tr align="center">
                     <th>
-                        <textarea id="comment" rows="4" cols="50" name="comment_desc">
-                        </textarea>
+                        <textarea class="txtarea" style="height:50px;" rows="5" cols="50" name="comment_desc" Id="text" value=""> </textarea>
                     </th>
                 </tr>
                 <tr align="center">
                     <th>
-                        <button class="btn btn-info text-center"  type="submit">Add</button>
+                        <button class="btn btn-info text-center" name="add"  type="submit" onsubmit="return false">Add</button>
                     </th>
                 </tr>
             </table>

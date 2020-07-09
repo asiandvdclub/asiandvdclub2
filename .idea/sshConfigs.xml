@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig host="45.83.27.44" id="96f6c1e0-cc59-4a0a-a933-fc31ac52c6e6" keyPath="E:\PROJECTS\AllAboutNexusphp\fossaa.ppk" port="22" customName="google" nameFormat="CUSTOM" username="fossa" />
+    </configs>
+  </component>
+</project>

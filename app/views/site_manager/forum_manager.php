@@ -1,48 +1,44 @@
 <?php require_once APP_ROUTE . '/views/inc/navbar_header.php';?>
 
-<div id="std_web" class="container">
-    <div id="std_in" class="container bg-dark">
-        <a class="badge bg-light font-big mg">Forum Overview</a>
-        <table class="table table-striped table-bordered bg-white">
-            <tbody>
-            <tr class="text-center">
-                <td>Forums</td>
-                <td>Posts</td>
-                <td>Moderators</td>
-                <td>Users</td>
-            </tr>
-            <tr class="text-center">
-                <td><?php echo $data["forum_status"]["forums"]?></td>
-                <td><?php echo $data["forum_status"]["posts"] ?></td>
-                <td></td>
-                <td><?php echo $data["forum_status"]["users"] ?></td>
+<div style="width: 1600px; height: 300px">
+    <div  style="float: left;margin-right: 30px; width: 100%">
+        <h2>Forum Overview</h2>
+        <div class="news">
+            <div class="news-heading"></div>
+            <table class="table" style="width: 700px; " cellspacing="0" cellpadding="10">
+                <thead>
+                <tr class="">
+                    <th>Categorys</th>
+                    <th>Forums</th>
+                    <th>Topics</th>
+                    <th>Posts</th>
+                    <th>Blocked users to post</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div  style="float: left;margin-right: 30px; width: 100%">
+        <h2>Forum Settings</h2>
+        <div class="news">
+            <?php echo $data['error']; ?>
+            <?php echo $data['view_settings']; ?>
+            <!--
+            <div class="news-heading"></div>
+            <div class="news-body">
 
-            </tr>
-
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            </tbody>
-        </table>
-        <br>
-        <a class="badge bg-light font-big mg">Forum Settings</a>
-
-        <table class="table table-striped table-bordered bg-white">
-            <tr>
-                <th style="width: 200px"><a href="<?php echo URL_ROOT . "/forum_manager_forums"; ?>">Manage Forums</a></th>
-                <th class="border-left" rowspan="3"><?php echo $data['category']; ?></th>
-            </tr>
-            <tr>
-                <td><a href="">Manage Users</a></td>
-            </tr>
-            <tr>
-                <td><a href="#">Manages Posts</a></td>
-            </tr>
-        </table>
-
+            </div>
+            -->
+        </div>
     </div>
 </div>
 

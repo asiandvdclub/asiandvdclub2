@@ -17,15 +17,15 @@ define('APP_IMAGE', dirname(APP_ROUTE) . "/public/images");
 define('IMDB_IMAGES', APP_IMAGE . "/imdb/");
 define('LANG_ROUTE', APP_ROUTE . "/lang/");
 //URL route
-define('URL_ROOT', 'http://192.168.1.2');
+define('URL_ROOT', 'http://45.83.27.44');
 define('URL_IMDB', 'https://www.imdb.com/title/tt');
 define('URL_ANIDB', 'https://anidb.net/anime/');
 define('SITE_NAME', 'forum');
 //BD Variables
 define('DB_HOST', 'localhost');
-define('DB_USER', 'duplex');
-define('DB_PASS', '123123');
-define('DB_NAME', 'nexusphp_updated');
+define('DB_USER', 'fossa');
+define('DB_PASS', '6#hxAfvU{?-ttyx9');
+define('DB_NAME', 'fossa_adc');
 //Folders
 define('DIR_TORRENTS', APP_ROUTE . '/torrents/');
 define('DIR_IMAGES', 'images/');

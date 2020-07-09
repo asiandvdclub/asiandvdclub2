@@ -7,6 +7,7 @@
 
 require_once "functions.php";
 require_once "functions_announce.php";
+require_once APP_ROUTE . "/models/cacheManager.php";
 @session_start();
 //TODO Language system for a "translator" to translate the page
 
@@ -17,9 +18,10 @@ class Core{
     //This is the mapping for Controllers(keys) and Methods(values)
     //If you want to add a page this is where you will add it first.
     private $pages;
+    private $memcached;
 
     public function Core(){
-
+        $this->memcached = new cacheManager();
         require getConfigPath();
         $this->pages = $PAGES;
 
@@ -29,8 +31,16 @@ class Core{
         $url = $this->getUrl();
 
         $db = new Database();
-        if(isLogged())
-             $auth = new Authority();
+        if(isLogged()) {
+            $auth = new Authority();
+        }
+        //update last seen
+        if(isset($_COOKIE['c_secure_uid']) && timeDiff($this->memcached->getLastSeen()) > 900){
+            $db->querry("UPDATE users SET last_access = NOW() WHERE id = :uid");
+            $db->bind(":uid", base64_decode($_COOKIE['c_secure_uid']));
+            $db->execute();
+            $this->memcached->setLastSeen();
+        }
 
         $db->querry("SELECT globalSignUp, trackerStatus FROM tracker LIMIT 1");
         $globalSignUp = $db->getRow();
@@ -66,7 +76,6 @@ class Core{
                     require_once '../app/controllers/' . $this->currentController . '.php';
                     $this->currentController = new $this->currentController();
                 }
-
                 if (method_exists($this->currentController, $url[0])) {
                     $this->currentMethod = $url[0];
                     // remove this if you want index to show instead of home, also change home in takelogin.php in index
@@ -105,6 +114,7 @@ class Core{
             $this->currentMethod = "closedSignUp";
 
         // Get params
+        //TODO accept array of paramterers ex. : www.host.com/method/variable1/value1/variable2/value2
         $this->params = $url ? $url : [];
 
         $db->closeDb();

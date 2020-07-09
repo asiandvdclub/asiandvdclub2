@@ -22,15 +22,15 @@
                 <tbody >
                 <tr>
                     <td  align="right" style="width: 65%">Active accounts:</td>
-                    <td><?php echo $data['index_data']['users'];?></td>
+                    <td><?php echo $data['tracker_info']['users'];?></td>
                 </tr>
                 <tr>
                     <td align="right">Users active today</td>
-                    <td></td>
+                    <td><?php echo $data['tracker_info']['users_active_today'];?></td>
                 </tr>
                 <tr>
                     <td align="right">Users active last 15 min</td>
-                    <td></td>
+                    <td><?php echo $data['tracker_info']['users_active_last_15min'];?></td>
                 </tr>
                 <tr>
                     <td align="right">Active warned accounts</td>
@@ -38,7 +38,7 @@
                 </tr>
                 <tr>
                     <td align="right">Total torrents</td>
-                    <td><?php echo $data['index_data']['total_torrents'];?></td>
+                    <td><?php echo $data['tracker_info']['total_torrents'];?></td>
                 </tr>
                 <tr>
                     <td align="right">Blu-ray</td>
@@ -46,23 +46,23 @@
                 </tr>
                 <tr>
                     <td align="right">Total peers</td>
-                    <td><?php echo $data['index_data']['peers'];?></td>
+                    <td><?php echo $data['tracker_info']['peers'];?></td>
                 </tr>
                 <tr>
                     <td align="right">Seeders</td>
-                    <td><?php echo $data['index_data']['seeders'];?></td>
+                    <td><?php echo $data['tracker_info']['seeders'];?></td>
                 </tr>
                 <tr>
                     <td align="right">Leechers</td>
-                    <td><?php echo $data['index_data']['leechers'];?></td>
+                    <td><?php echo $data['tracker_info']['leechers'];?></td>
                 </tr>
                 <tr>
                     <td align="right">Seeders/leechers ratio</td>
-                    <td><?php echo $data['index_data']['ratio'];?></td>
+                    <td><?php echo $data['tracker_info']['ratio'];?></td>
                 </tr>
                 <tr>
                     <td align="right">User limit</td>
-                    <td><?php echo $data['index_data']['user_limit'];?></td>
+                    <td><?php echo $data['tracker_info']['user_limit'];?></td>
                 </tr>
                 </tbody>
             </table>

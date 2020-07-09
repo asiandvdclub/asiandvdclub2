@@ -28,8 +28,9 @@ class Tracker extends Controller
 
         $showList = "";
 
-        $this->db->querry("SELECT tor.downloaded, tor.id, tor.name, tor.seeders, tor.leechers, usr.username, tor.size, tor.added, (SELECT COUNT(*) FROM torrentComment as tc WHERE tc.id = tor.id) as comments FROM torrents as tor JOIN users as usr WHERE tor.owner = usr.id");
+        $this->db->querry("SELECT tor.downloaded, tor.id, tor.name, tor.seeders, tor.leechers, usr.username, tor.size, tor.added, (SELECT COUNT(*) FROM torrentComment as tc WHERE tc.tid = tor.id) as comments FROM torrents as tor JOIN users as usr WHERE tor.owner = usr.id");
         $tList = $this->db->getAll();
+
         foreach ($tList as $row){
             $showList .= "<tr align='center'>";
             $showList .=   "<td>DVD</td>";
@@ -89,7 +90,7 @@ class Tracker extends Controller
                 $contentData['content_link_name'] = $lang_torrent['anidb_link'];
             break;
         }
-
+        //TODO Check if torrent description isn't black *baka*
         if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['sitelanguage'])) {
             //die($this->cacheManager->getUserStats()['id'] . "------" . $idTorrent . "========" . $_POST['comment_desc']);
             $this->db->querry("INSERT INTO `torrentComment` (`userid`, `comment`, `added`, `tid`) VALUES (:uid, :comment, NOW(), :tid)");
@@ -98,17 +99,7 @@ class Tracker extends Controller
             $this->db->bind(":comment", $_POST['comment_desc']);
             $this->db->execute();
 
-            $this->view('tracker/torrent',
-                [
-                    "currentPage" => "/" . __FUNCTION__,
-                    "userStats" => $this->cacheManager->getUserStats(),
-                    "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
-                    "getSiteManagerBar" => $this->cacheManager->getSiteManager($this->userClass),
-                    "torrentData" => $tdata,
-                    "content_data" => $contentData,
-                    "torrent_lang" => $lang_torrent,
-                    "tID" => $idTorrent
-                ]);
+            redirect("/torrent/" . $idTorrent);
         }else{
             $this->view('tracker/torrent',
                 [
@@ -119,7 +110,8 @@ class Tracker extends Controller
                     "torrentData" => $tdata,
                     "content_data" => $contentData,
                     "torrent_lang" => $lang_torrent,
-                    "tID" => $idTorrent
+                    "tID" => $idTorrent,
+                    "comments" => $this->getTorrentComments($idTorrent)
                 ]);
         }
     }
@@ -269,11 +261,19 @@ class Tracker extends Controller
     private function getTorrentComments($tid){
         $html_out = "";
 
-        $this->db->querry("SELECT tc.comment, tc.added, (CASE WHEN  t.anonymous = \"yes\" AND u.id = t.owner THEN \"Anonymous\" ELSE u.username END) as username FROM torrentComment as tc 
+        $this->db->querry("SELECT tc.id, tc.comment, tc.added, (CASE WHEN  t.anonymous = \"yes\" AND u.id = t.owner THEN \"Anonymous\" ELSE u.username END) as username, u.avatar FROM torrentComment as tc 
                                 INNER JOIN torrents as t ON tc.tid = t.id AND t.id = :t_id
                                 LEFT JOIN users as u ON u.id = tc.userid ");
         $this->db->bind(':t_id', $tid);
         $data = $this->db->getAll();
-        return $data;
+        $html_out = "";
+
+        foreach ($data as $value){
+            $html_out .= "<table class=\"bg-dark text-white center\" align=\"center\"><tbody><tr><td colspan=\"3\" height=\"15px\" align='left'>";
+            $html_out .= $value['username'] . "</td></tr><tr><td width='200px' height='200px'>";
+            $html_out .= "<img src='" . $value['avatar'] . "' width='200px' height='200px'></td><td align='left'>" . $value['comment'] ."</td></tr><tr><td height=\"15px\">ActionHere</td><td align='right'>";
+            $html_out .= "<a href='' style='margin-right: 20px'>Reply</a><a href='' style='margin-right: 20px'>Quote</a> </td></tr></tbody></table><br>";
+        }
+        return $html_out;
     }
 }

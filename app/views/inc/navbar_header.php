@@ -27,7 +27,10 @@
         <a href="<?php echo URL_ROOT . "/rules"; ?>"><?php echo $lang_functions['text_rules'] ?></a>
         <a href="#"><?php echo $lang_functions['text_settings'] ?></a>
         <a href="<?php echo URL_ROOT . "/log"; ?>"><?php echo $lang_functions['text_log'] ?></a>
-        <a href="#"><?php echo $lang_functions['text_donate'] ?></a>
+        <a href="<?php echo URL_ROOT . "/donation"; ?>"><?php echo $lang_functions['text_donate'] ?></a>
         <a href="#"><?php echo $lang_functions['text_staff'] ?></a>
+    </div>
+    <div class="navigation">
+        <?php echo $data['getSiteManagerBar'];?>
     </div>
     <div class="main">

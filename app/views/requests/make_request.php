@@ -3,7 +3,7 @@
 <div id="home_content" class="container" align="center">
     <?php echo isset($data['request_msg']) ? $data['request_msg'] : ""; ?>
 
-    <form enctype="multipart/form-data" method="POST" action="<?php echo $URL_ROOT . "/make_request";?>" role="form">
+    <form enctype="multipart/form-data" method="POST" action="<?php echo URL_ROOT . "/make_request";?>" role="form">
         <table class="bg-dark text-white" align="center" border="1" cellspacing="0" cellpadding="5" width="940">
             <tr>
             <tr><td class="colhead" colspan="2" align="center"><b>!!Request Experimental Test!!</b>

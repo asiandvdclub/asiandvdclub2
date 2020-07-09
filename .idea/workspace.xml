@@ -21,16 +21,13 @@
       <change beforePath="$PROJECT_DIR$/app/views/tracker/upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tracker/upload.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/user_manager/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_manager/profile.php" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -46,9 +43,6 @@
     <expand />
     <select />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="adc2" />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -56,7 +50,6 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -74,18 +67,6 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\DESKTOP-Z3G2\Documents\GitHub\adc2\app\views\tracker" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -215,51 +196,68 @@
       <workItem from="1591027949131" duration="20000" />
       <workItem from="1591035509111" duration="3230000" />
       <workItem from="1591082424607" duration="14018000" />
+      <workItem from="1594286643477" duration="61000" />
+      <workItem from="1594286838902" duration="2770000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="178" key="#Deployment" />
-    <state x="552" y="178" key="#Deployment/0.0.1920.1040@0.0.1920.1040" />
-    <state x="552" y="178" key="#Options" />
-    <state x="552" y="178" key="#Options/0.0.1920.1040@0.0.1920.1040" />
-    <state x="552" y="178" key="#SQL_Dialects" />
-    <state x="552" y="178" key="#SQL_Dialects/0.0.1920.1040@0.0.1920.1040" />
-    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" />
-    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" />
-    <state x="699" y="322" key="#com.intellij.fileTypes.FileTypeChooser" />
-    <state x="699" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" />
-    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog" />
-    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog/0.0.1920.1040@0.0.1920.1040" />
-    <state x="740" y="274" key="FileChooserDialogImpl" />
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" />
-    <state x="694" y="334" key="NewPhpClassDialog" />
-    <state x="694" y="334" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" />
-    <state x="794" y="443" key="NewPhpFileDialog" />
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" />
-    <state x="844" y="250" key="ftp.server.browser" />
-    <state x="844" y="250" key="ftp.server.browser/0.0.1920.1040@0.0.1920.1040" />
-    <state x="829" y="395" key="publish.login" />
-    <state x="829" y="395" key="publish.login/0.0.1920.1040@0.0.1920.1040" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" />
+    <state x="552" y="178" key="#Deployment" timestamp="1594286876120">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#Deployment/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594286876120" />
+    <state x="552" y="178" key="#Deployment/0.0.1920.1040@0.0.1920.1040" timestamp="1594275148012" />
+    <state x="552" y="178" key="#Options" timestamp="1594275148012" />
+    <state x="552" y="178" key="#Options/0.0.1920.1040@0.0.1920.1040" timestamp="1594275148012" />
+    <state x="552" y="178" key="#SQL_Dialects" timestamp="1594275148012" />
+    <state x="552" y="178" key="#SQL_Dialects/0.0.1920.1040@0.0.1920.1040" timestamp="1594275148012" />
+    <state x="536" y="165" key="#SSH_Configurations" timestamp="1594286871814">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="536" y="165" key="#SSH_Configurations/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594286871814" />
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594275148012" />
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594275148012" />
+    <state x="699" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594275148012" />
+    <state x="699" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1594275148012" />
+    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog" timestamp="1594275148012" />
+    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594275148012" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1594275568668">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594275568668" />
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594275148012" />
+    <state x="694" y="334" key="NewPhpClassDialog" timestamp="1594275148012" />
+    <state x="694" y="334" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594275148012" />
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1594275148012" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594275148012" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1594275148012" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594275148012" />
+    <state x="844" y="250" key="ftp.server.browser" timestamp="1594275629266">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="844" y="250" key="ftp.server.browser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594275629266" />
+    <state x="844" y="250" key="ftp.server.browser/0.0.1920.1040@0.0.1920.1040" timestamp="1594275148012" />
+    <state x="829" y="395" key="publish.login" timestamp="1594286846490">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="829" y="395" key="publish.login/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594286846490" />
+    <state x="829" y="395" key="publish.login/0.0.1920.1040@0.0.1920.1040" timestamp="1594275148012" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1594275148012" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1594275148012" />
   </component>
 </project>

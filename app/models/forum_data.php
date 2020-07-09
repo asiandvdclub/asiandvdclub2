@@ -11,7 +11,7 @@ class forum_data
         $this->setForumStatus();
     }
     public function display_forums(){
-        $this->db->querry("SELECT `name`, `title` FROM `category` JOIN `forums` WHERE category.idCategory = forums.category_idCategory");
+        $this->db->querry("SELECT `name`, `title` FROM `forumCategory` JOIN `forums` WHERE forumCategory.idCategory = forums.category_idCategory");
         $this->db->execute();
         $cat = $this->db->getAll();
         $divCat = "";
@@ -58,7 +58,8 @@ class forum_data
         return $this->forumStatus;
     }
     public function display_forums_manager(){
-        $this->db->querry("SELECT `idForum`, `name`, `title` FROM `category` JOIN `forums` WHERE category.idCategory = forums.category_idCategory");
+
+        $this->db->querry("SELECT `idForum`, `name`, `title` FROM `forumCategory` JOIN `forums` WHERE forumCategory.idCategory = forums.category_idCategory");
         $this->db->execute();
         $cat = $this->db->getAll();
         $divCat = "";
@@ -91,7 +92,9 @@ class forum_data
         }
         $divCat .= $this->addForumButton();
         $divCat .= "</div>";
+
         return $divCat;
+
     }
     private function deleteForumButton($forumId){
         return "<button id='deleteButton' onclick=\"location.href='". URL_ROOT . "/forum_delete/" . $forumId ."'\" type=\"button\" style=\"margin-left:10px;\" class=\"btn btn-info text-center\">Delete Text</button>";

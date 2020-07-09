@@ -133,6 +133,13 @@ function textTypes($types){
             break;
     }
 }
+function timeDiff($date){
+    $t1 = new DateTime($date);
+    $t2 = new DateTime(date("Y-m-d h:i:sa"));
+    $timediff = $t2->getTimestamp() - $t1->getTimestamp();
+    return $timediff;
+}
+
 function dbg_log($log){
     $log_path = APP_ROUTE . "/torrents/log.txt";
     $current = file_get_contents($log_path);
