@@ -41,7 +41,7 @@
                 </tr>
                 <tr>
                     <td style="table-layout: fixed; width: 10%;">Last Seen:</td>
-                    <td><?php echo $data['user_data']['last_access']; ?></td>
+                    <td><?php echo $data['last_seen']; ?></td>
                 </tr>
                 <tr>
                     <td style="table-layout: fixed; width: 10%;">Gender:</td>
@@ -61,15 +61,15 @@
                 </tr>
                 <tr>
                     <td style="table-layout: fixed; width: 10%;">Currently Seeding:</td>
-                    <td></td>
+                    <td><?php echo $data['userStats']['seeding']; ?></td>
                 </tr>
                 <tr>
                     <td style="table-layout: fixed; width: 10%;">Currently Leeching:</td>
-                    <td></td>
+                    <td><?php echo $data['userStats']['leeching']; ?></td>
                 </tr>
                 <tr>
                     <td style="table-layout: fixed; width: 10%;">Completed Torrents:</td>
-                    <td></td>
+                    <td><?php echo $data['userStats']['completed']; ?></td>
                 </tr>
                 </tbody>
             </table>

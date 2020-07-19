@@ -13,12 +13,9 @@
 </div>
 <div class="outer">
     <div class="navigation">
-        <a href="/">Home</a>
         <a href="/login">Login</a>
         <a href="/signup">Signup</a>
         <a href="/recover">Recover</a>
         <a href="/confirm_resend">Resend confirmation</a>
-        <a href="/rules">Rules</a>
-        <a href="/faq">FAQ</a>
     </div>
     <div class="main">

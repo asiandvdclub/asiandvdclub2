@@ -10,7 +10,7 @@
 <body>
 <div class="logo">
     <div class="logo-text">
-        Ratio: <?php $ratio = (int)$data['userStats']['uploaded'] / (int)$data['userStats']['downloaded']; echo is_nan($ratio) ? "0" : sprintf("%01.3f", $ratio); ?> Activity: <img class="main-arrowup"> <img class="main-arrowdown"> Connectable: <?php echo $data['userStats']['connectable']; ?>
+        Ratio: <?php $ratio = (int)$data['userStats']['uploaded'] / (int)$data['userStats']['downloaded']; echo is_nan($ratio) ? "0" : sprintf("%01.3f", $ratio); ?> Activity: <?php echo $data['userStats']['seeding']; ?> <img class="main-arrowup"> <?php echo $data['userStats']['leeching']; ?> <img class="main-arrowdown"> Connectable: <?php echo $data['userStats']['connectable']; ?>
     </div>
 </div>
 <div class="outer">

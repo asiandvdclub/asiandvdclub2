@@ -15,7 +15,7 @@
                 <span class="required"></span>
             </td>
             <td class="rowfollow" valign="top" align="left">
-                <input type="file" class="file" id="torrent" name="torrent_file"><span class="error"> <?php echo $data['error']['file']; ?></span>
+                <input type="file" class="file" id="torrent" name="torrent_file"><span class="error"> <?php echo "<p style='color: red;display:inline;'>" . $data['error']['file_t'] . "</p>"; ?></span>
             </td>
         </tr>
         <tr>
@@ -55,7 +55,7 @@
                 <span class="required"></span>
             </td>
             <td class="rowfollow" valign="top" align="left">
-                <input type="text" style="width: 650px;" id="name" name="torrent_name" value=""><?php echo $data['error']['torrent_name']; ?><br>
+                <input type="text" style="width: 650px;" id="name" name="torrent_name" value=""><?php echo "<p style='color: red;display:inline;'>" . $data['error']['torrent_name'] . "</p>"; ?><br>
                 <span class="medium">Taken from filename if not specified.</span>
             </td>
         </tr>
@@ -71,7 +71,7 @@
             <td class="rowhead nowrap" valign="top" align="right"> IMDb&nbsp;URL
             </td>
             <td class="rowfollow" valign="top" align="left">
-                <input type="text" style="width: 650px;" name="imdb_url" value=""><?php echo $data['error']['imdb']; ?><br>
+                <input type="text" style="width: 650px;" name="imdb_url" value=""> <?php echo "<p style='color: red;display:inline;'>" . $data['error']['imdb'] . "</p>"; ?><br>
                 <span class="medium">(URL taken from <strong><a href="http://www.imdb.com/" target="_blank">IMDb</a></strong>. e.g.&nbsp;for movie <b>The Dark Knight</b> the URL is <b>http://www.imdb.com/title/tt0468569/</b>)</span>
             </td>
         </tr>
@@ -79,7 +79,7 @@
             <td class="rowhead nowrap" valign="top" align="right">AniDB&nbsp;URL
             </td>
             <td class="rowfollow" valign="top" align="left">
-                <input type="text" style="width: 650px;" name="url_anidb" value=""><?php echo $data['error']['anidb']; ?><br>
+                <input type="text" style="width: 650px;" name="url_anidb" value=""> <?php echo "<p style='color: red;display:inline;'>" . $data['error']['anidb'] . "</p>"; ?><br>
                 <span class="medium">(URL taken from <strong><a href="https://anidb.net/" target="_blank">AniDB</a></strong>. e.g.&nbsp;for anime <b> Infinite Dendrogram</b> the URL is <b>https://anidb.net/anime/14564</b></span>
             </td>
         </tr>
@@ -173,7 +173,7 @@
             </td>
             <td class="rowfollow" valign="top" align="left">
                 <input type="file" class="file" name="nfo"><br>
-                <span class="medium">(Can only be viewed by <b class="User_Name">User</b> or Above.  insert only file ending with <b>.nfo</b></span>
+                <span class="medium">(Can only be viewed by <b class="User_Name">User</b> or Above.  insert only file ending with <b>.nfo</b>)</span>
             </td>
         </tr>
         <tr>
@@ -186,7 +186,7 @@
         <tr>
             <td class="rowhead nowrap" valign="top" align="right">MediaInfo</td>
             <td align="left">
-                <button>Add</button>
+                <input type="file" class="file" name="media_info"> <?php echo "<p style='color: red;display:inline;'>" . $data['error']['file_mi'] . "</p>"; ?> <br>
             </td>
         </tr>
         <tr>

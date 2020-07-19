@@ -20,12 +20,15 @@ x = {
 }
 if len(sys.argv) != 2:
     print(json.dumps({"error":"Imdb link empty"}))
-    quit(0);
+    quit(0)
 direct = []
 imdb = IMDb()
-movie = imdb.get_movie(sys.argv[1]);
-for director in movie['directors']:
-    direct.append(director['name'])
+movie = imdb.get_movie(sys.argv[1])
+try:
+    for director in movie['directors']:
+        direct.append(director['name'])
+except KeyError:
+        direct = "none"
 
 x.update(name = movie.get('title'))
 x.update(genre = movie.get('genre'))

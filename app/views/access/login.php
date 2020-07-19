@@ -1,8 +1,8 @@
 <?php require APP_ROUTE . "/views/inc/header.php";?>
-<form method="post" action="<?php echo URL_ROOT;?>/login" onsubmit="return verify_form()">
+<form method="post" action="<?php echo URL_ROOT;?>/login" onsubmit="return verify_form()" align="center">
     <p>Note: You need cookies enabled to log in.</p>
     <input type="hidden" name="apple" value="evil">
-    <table class="clean">
+    <table class="clean" align="center">
         <tbody>
             <tr>
                 <td class="rowhead">Username</td>
@@ -24,7 +24,7 @@
         </tbody>
     </table>
 </form>
-<p>
+<p align="center">
     Don't have an account? <a class="bold" href="/signup">Sign up</a> right now!<br><br>
     Forgotten your password and/or username? <a class="bold" href="/recover">Recover them here</a>.<br><br>
     Need another <a class="bold" href="/confirm_resend">account confirmation</a> email?

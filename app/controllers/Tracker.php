@@ -59,7 +59,7 @@ class Tracker extends Controller
         require_once $this->languageMod->getLangPath(__FUNCTION__);
         $this->languageMod->setLanguage(__FUNCTION__);
 
-        $this->db->querry("SELECT t.anonymous, t.info_hash, t.numfiles, t.content_id, t.name, t.desc, t.seeders, t.leechers, t.size, t.added, t.specs, usr.username FROM torrents as t JOIN users as usr WHERE t.id = :tid AND t.owner = usr.id");
+        $this->db->querry("SELECT t.anonymous, t.info_hash, t.numfiles, t.content_id, t.name, t.desc, t.seeders, t.leechers, t.size, t.added, t.specs, t.media_info, usr.username FROM torrents as t JOIN users as usr WHERE t.id = :tid AND t.owner = usr.id");
         $this->db->bind(":tid", $idTorrent);
         $tdata = $this->db->getRow();
         $tdata['specs'] = json_decode($tdata['specs'], true);
@@ -71,15 +71,17 @@ class Tracker extends Controller
 
         switch ($type){
             case "movie":
-                $this->db->querry("SELECT * FROM imdb WHERE id = :content_id");
+                $this->db->querry("SELECT * FROM imdb WHERE imdb_id = :content_id");
                 $this->db->bind(':content_id', $tdata['content_id']);
                 $contentData = $this->db->getRow();
                 $contentData['genre'] = json_decode($contentData['genre'], true);
+                $contentData['genre'] = $contentData['genre']['genre'];
                 if(empty($contentData['synopsis']))
                     $contentData['synopsis'] = $contentData['plot'];
                 $contentData['directors'] = json_decode($contentData['directors'], true);
                 $contentData['content_site_name'] = $lang_torrent['imdb_info'];
                 $contentData['content_link_name'] = $lang_torrent['imdb_link'];
+                $contentData['content_link'] = "<a href='https://www.imdb.com/title/tt" . $tdata['content_id'] ."'>https://www.imdb.com/title/tt" . $tdata['content_id'] . "</a>";
                 break;
             case "anime":
                 $this->db->querry("SELECT * FROM anidb WHERE anidb_id = :content_id");
@@ -128,7 +130,7 @@ class Tracker extends Controller
         $imdb = false;
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['sitelanguage'])) {
-            $check =  $this->takeupload->checkForm($_POST, $_FILES['torrent_file']);
+            $check =  $this->takeupload->checkForm($_POST, $_FILES);
             $error = $check['error'];
 
             foreach ($error as $value){
@@ -182,6 +184,7 @@ class Tracker extends Controller
             $torrent_data['optradio'] = $_POST['optradio'];
             $torrent_data['specs'] = json_encode($specs); // jsond encode
             $torrent_data['content_id'] = $check['content_id'];
+            $torrent_data['media_info'] = read_file($_FILES['media_info']); // todo without verify
             if (URL_ROOT . "/announce" != $f['announce']){
                 $error['file'] = "Invalid announce url";
                 $this->uploadView($error);

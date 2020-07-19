@@ -8,7 +8,7 @@ Example for 1.0.30
 0 -> beta, 0 for no beta -> wasn't in production
 30 -> reset from nr. of comits see git repo
 */
-define("ADC_FRAMEWORK", "1.0.32");
+define("ADC_FRAMEWORK", "0.0.32");
 //Bitorrent
 define("IN_TRACKER", true);
 //App route
@@ -31,6 +31,7 @@ define('DIR_TORRENTS', APP_ROUTE . '/torrents/');
 define('DIR_IMAGES', 'images/');
 //Header
 define('TORRENT_HEADER', 'application/x-bittorrent');
+define('TXT_HEADER', 'text/plain');
 
 //Register Settings
 define('maxUserLenght', 12);

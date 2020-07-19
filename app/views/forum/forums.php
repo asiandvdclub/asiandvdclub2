@@ -1,5 +1,6 @@
 <?php require APP_ROUTE . '/views/inc/navbar_header.php';?>
 <div id="news" class="torrenttable_helper" align="center">
+    <!--
     <table class="torrenttable_helper"  border="0" cellspacing="0" cellpadding="10">
         <tbody style="border: none;">
         <tr>
@@ -25,5 +26,7 @@
         </tr>
         </tbody>
     </table>
+    -->
+    <?php echo $data['display_forums']; ?>
 </div>
 <?php require APP_ROUTE . '/views/inc/navbar_footer.php';?>

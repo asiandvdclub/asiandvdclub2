@@ -79,7 +79,8 @@ class SiteManager extends Controller
                 "forum_status" => $this->forum_data->getForumStatus(),
                 "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                 "getSiteManagerBar" => $this->cacheManager->getSiteManager($this->userClass),
-                "category" => $this->forum_data->display_forums_manager(),
+                //"category" => $this->forum_data->display_forums_manager(),
+                "forumData" => $this->forum_data->getForumStatus(),
                 "view_settings" => $view_selector,
                 "error" => $error
             ]);

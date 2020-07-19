@@ -5,7 +5,7 @@
         <h2>Forum Overview</h2>
         <div class="news">
             <div class="news-heading"></div>
-            <table class="table" style="width: 700px; " cellspacing="0" cellpadding="10">
+            <table class="table" style="width: 700px; " cellspacing="0" cellpadding="10" align="center">
                 <thead>
                 <tr class="">
                     <th>Categorys</th>
@@ -15,13 +15,13 @@
                     <th>Blocked users to post</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody align="center">
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><?php echo $data['forumData']['category'];?></td>
+                        <td><?php echo $data['forumData']['forums'];?></td>
+                        <td><?php echo $data['forumData']['topics'];?></td>
+                        <td><?php echo $data['forumData']['posts'];?></td>
+                        <td><?php echo "to be added " . $data['forumData']['posts'];?></td>
                     </tr>
                 </tbody>
             </table>

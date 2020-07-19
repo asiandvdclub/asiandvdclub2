@@ -32,7 +32,8 @@ class Forum extends Controller
                     "getLangPath" => $this->languageMod->getLangPath(__FUNCTION__),
                     "getSiteLangHeader" => $this->languageMod->getSiteLangHeader(),
                     "getSiteManagerBar"=> $this->cacheManager->getSiteManager($this->userClass),
-                    "category" => $this->forum_data->display_forums(),
+                    //"category" => $this->forum_data->display_forums(),
+                    "display_forums" => $this->displayForums()
                 ]);
         }
     }
@@ -41,5 +42,36 @@ class Forum extends Controller
     }
     public function post(){
 
+    }
+    private function displayForums(){
+
+        //TODO ADD to querryes on for category and one for forums this will requeired to foreach to display the resust need to be set in memchacheed. that all. 
+        $this->db->querry("SELECT cat.id, f.title, f.description, cat.name FROM forums as f join forumCategory as cat where f.idCategory = cat.id");
+        $tb = $this->db->getAll();
+        $html_out = "";
+
+        for($i = 0; $i < count($tb); $i++){
+            $html_out .= "<table class=\"torrenttable_helper\"  border=\"0\" cellspacing=\"0\" cellpadding=\"10\"><tbody style=\"border: none;\"><tr><th colspan=\"4\" style=\"text-align: left\">"
+                . $tb[i]['name'] . "</th></tr><tr style=\" background: #D7D7D7;\">
+            <td style=\"text-align: left;border-right: none; width: 1000px; overflow: auto\">Forum</td>
+            <td style=\"border: none; text-align: center;\">Topics</td>
+            <td style=\"border: none; text-align: center;\">Posts</td>
+            <td style=\"border-left: none; text-align: center;\">Last Post</td></tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>";
+        }
+        return $html_out;
     }
 }

@@ -34,8 +34,8 @@ class Core{
         if(isLogged()) {
             $auth = new Authority();
         }
-        //update last seen
-        if(isset($_COOKIE['c_secure_uid']) && timeDiff($this->memcached->getLastSeen()) > 900){
+        //todo update last seen
+        if(isset($_COOKIE['c_secure_uid']) && timeDiff($this->memcached->getLastSeen()) > 10){
             $db->querry("UPDATE users SET last_access = NOW() WHERE id = :uid");
             $db->bind(":uid", base64_decode($_COOKIE['c_secure_uid']));
             $db->execute();

@@ -45,25 +45,25 @@
         </tr>
         <tr>
             <td>Mediainfo</td>
-            <td style="padding-left: 15px"><?php echo $data['torrentData']['media_info'];?></td>
+            <td style="padding-left: 15px"><?php echo "<pre>" . $data['torrentData']['media_info'] . "</pre>";?></td>
         </tr>
         <tr>
             <td>Content Info</td>
             <td style="padding-left: 15px;" align="left">
                 <p style="font-size: large"><?php echo $data['content_data']['content_site_name'];?></p>
-                <?php echo $data['content_data']['content_link_name'];?>: <a href="http://anidb.net/a<?php echo  $data['content_data']['anidb_id'];?>">http://anidb.net/a<?php echo  $data['content_data']['anidb_id'];?></a>
+                <?php echo $data['content_data']['content_link_name'] . ": " . $data['content_data']['content_link'];?>
                 <br>
                 Title: <?php echo  $data['content_data']['title'];?>
                 <br>
                 Original Title: <?php echo  $data['content_data']['title_jp'];?>
                 <br>
-                Type: <?php echo  $data['content_data']['type'];?>
+                Type: <?php echo implode(", " ,$data['content_data']['genre']);?>
                 <br>
                 Year: <?php echo  $data['content_data']['year'];?>
                 <br>
-                <p style="font-size: large">Plot</p>
-                <br>
+                <p style="font-size: large;">Plot</p>
                 <?php echo  $data['content_data']['synopsis'];?>
+                <br><br>
             </td>
         </tr>
         <tr>

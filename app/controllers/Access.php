@@ -294,7 +294,10 @@ class Access extends Controller{
 
     }
     public function closedSignUp(){
-        die("Closed");
+        $this->view("/access/closed_signup",
+            [
+                "getLangPath"=>$this->languageMod->getLangPath(__FUNCTION__)
+            ]);
     }
     public function confirm($hash){
        $db = new Database();

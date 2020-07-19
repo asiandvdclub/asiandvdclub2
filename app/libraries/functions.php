@@ -170,3 +170,8 @@ function check_image_link($url){
     }
     return !empty($ext) ? true : false;
 }
+function read_file($file){
+    $fo = fopen($file['tmp_name'], "r");
+    $text = fread($fo, filesize($file['tmp_name']));
+    return $text;
+}

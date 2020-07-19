@@ -50,6 +50,12 @@ class forum_data
         $this->db->querry("SELECT COUNT(*) as total FROM posts");  $this->db->execute();
         $temp = $this->db->getAll();
         $this->forumStatus += array("posts" => $temp[0]['total']);
+        $this->db->querry("SELECT COUNT(*) as total FROM forumCategory");
+        $temp = $this->db->getAll();
+        $this->forumStatus += array("category" => $temp[0]['total']);
+        $this->db->querry("SELECT COUNT(*) as total FROM topics");
+        $temp = $this->db->getAll();
+        $this->forumStatus += array("topics" => $temp[0]['total']);
         $this->db->querry("SELECT COUNT(*) as total FROM users");  $this->db->execute();
         $temp = $this->db->getAll();
         $this->forumStatus += array("users" => $temp[0]['total']);
@@ -57,6 +63,7 @@ class forum_data
     public function getForumStatus(){
         return $this->forumStatus;
     }
+    //TODO remove the lines about I think
     public function display_forums_manager(){
 
         $this->db->querry("SELECT `idForum`, `name`, `title` FROM `forumCategory` JOIN `forums` WHERE forumCategory.idCategory = forums.category_idCategory");

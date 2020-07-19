@@ -50,11 +50,11 @@ class cacheManager
             $last_seen = $row['last_access'];
             unset($row['last_access']);
             $this->cache->setKey($this->user_cache, $row, 1800);
-            $this->cache->setKey(str_replace("_stats", "_last_seen", $this->user_cache), date("Y-m-d h:i:sa"), 900);
+            $this->cache->setKey(str_replace("_stats", "_last_seen", $this->user_cache), date("Y-m-d h:i:s"), 900);
         }
     }
     public function setLastSeen(){
-        $this->cache->setKey(str_replace("_stats", "_last_seen", $this->user_cache), date("Y-m-d h:i:sa"), 900);
+        $this->cache->setKey(str_replace("_stats", "_last_seen", $this->user_cache), date("Y-m-d h:i:s"), 900);
     }
     public function getLastSeen(){
         return $this->cache->getKey(str_replace("_stats", "_last_seen", $this->user_cache));
